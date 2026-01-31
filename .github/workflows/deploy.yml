@@ -23,7 +23,8 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        # Abbiamo aggiunto --legacy-peer-deps per risolvere il conflitto ESLint 9
+        run: npm install --legacy-peer-deps
 
       - name: Build
         run: npm run build
