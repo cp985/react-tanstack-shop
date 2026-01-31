@@ -1,0 +1,45 @@
+name: Deploy su GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # Esegue il deploy ogni volta che fai push su main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Configurazione Node.js
+        uses: actions/node-versions@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Installazione dipendenze
+        run: npm install
+
+      - name: Compilazione Progetto (Build)
+        # Qui passiamo la variabile d'ambiente per la build
+        run: npm run build
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
+
+      - name: Configurazione Pages
+        uses: actions/configure-pages@v4
+
+      - name: Caricamento Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Vite genera i file pronti nella cartella 'dist'
+          path: './dist'
+
+      - name: Deploy su GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
