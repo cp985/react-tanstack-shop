@@ -23,11 +23,14 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        # Abbiamo aggiunto --legacy-peer-deps per risolvere il conflitto ESLint 9
+        # Risolve conflitti di dipendenze se presenti
         run: npm install --legacy-peer-deps
 
       - name: Build
+        # Inseriamo qui la variabile. GitHub la prenderà da "Settings > Secrets and variables > Actions"
         run: npm run build
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
