@@ -1,10 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    async function fetchData() {
+      const { VITE_API_URL } = import.meta.env;
+
+      try {
+        console.log("Fetching data...");
+        const response = await fetch(`${VITE_API_URL}/products`);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        console.log("Data fetched");
+        console.log("render data", data);
+      } catch (error) {
+        console.log(error);
+        throw new Error("Error fetching data: " + error.message);
+      }
+    }
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -29,7 +50,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
