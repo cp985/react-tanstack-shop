@@ -5,6 +5,7 @@ import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -18,6 +19,7 @@ function App() {
         }
         const data = await response.json();
         console.log("Data fetched");
+        setProducts(data);
         console.log("render data", data);
       } catch (error) {
         console.log(error);
@@ -49,6 +51,19 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div>
+        <ul className="dummy-product-list">
+          {products.map((product) => (
+            <li key={product.id}>
+              <h2>{product.name}</h2>
+              <p>{product.description}</p>
+              <p>{product.price}</p>
+              <img src={product.imageUrl} alt={product.name} />
+              <p>{product.category}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
 }
