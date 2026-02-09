@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, HashRouter, createHashRouter } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -6,8 +6,9 @@ import NewsLetterContact from "./pages/NewsletterContact";
 import AccountUser from "./pages/AccountUser";
 import ErrorPage from "./components/general/ErrorPage";
 import WrapperLayoutMainNav from "./components/general/WrapperLayoutMainNav";
+import MainPageShop from "./pages/MainPageShop";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   [
     {
       path: "/",
@@ -15,9 +16,14 @@ const router = createBrowserRouter(
       errorElement: <ErrorPage />,
       children: [
         {
-          path: "",
+       
           element: <WrapperLayoutMainNav />,
           children: [
+            {
+              index: true,
+              element: <MainPageShop />,
+            },
+
             {
               path: "cart",
               element: <Cart />,
@@ -33,11 +39,11 @@ const router = createBrowserRouter(
           ],
         },
       ],
-    },
-  ],
-  {
-    basename: "/react-tanstack-shop/",
-  },
+    }
+  ]
+  // {
+  //   basename: "/react-tanstack-shop/",
+  // },
 );
 
 function App() {
