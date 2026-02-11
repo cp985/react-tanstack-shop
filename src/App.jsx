@@ -16,7 +16,7 @@ import MainPageShop from "./pages/MainPageShop";
 import OrdersHistory from "./pages/OrdersHistory";
 import ProfileUser from "./pages/ProfileUser";
 import FirstPage from "./pages/FirstPage";
-
+import Sales from "./pages/Sales";
 import { authCheck } from "./util/auth";
 import { loader as loaderItem } from "./pages/MainPageShop";
 const router = createHashRouter(
@@ -46,6 +46,10 @@ const router = createHashRouter(
           },
           element: <MainPageShop />,
         },
+        {
+          path: "sales",
+          element: <Sales />,
+        },
 
         {
           path: "cart",
@@ -59,6 +63,7 @@ const router = createHashRouter(
           path: "accountUser/:user",
           element: <AccountUser />,
           children: [
+            { index: true, element: <ProfileUser /> },
             {
               path: "profile",
               element: <ProfileUser />,

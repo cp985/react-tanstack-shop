@@ -4,12 +4,13 @@ import classFirstPage from "./style/FirstPage.module.css";
 export default function FirstPage() {
   const user = localStorage.getItem("username");
   return (
-    <>
+    <section className={classFirstPage.firstPage}>
       <h1>FirstPage</h1>
       <div className={classFirstPage.bottonContainer}>
         <CardLink
           text={"Shop"}
           path={"/app/shop"}
+
        
         />
                 <CardLink
@@ -22,8 +23,12 @@ export default function FirstPage() {
           path={`/app/accountUser/${user}/orders`}
        
         />
-
       </div>
-    </>
+      <CardLink
+        text={"Sales"}
+        path={`/app/sales`}
+       width={"100%"}
+      />
+    </section>
   );
 }

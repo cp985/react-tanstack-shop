@@ -3,14 +3,13 @@ import classCardLink from "./style/CardLink.module.css";
 
 export default function CardLink({
   text,
-  isLink,
+
+  width,
   path,
-  type,
-  classOf,
-  onClick,
+
 }) {
   return (
-    <Link className={classCardLink.card} to={path}>
+    <Link style={{width}} className={classCardLink.card} to={path}>
       <img src="#" alt="#" />
       {text}
     </Link>
