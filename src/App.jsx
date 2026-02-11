@@ -13,16 +13,18 @@ import AccountUser from "./pages/AccountUser";
 import ErrorPage from "./components/general/ErrorPage";
 import WrapperLayoutMainNav from "./components/general/WrapperLayoutMainNav";
 import MainPageShop from "./pages/MainPageShop";
+import OrdersHistory from "./pages/OrdersHistory";
+import ProfileUser from "./pages/ProfileUser";
+import FirstPage from "./pages/FirstPage";
 
 import { authCheck } from "./util/auth";
-import {loader as loaderItem} from './pages/MainPageShop'
+import { loader as loaderItem } from "./pages/MainPageShop";
 const router = createHashRouter(
   [
     {
       path: "/",
       element: <Home />,
       errorElement: <ErrorPage />,
-     
     },
 
     {
@@ -34,8 +36,14 @@ const router = createHashRouter(
       },
       children: [
         {
-         path: "shop",
-         loader: () => {return loaderItem()},
+          path: "home",
+          element: <FirstPage />,
+        },
+        {
+          path: "shop",
+          loader: () => {
+            return loaderItem();
+          },
           element: <MainPageShop />,
         },
 
@@ -48,8 +56,18 @@ const router = createHashRouter(
           element: <NewsLetterContact />,
         },
         {
-          path: "accountUser",
+          path: "accountUser/:user",
           element: <AccountUser />,
+          children: [
+            {
+              path: "profile",
+              element: <ProfileUser />,
+            },
+            {
+              path: "orders",
+              element: <OrdersHistory />,
+            },
+          ],
         },
       ],
     },

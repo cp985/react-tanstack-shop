@@ -6,11 +6,14 @@ export default function MainNav() {
   return (
       <nav className={classMainNav.nav} >
         <ul className={classMainNav.ul}>
-          <li>
-            <Button text={"Home"} isLink={true} path={"shop"} />
+                   <li>
+            <Button text={"Home"} isLink={true} path={"home"} />
           </li>
           <li>
-            <Button text={"Account"} isLink={true} path={"accountUser"} />
+            <Button text={"Shop"} isLink={true} path={"shop"} />
+          </li>
+          <li>
+            <Button text={"Account"} isLink={true} path={"accountUser/:id"} />
           </li>
 
           <li>
@@ -18,7 +21,7 @@ export default function MainNav() {
               text={"NewsLetterContact"}
               isLink={true}
               path={"newsLetterContact"}
-            />{" "}
+            />
           </li>
           <li>
             <Button text={`Cart(${0})`} isLink={true} path={"cart"} />

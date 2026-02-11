@@ -4,7 +4,7 @@ export const DUMMY_ITEMS = [
     name: "Corazza del Guardiano Eterno",
     type: "Armatura",
     slot: "Torso",
-    rarity: "Epic", // Common, Rare, Epic, Legendary
+    rarity: "Epic",
     levelRequired: 15,
     weight: 18.5,
     value: 1200,
@@ -109,13 +109,15 @@ export const DUMMY_ITEMS = [
 
 export const DUMMY_USERS = [
   {
+    username: "admin",
     email: "admin@admin.it",
     password: "admin",
-    id:'123456789A'
+    id: "123456789A",
   },
   {
+    username: "user",
     email: "user@user.it",
     password: "user",
-    id:'987654321B'
+    id: "987654321B",
   },
 ];

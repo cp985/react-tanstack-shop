@@ -1,0 +1,57 @@
+.footer {
+    width: 100%;
+    background-color: rgb(88, 88, 88);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem;
+    gap: 2rem;
+}
+
+.footer section {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f2ef20;
+    border-radius: 0.3rem
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    padding: 0.1rem 0.2rem;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer a:active {
+    text-decoration: underline;
+}
+
+.footer address{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  
+}

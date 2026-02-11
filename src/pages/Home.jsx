@@ -16,8 +16,9 @@ export default function Home() {
     onSuccess: (response) => {
       console.log("onSuccess data", response);
       localStorage.setItem("token", response.id);
-      localStorage.setItem("expires", Date.now() + 6 * 60 * 1000); //! 6minuti
-      navigate("/app");
+      localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
+      localStorage.setItem("username", response.username);
+      navigate("/app/home");
     },
   });
 

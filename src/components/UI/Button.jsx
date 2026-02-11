@@ -5,5 +5,5 @@ export default function Button({ text, isLink, path,type ,classOf, onClick }) {
     return <NavLink className={({isActive})=> isActive ? classButton.active : classButton.button} to={path}>{text}</NavLink>;
   }
 
-  return <button type={type} className={classOf ? classButton.classOf : classButton.button} onClick={onClick}>{text}</button>;
+  return <button type={type} className={classOf ? classOf : classButton.button} onClick={onClick}>{text}</button>;
 }
