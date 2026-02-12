@@ -8,27 +8,14 @@ export default function FirstPage() {
       <h1>FirstPage</h1>
       <div className={classFirstPage.bottonContainer}>
         <CardLink
-          text={"Shop"}
+          title={"Shop"}
           path={"/app/shop"}
-
-       
+          description={"Go to the main shop page and find your staff!!"}
         />
-                <CardLink
-          text={"Profile"}
-          path={`/app/accountUser/${user}/profile`}
-       
-        />
-                <CardLink
-          text={"Orders"}
-          path={`/app/accountUser/${user}/orders`}
-       
-        />
+        <CardLink title={"Profile"} path={`/app/accountUser/${user}/profile`} description={'Setting your profile options'} />
+        <CardLink title={"Orders"} path={`/app/accountUser/${user}/orders`} description={'Organize your orders status '} />
       </div>
-      <CardLink
-        text={"Sales"}
-        path={`/app/sales`}
-       width={"100%"}
-      />
+      <CardLink classOf={"sales"} title={"Sales"} path={`/app/sales`}  />
     </section>
   );
 }

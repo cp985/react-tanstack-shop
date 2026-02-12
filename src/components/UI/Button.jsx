@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import classButton from "./style/Button.module.css";
-export default function Button({ text, isLink, path,type ,classOf, onClick }) {
+export default function Button({ text,classOf ,isLink, path,type,  onClick,end }) {
   if (isLink) {
-    return <NavLink className={({isActive})=> isActive ? classButton.active : classButton.button} to={path}>{text}</NavLink>;
+    return <NavLink className={({isActive})=> `${isActive ? classButton.active : classButton.button} ${classButton[classOf] || ""}`} to={path} end={end}>{text}</NavLink>;
   }
 
-  return <button type={type} className={`${classOf ? classButton[classOf] : classButton.button}`} onClick={onClick}>{text}</button>;
+  return <button  type={type} className={`${classButton.button} ${classButton[classOf] || ""}`} onClick={onClick}>{text}</button>;
 }

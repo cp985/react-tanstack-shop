@@ -22,12 +22,14 @@ nav {
     position: relative;
 }
 
-.li>div {
+.li div {
     position: absolute;
     border-radius: 0.3rem;
     background-color: #e4e000;
+    margin-top: 2rem;
+   
     padding-top: 0.5rem;
-    top: 130%;
+    top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -35,14 +37,17 @@ nav {
     height: 0;
     width: 100%;
     opacity: 0;
-    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    overflow: hidden;
+    transition: height 0.1s ease-in-out, opacity 0.2s ease-in-out;
+
 }
 
-.li:hover>div {
-    display: flex;
-    flex-direction: column;
-    height: 6rem;
+.li:hover div {
+  
+    height: 3rem;
     opacity: 1;
 
+}
+
+.li:hover .two-link{
+    height: 6rem;
 }

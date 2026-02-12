@@ -2,16 +2,21 @@ import { Link } from "react-router-dom";
 import classCardLink from "./style/CardLink.module.css";
 
 export default function CardLink({
-  text,
-
-  width,
+  title,
+description,
   path,
+  classImage,
+  classOf
+  
 
 }) {
   return (
-    <Link style={{width}} className={classCardLink.card} to={path}>
-      <img src="#" alt="#" />
-      {text}
+    <Link  className={`${classCardLink.card} ${classCardLink[classOf] || ""}`} to={path}>
+     <h2>{title}</h2>
+      <div  className={`${classCardLink.image} ${classCardLink[classImage] || ""}`} ></div>
+      <p>{description}</p>
+      
+      
     </Link>
   );
 }
