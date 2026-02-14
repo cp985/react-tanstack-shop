@@ -1,25 +1,22 @@
 //! nav fissa una volta dentro. pensare se mettere
 //! filti qui  o creare barra laterale
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import classMainNav from "./style/MainNav.module.css";
 import Button from "./Button";
 import Input from "./Input";
-import FormFilter from "./FormFilter";
 
-export default function MainNav() {
+export default function MainNav({ setIsFilterOpen, isFilterOpen }) {
   const [theme, setTheme] = useState("light");
   const location = useLocation();
   console.log("locatio ", location);
   const path = location.pathname;
 
-  function toggleTheme() {
-    setTheme(theme === "dark" ? "light" : "dark");
-  }
-  function toggleFilter() {
-    console.log("filter");
-  }
+      function toggleTheme() {
+      setTheme(theme === "dark" ? "light" : "dark");
+    }
+
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
@@ -29,18 +26,8 @@ export default function MainNav() {
     <nav className={classMainNav.nav}>
       <ul className={classMainNav.ul}>
         {path === "/app/shop" && (
-          <li className={classMainNav.filterContainer}>
-            <Input
-              classOfInput={"input-filter1"}
-              classOfLabel={"label-filter1"}
-              id={"filter"}
-              type={"checkbox"}
-              label={"Filter"}
-              hidden
-            />
-            <div className={classMainNav.filter}>
-              <FormFilter />
-            </div>
+          <li className={classMainNav['button-filter']}>
+            <Button text={"Filter"} onClick={setIsFilterOpen} />
           </li>
         )}
         <li>

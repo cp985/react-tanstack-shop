@@ -1,5 +1,6 @@
 nav {
     width: 100%;
+    height: var(--nav-height);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,6 +8,9 @@ nav {
     position: relative;
     background-color: #e4e000;
     color: black;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .ul {
@@ -20,6 +24,9 @@ nav {
 
 .li {
     position: relative;
+}
+.button-filter{
+    margin-right: auto;
 }
 
 .li div {
@@ -55,16 +62,9 @@ nav {
 
 }
 
-.filterContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: auto;
-    height: 100%;
-}
 
-.filter {
+
+/* .filter {
 
     position: absolute;
     padding-top: 0.5rem;
@@ -76,4 +76,4 @@ nav {
     transition: height 0.1s ease-in-out, opacity 0.1s ease-in-out;
     width: 16rem;
 
-}
+} */
