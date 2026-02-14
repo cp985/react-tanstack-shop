@@ -1,27 +1,56 @@
-.input-filter{
+.inputCntainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.label-filter1{
   
     background-color: red;
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 0.5rem
 }
+.label-filter1:hover{
+    background-color: rgb(243, 129, 0);
+}
 
-.input-filter:checked + div{
-height: 50dvh;
+
+
+.input-filter1 label ~ div{
+height: 0;
+opacity: 0;
+z-index: -1;
+}
+
+.input-filter1:checked ~ div{
+height: 100dvh;
 opacity: 1;
+z-index: 2;
 
 }
 
-.input-filter2{
-  
-    background-color: rgb(76, 0, 255);
+.input-filter + div label{
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 0.5rem
+    width: 30%;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    background-color: #676fff;
+    color: aqua;
 }
 
-.input-filter2:checked + div{
-width: 50dvh ;
-opacity: 1;
+.input-filter + div label:hover,
+.input-filter + div form input:checked label{
+    background-color: rgb(137, 73, 1);
+}
 
+
+
+.input-filter{
+  
+    cursor: pointer;
+    padding: 0.2rem;
+    border-radius: 0.5rem
 }

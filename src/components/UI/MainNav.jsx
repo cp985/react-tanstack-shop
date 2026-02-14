@@ -31,7 +31,8 @@ export default function MainNav() {
         {path === "/app/shop" && (
           <li className={classMainNav.filterContainer}>
             <Input
-              classOf={"input-filter"}
+              classOfInput={"input-filter1"}
+              classOfLabel={"label-filter1"}
               id={"filter"}
               type={"checkbox"}
               label={"Filter"}

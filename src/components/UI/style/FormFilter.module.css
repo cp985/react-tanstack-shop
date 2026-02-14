@@ -4,42 +4,26 @@
     align-items: center;
     flex-direction: column;
     gap: 1rem;
+    
 }
 
-.form-filter label {
-    cursor: pointer;
-    width: 100%;
-    border: 1px solid #f2ef20;
-    border-radius: 0.3rem;
-    padding: 0.5rem;
-    background-color: #f2ef20
-}
+
 
 
 .form-filter label:hover {
     background-color: rgb(137, 137, 1);
 }
 
-.filterContainer2 {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  width: 100%;
-}
 
-.filter2 {
 
-    position: absolute;
-    padding-top: 0.5rem;
-    top: 0;
-    left: 100%;
-    background-color: #e4e000;
-    width: 0;
-    height:16rem;
-    opacity: 0;
-    transition: width 0.2s ease-in-out, opacity 0.1s ease-in-out;
-    
-
-}
+fieldset{
+    font-size: 0.9rem;
+    width: 95%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap:wrap ;
+gap: 0.2rem;
+padding: 0.1rem;
+border-radius: 0.3rem;
+ }
