@@ -1,4 +1,5 @@
 import axios from "axios";
+const API_URL= import.meta.env.VITE_API_URL
 export function logIn(lista, user) {
   const foundUser = lista.find(
     (element) =>
@@ -18,7 +19,7 @@ export async function httpLoader(queryClient) {
       queryKey,
       queryFn: async () => {
         const response = await axios.get(
-          "http://localhost:5000/api/products",
+         API_URL ,
         );
         return response.data;
       },
