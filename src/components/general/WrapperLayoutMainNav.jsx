@@ -4,7 +4,7 @@ import MainNav from "../UI/MainNav";
 import Footer from "../UI/Footer";
 import FormFilter from "../UI/FormFilter";
 import Header from "../UI/Header";
-import "./style/WrapperLayoutMainNav.module.css";
+import classWrapperLayoutMainNav from "./style/WrapperLayoutMainNav.module.css";
 export default function WrapperLayoutMainNav() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const sidebarRef = useRef(null); // Riferimento alla sidebar
@@ -69,7 +69,7 @@ export default function WrapperLayoutMainNav() {
       <Header />
       <MainNav setIsFilterOpen={toggleFilter} isFilterOpen={isFilterOpen} />
       {isFilterOpen && (
-        <aside style={{ marginTop: `${marginTop}px` }} ref={sidebarRef}>
+        <aside className={classWrapperLayoutMainNav.aside} style={{ marginTop: `${marginTop}px` }} ref={sidebarRef}>
           <FormFilter />
         </aside>
       )}
