@@ -9,6 +9,7 @@ import { DUMMY_ITEMS } from "../util/dataDummy";
 
 export default function MainPageShop() {
   const items = useLoaderData();
+console.log('items list ' , items);
 
   return (
     <>

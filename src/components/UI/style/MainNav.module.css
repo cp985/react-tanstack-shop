@@ -25,8 +25,21 @@ nav {
 .li {
     position: relative;
 }
-.button-filter{
+.filter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     margin-right: auto;
+}
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row-reverse;
+  
 }
 
 
