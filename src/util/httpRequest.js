@@ -1,5 +1,29 @@
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
+
+export async function signUp(user) {
+  try {
+    const response = await axios.post(`${API_URL}/users/register`, user);
+
+
+    return response.data;
+  } catch (error) {
+    console.error(
+      "❌ Errore registrazione:",
+      error.response?.data || error.message,
+    );
+
+    // Gestisci gli errori dal backend
+    if (error.response?.data?.message) {
+      throw new Error(error.response.data.message);
+    } else if (error.request) {
+      throw new Error("Errore di connessione al server");
+    } else {
+      throw new Error("Errore imprevisto durante la registrazione");
+    }
+  }
+}
+
 export async function logIn(user) {
   try {
     const response = await axios.post(`${API_URL}/users/login`, user);
@@ -10,15 +34,14 @@ export async function logIn(user) {
     const foundUser = response.data;
     return foundUser;
   } catch (error) {
-        console.error("❌ Errore login:", error.response?.data || error.message);
-    
+    console.error("❌ Errore login:", error.response?.data || error.message);
+
     if (error.response?.data?.message) {
       throw new Error(error.response.data.message);
     } else {
       throw new Error("Errore di connessione al server");
     }
   }
-  
 }
 
 export async function httpLoader(queryClient) {

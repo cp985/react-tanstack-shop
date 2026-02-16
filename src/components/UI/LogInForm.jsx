@@ -6,11 +6,25 @@ export default function LogInForm({
   submitHandler,
   subscribe,
   toggleSubscribe,
+  submitHandlerSub,
 }) {
   function formData(e) {
     const data = new FormData(e.currentTarget);
+
     const datiForm = Object.fromEntries(data.entries());
-    submitHandler(datiForm);
+    if (datiForm.password !== datiForm.passwordConfirm) {
+      throw new Error("Le password non corrispondono");
+    }
+    delete datiForm.passwordConfirm;
+ 
+
+    console.log(datiForm);
+
+    if (subscribe) {
+      submitHandlerSub(datiForm);
+    } else {
+      submitHandler(datiForm);
+    }
   }
 
   return (
@@ -38,7 +52,6 @@ export default function LogInForm({
         {subscribe && (
           <fieldset>
             <div className={classLogInForm["input-container"]}>
-              {" "}
               <Input
                 type="text"
                 id="username"
