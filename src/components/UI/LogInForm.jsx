@@ -1,38 +1,45 @@
 import { Form } from "react-router-dom";
+import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import classLogInForm from "./style/LogInForm.module.css";
+
 export default function LogInForm({
   submitHandler,
   subscribe,
   toggleSubscribe,
   submitHandlerSub,
 }) {
+  const [error, setError] = useState([]);
   function formData(e) {
+      e.preventDefault();
     const data = new FormData(e.currentTarget);
 
     const datiForm = Object.fromEntries(data.entries());
-    if (datiForm.password !== datiForm.passwordConfirm) {
-      throw new Error("Le password non corrispondono");
-    }
-    delete datiForm.passwordConfirm;
- 
-
-    console.log(datiForm);
 
     if (subscribe) {
+      if (datiForm.password !== datiForm.passwordConfirm) {
+       
+        setError("Le password non corrispondono");
+        return
+      }
+      delete datiForm.passwordConfirm;
       submitHandlerSub(datiForm);
     } else {
       submitHandler(datiForm);
     }
+
+    console.log(datiForm);
   }
 
   return (
     <>
+    {error && <h4>{error}</h4>}
       <Form
         className={classLogInForm["form-login"]}
         noValidate
         onSubmit={formData}
+        
       >
         <h3>{subscribe ? "Registrati" : "Accedi"}</h3>
 

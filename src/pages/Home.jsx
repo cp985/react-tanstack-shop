@@ -16,7 +16,7 @@ export default function Home() {
       console.log("onSuccess data", response);
       localStorage.setItem("token", response.token);
       localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
-      localStorage.setItem("username", response.user.nome);
+      localStorage.setItem("username", response.user.username);
       navigate("/app/home");
     },
   });
@@ -28,7 +28,7 @@ export default function Home() {
       console.log("onSuccess data", response);
       localStorage.setItem("token", response.token);
       localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
-      localStorage.setItem("username", response.user.nome);
+      localStorage.setItem("username", response.user.username);
       navigate("/app/home");
     },
   });
