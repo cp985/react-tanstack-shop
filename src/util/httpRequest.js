@@ -1,15 +1,24 @@
 import axios from "axios";
-const API_URL= import.meta.env.VITE_API_URL
-export function logIn(lista, user) {
-  const foundUser = lista.find(
-    (element) =>
-      element.email === user.email && element.password === user.password,
-  );
+const API_URL = import.meta.env.VITE_API_URL;
+export async function logIn(user) {
+  try {
+    const response = await axios.post(`${API_URL}/users/login`, user);
 
-  if (!foundUser) {
-    throw new Error("Credenziali non valide. Riprova.");
+    if (response.status !== 200) {
+      throw new Error("Errore nel server");
+    }
+    const foundUser = response.data;
+    return foundUser;
+  } catch (error) {
+        console.error("❌ Errore login:", error.response?.data || error.message);
+    
+    if (error.response?.data?.message) {
+      throw new Error(error.response.data.message);
+    } else {
+      throw new Error("Errore di connessione al server");
+    }
   }
-  return foundUser;
+  
 }
 
 export async function httpLoader(queryClient) {
@@ -18,17 +27,13 @@ export async function httpLoader(queryClient) {
     return await queryClient.ensureQueryData({
       queryKey,
       queryFn: async () => {
-        const response = await axios.get(
-         `${API_URL}/products` ,
-        );
+        const response = await axios.get(`${API_URL}/products`);
         return response.data;
       },
     });
   } catch (e) {
     const message =
-      e.response?.data?.message ||
-      "Errore del server" ||
-      e.message
+      e.response?.data?.message || "Errore del server" || e.message;
     const error = new Error(message);
     error.status = e.response?.status || 500;
 

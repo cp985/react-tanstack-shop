@@ -12,12 +12,12 @@ export default function Home() {
   const navigate = useNavigate();
 
   const { mutate, isLoading, isError, error, data } = useMutation({
-    mutationFn: ({ DUMMY_USERS, user }) => logIn(DUMMY_USERS, user),
+    mutationFn: (user ) => logIn( user),
     onSuccess: (response) => {
       console.log("onSuccess data", response);
-      localStorage.setItem("token", response.id);
+      localStorage.setItem("token", response.token);
       localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
-      localStorage.setItem("username", response.username);
+      localStorage.setItem("username", response.user.nome);
       navigate("/app/home");
     },
   });
@@ -27,7 +27,7 @@ export default function Home() {
   }
 
   function submitHandler(user) {
-    mutate({ DUMMY_USERS: DUMMY_USERS, user: user });
+    mutate(user );
   }
 
   return (

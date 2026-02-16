@@ -13,6 +13,11 @@
 
 .form-login fieldset{
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3rem;
 }
 
 div.input-container{

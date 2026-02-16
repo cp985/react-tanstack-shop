@@ -33,6 +33,16 @@ nav {
     margin-right: auto;
 }
 
+@media screen and (max-width: 720px) {
+    .filter-container{
+        flex-direction: column;
+    }
+    .nav{
+        height: fit-content;
+       
+    }
+}
+
 .search-container{
     display: flex;
     justify-content: center;
