@@ -16,12 +16,14 @@ import MainPageShop from "./pages/MainPageShop";
 import OrdersHistory from "./pages/OrdersHistory";
 import ProfileUser from "./pages/ProfileUser";
 import FirstPage from "./pages/FirstPage";
-import LogOut from "./pages/LogOut"
+import LogOut from "./pages/LogOut";
 
 import Sales from "./pages/Sales";
 import Spinner from "./components/UI/Spinner";
 import { authCheck } from "./util/auth";
 import { httpLoader } from "./util/httpRequest";
+const API_URL = import.meta.env.VITE_API_URL;
+
 const queryClient = new QueryClient();
 const router = createHashRouter(
   [
@@ -36,9 +38,17 @@ const router = createHashRouter(
       path: "/app",
       element: <WrapperLayoutMainNav />,
       errorElement: <ErrorPage />,
-      loader: () => {
-        return authCheck();
+      loader: async () => {
+        await queryClient.ensureQueryData({
+          queryKey: ["items"],
+          queryFn: async () => {
+            const res = await fetch(`${API_URL}/products`);
+            return res.json();
+          },
+        });
+          return authCheck();
       },
+
       children: [
         {
           path: "home",
@@ -46,9 +56,6 @@ const router = createHashRouter(
         },
         {
           path: "shop",
-          loader: () => {
-            return httpLoader(queryClient);
-          },
 
           element: <MainPageShop />,
         },
@@ -69,8 +76,7 @@ const router = createHashRouter(
           path: "accountUser/:user",
           element: <AccountUser />,
           children: [
-            { index: true, 
-            element: <ProfileUser /> },
+            { index: true, element: <ProfileUser /> },
             {
               path: "profile",
               element: <ProfileUser />,
@@ -79,11 +85,10 @@ const router = createHashRouter(
               path: "orders",
               element: <OrdersHistory />,
             },
-                  {
+            {
               path: "logout",
               element: <LogOut />,
             },
-
           ],
         },
       ],
@@ -98,7 +103,7 @@ const router = createHashRouter(
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router}  />
+      <RouterProvider router={router} />
     </QueryClientProvider>
   );
 }

@@ -1,9 +1,12 @@
 import { Outlet } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { useSuspenseQuery } from '@tanstack/react-query';
 import MainNav from "../UI/MainNav";
 import Footer from "../UI/Footer";
 import FormFilter from "../UI/FormFilter";
 import Header from "../UI/Header";
+import {ItemsProvider} from "../../context/FilteredItemsContext";
+const API_URL = import.meta.env.VITE_API_URL;
 import classWrapperLayoutMainNav from "./style/WrapperLayoutMainNav.module.css";
 export default function WrapperLayoutMainNav() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -11,7 +14,16 @@ export default function WrapperLayoutMainNav() {
   const [filterData, setFilterData] = useState(null);
   const [marginTop, setMarginTop] = useState(175); // Il tuo margine iniziale (es. altezza navbar)
 
-  
+  const { data: items } = useSuspenseQuery({
+    queryKey: ['items'],
+    queryFn: async () => {
+      const res = await fetch(`${API_URL}/products`);
+      return res.json();
+    },
+  });
+
+  console.log('items:', items); 
+
   useEffect(() => {
     // Funzione che gestisce il click
     const handleClickOutside = (event) => {
@@ -28,7 +40,7 @@ export default function WrapperLayoutMainNav() {
     // Aggiungiamo l'event listener al document
     document.addEventListener("click", handleClickOutside);
     const handleKeyDown = (e) => {
-      if (e.key === "Escape") setIsOpen(false);
+      if (e.key === "Escape") setIsFilterOpen(false);
     };
     document.addEventListener("keydown", handleKeyDown);
     // Ricordati di rimuoverlo nel return!
@@ -49,7 +61,6 @@ export default function WrapperLayoutMainNav() {
     setIsFilterOpen((prev) => !prev);
   }
 
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -65,15 +76,18 @@ export default function WrapperLayoutMainNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
-    function handlerFilterData(data) {
+  function handlerFilterData(data) {
     setFilterData(data);
     console.log(data);
-    
+  }
+
+   if (!items) {
+    return <div>Caricamento...</div>;
   }
   return (
     <>
       <Header />
+         <ItemsProvider items={items.products}>
       <MainNav setIsFilterOpen={toggleFilter} isFilterOpen={isFilterOpen} />
       {isFilterOpen && (
         <aside
@@ -81,11 +95,13 @@ export default function WrapperLayoutMainNav() {
           style={{ marginTop: `${marginTop}px` }}
           ref={sidebarRef}
         >
-          <FormFilter handlerFilterData={handlerFilterData} />
+          <FormFilter  />
         </aside>
       )}
+   
+        <Outlet />
+      </ItemsProvider>
 
-      <Outlet />
       <Footer />
     </>
   );

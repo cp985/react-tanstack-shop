@@ -1,20 +1,23 @@
 //! pagine home se con token . si vedrà lista oggetti e filtri
-import { useLoaderData, Outlet } from "react-router-dom";
-import {useQuery} from '@tanstack/react-query'
+import { useLoaderData } from "react-router-dom";
 
+import { useItems } from "../context/FilteredItemsContext";
 import ItemContainer from "../components/UI/ItemContainer";
 
 
-import { DUMMY_ITEMS } from "../util/dataDummy";
+
 
 export default function MainPageShop() {
+  const { filtered } = useItems();
   const items = useLoaderData();
-console.log('items list ' , items);
+
+
+
 
   return (
     <>
       <>
-        <h1>MainPageShop</h1> <ItemContainer list={items} />
+        <h1>MainPageShop</h1> <ItemContainer list={filtered ? filtered : items} />
        
       </>
     </>

@@ -1,40 +1,42 @@
 import classFormFilter from "./style/FormFilter.module.css";
 import { useState } from "react";
 import Input from "./Input";
+import { useItems } from "../../context/FilteredItemsContext";
 
-export default function FormFilter({handlerFilterData}) {
-  const [formData, setFormData] = useState({
-    rarita: [],
-    classe: [],
-    categoria: [],
-    prezzoMin: 0,
-    prezzoMax: 10000,
-  });
+export default function FormFilter() {
+  const { formData, setFormData } = useItems();
 
+  function handlerStatusChange(e) {
+    const { name, value, checked, type } = e.target;
 
-
-function handlerStatusChange(e) {
-  const { name, value, checked, type } = e.target;
-
-  if (type === "checkbox") {
-    setFormData(prev => ({
-      ...prev,
-      [name]: checked
-        ? [...prev[name], value]          // aggiunge se spuntato
-        : prev[name].filter(v => v !== value) // rimuove se de-spuntato
-    }));
-      
-    
-  } else {
-    setFormData(prev => ({ ...prev, [name]: value }));
+    if (type === "checkbox") {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: checked
+          ? [...prev[name], value] // aggiunge se spuntato
+          : prev[name].filter((v) => v !== value), // rimuove se de-spuntato
+      }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   }
-
-  handlerFilterData(formData)
-}
-
 
   return (
     <form className={classFormFilter["form-filter"]}>
+      <fieldset>
+        <legend>Ordina per</legend>
+        <select name="sortBy" onChange={handlerStatusChange}>
+          <option value="prezzo">Prezzo</option>
+          <option value="nome">Nome</option>
+          <option value="rarita">Rarità</option>
+        </select>
+
+        <select name="sortOrder" onChange={handlerStatusChange}>
+          <option value="asc">Crescente</option>
+          <option value="desc">Decrescente</option>
+        </select>
+      </fieldset>
+
       <fieldset>
         <legend>Rarità</legend>
         <Input
@@ -91,7 +93,7 @@ function handlerStatusChange(e) {
           name="categoria"
           label="Arma"
           value="Arma"
-           onChange={handlerStatusChange}
+          onChange={handlerStatusChange}
           hidden
         />
         <Input
@@ -130,7 +132,6 @@ function handlerStatusChange(e) {
           label="Mago"
           value="Mago"
           onChange={handlerStatusChange}
-            
           hidden
         />
         <Input
