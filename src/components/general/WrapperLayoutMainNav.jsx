@@ -8,7 +8,10 @@ import classWrapperLayoutMainNav from "./style/WrapperLayoutMainNav.module.css";
 export default function WrapperLayoutMainNav() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const sidebarRef = useRef(null); // Riferimento alla sidebar
+  const [filterData, setFilterData] = useState(null);
+  const [marginTop, setMarginTop] = useState(175); // Il tuo margine iniziale (es. altezza navbar)
 
+  
   useEffect(() => {
     // Funzione che gestisce il click
     const handleClickOutside = (event) => {
@@ -46,16 +49,15 @@ export default function WrapperLayoutMainNav() {
     setIsFilterOpen((prev) => !prev);
   }
 
-  const [marginTop, setMarginTop] = useState(175); // Il tuo margine iniziale (es. altezza navbar)
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const altezzaNavbar = 175; // Sostituisci con l'altezza reale della tua barra gialla
-      
+
       // Calcoliamo il nuovo margine: parte da 80 e scende fino a 0 man mano che scrolli
       const nuovoMargine = Math.max(45, altezzaNavbar - scrollY);
-      
+
       setMarginTop(nuovoMargine);
     };
 
@@ -64,13 +66,22 @@ export default function WrapperLayoutMainNav() {
   }, []);
 
 
+    function handlerFilterData(data) {
+    setFilterData(data);
+    console.log(data);
+    
+  }
   return (
     <>
       <Header />
       <MainNav setIsFilterOpen={toggleFilter} isFilterOpen={isFilterOpen} />
       {isFilterOpen && (
-        <aside className={classWrapperLayoutMainNav.aside} style={{ marginTop: `${marginTop}px` }} ref={sidebarRef}>
-          <FormFilter />
+        <aside
+          className={classWrapperLayoutMainNav.aside}
+          style={{ marginTop: `${marginTop}px` }}
+          ref={sidebarRef}
+        >
+          <FormFilter handlerFilterData={handlerFilterData} />
         </aside>
       )}
 

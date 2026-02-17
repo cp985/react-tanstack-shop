@@ -1,41 +1,63 @@
 import classItem from "./style/Item.module.css";
 export default function Item({ item }) {
-  let backgroundStyle = "transparent";
-  const itemRarity = item["rarità"];
-  switch (itemRarity) {
-    case "Comune":
-      backgroundStyle = "grey";
-      break;
 
-    case "Non-Comune":
-      backgroundStyle = "blue";
-      break;
-
-    case "Raro":
-      backgroundStyle = "yellow";
-      break;
-
-    case "Leggendaria":
-      backgroundStyle = "orange";
-      break;
-
+  let itemType = item.categoria;
+switch (itemType) {
+  case "Armi":
+    itemType = "Arma";
+    break;
+  case "Armature":
+    itemType = "Armatura";
+    break;
+  case "Consumabili":
+    itemType = "Consumabile";
+    break;
+  case "Oggetto":
+    itemType = "Oggetto";
+    break;
     default:
-      "transparent";
-      break;
-  }
+    itemType = item.categoria;
+    break;
+}
+
+
+
+
+  let backgroundStyle = "transparent";
+  const itemRarity = item.rarita;
+switch (itemRarity) {
+  case "Comune":
+    backgroundStyle = "rarity-common";
+    break;
+  case "Non comune":
+    backgroundStyle = "rarity-uncommon";
+    break;
+  case "Rara":
+    backgroundStyle = "rarity-rare";
+    break;
+  case "Epica":
+    backgroundStyle = "rarity-epic";
+    break;
+  case "Leggendaria":
+    backgroundStyle = "rarity-legendary";
+    break;
+  default:
+    backgroundStyle = "rarity-default";
+    break;
+}
   return (
     <li
       key={item.id}
-      className={classItem.item}
-      style={{ background: backgroundStyle }}
-    >
+      className={`${classItem['item-card']} ${classItem[backgroundStyle]}`}>
+
+    
       <h3 className={classItem.h3}>{item.nome}</h3>
-      <h4>{item.classe}</h4>
+     <ul className={classItem["ul-classi"]}>Classi:{item.classe.map((classe) => <li key={classe}>{classe}</li>)}</ul>
       <div className={classItem["image-container"]}>
         <img className={classItem.image} src="#" alt={item.name} />
       </div>
       <p>
-        Tipo: {item.categoria} - Rarity: {item["rarità"]}
+        Tipo: {itemType} - Rarity: {item.rarita}
       </p>
       <p>
         Rating: {item.rating} - Disponibili: {item.stock}

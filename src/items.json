@@ -4,14 +4,17 @@
     "nome": "Spada del Drago Cremisi",
     "descrizione": "Forgiata nelle fiamme di un antico drago rosso, questa spada infligge danni da fuoco bonus e ha una probabilità del 10% di provocare un'esplosione ad area all'impatto.",
     "prezzo": 2500,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 4.5,
     "stock": 3,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 47,
     "rarita": "Leggendaria",
-    "classe": ["Guerriero", "Paladino"],
+    "classe": [
+      "Guerriero",
+      "Paladino"
+    ],
     "immagine": "/assets/armi/spada-drago-cremisi.png"
   },
   {
@@ -19,14 +22,16 @@
     "nome": "Arco Lunare di Selene",
     "descrizione": "Un arco elegante intagliato in legno di quercia lunare e decorato con rune argentate. Le frecce scoccate da quest'arco si illuminano di luce lunare e infliggono danni extra ai non-morti. Durante la notte, la precisione aumenta del 15%.",
     "prezzo": 1800,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 2.8,
     "stock": 5,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 33,
     "rarita": "Epica",
-    "classe": ["Ranger", "Cacciatore"],
+    "classe": [
+      "Cacciatore"
+    ],
     "immagine": "/assets/armi/arco-lunare-selene.png"
   },
   {
@@ -34,14 +39,16 @@
     "nome": "Bastone del Sapiente Arcano",
     "descrizione": "Un bastone di legno d'ebano intarsiato con gemme arcane che pulsano di energia magica. Aumenta il potere degli incantesimi del 20% e riduce il costo di mana del 15%. Ha una probabilità del 5% di lanciare automaticamente un Dardo Incantato quando si subisce un attacco.",
     "prezzo": 3200,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 3.2,
     "stock": 2,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 56,
     "rarita": "Leggendaria",
-    "classe": ["Mago", "Stregone"],
+    "classe": [
+      "Mago"
+    ],
     "immagine": "/assets/armi/bastone-sapiente-arcano.png",
     "onSale": true
   },
@@ -50,14 +57,16 @@
     "nome": "Pugnali Gemelli dell'Ombra",
     "descrizione": "Una coppia di pugnali forgiati nell'oscurità totale da un maestro assassino. Garantiscono un bonus del 25% ai danni da furtività e permettono di eseguire un'evasione immediata dopo un attacco critico. Ideali per colpi rapidi e letali.",
     "prezzo": 2100,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 1.8,
     "stock": 4,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 41,
     "rarita": "Epica",
-    "classe": ["Ladro", "Assassino"],
+    "classe": [
+      "Assassino"
+    ],
     "immagine": "/assets/armi/pugnali-gemelli-ombra.png"
   },
   {
@@ -65,14 +74,16 @@
     "nome": "Martello di Guerra Tempesta di Tuono",
     "descrizione": "Un enorme martello da guerra inciso con simboli del dio del tuono. Ogni colpo andato a segno ha una probabilità del 20% di evocare un fulmine che colpisce il bersaglio e i nemici circostanti. Garantisce resistenza ai danni da elettricità del 30%.",
     "prezzo": 2800,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 8.5,
     "stock": 2,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 62,
     "rarita": "Leggendaria",
-    "classe": ["Guerriero", "Barbaro"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armi/martello-tempesta-tuono.png"
   },
   {
@@ -80,14 +91,18 @@
     "nome": "Lancia del Cacciatore di Draghi",
     "descrizione": "Una lancia lunga forgiata con scaglie di drago e punta in mithril. Infligge danni tripli contro creature draconiche e garantisce immunità al soffio del drago. La portata estesa permette di colpire nemici a distanza media.",
     "prezzo": 2600,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 5.2,
     "stock": 3,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 38,
     "rarita": "Epica",
-    "classe": ["Guerriero", "Paladino", "Ranger"],
+    "classe": [
+      "Guerriero",
+      "Paladino",
+      "Cacciatore"
+    ],
     "immagine": "/assets/armi/lancia-cacciatore-draghi.png"
   },
   {
@@ -95,14 +110,16 @@
     "nome": "Scettro della Luce Divina",
     "descrizione": "Uno scettro sacro che emana una luce dorata costante. Potenzia gli incantesimi di guarigione del 30% e permette di scacciare i non-morti in un'area di 10 metri. Una volta al giorno può evocare un raggio di luce purificatrice che danneggia gravemente le creature malvagie.",
     "prezzo": 3500,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 2.5,
     "stock": 1,
     "disponibile": true,
     "rating": 5.0,
     "numeroRecensioni": 28,
     "rarita": "Leggendaria",
-    "classe": ["Chierico", "Paladino"],
+    "classe": [
+      "Paladino"
+    ],
     "immagine": "/assets/armi/scettro-luce-divina.png"
   },
   {
@@ -110,14 +127,16 @@
     "nome": "Ascia Bipenne Furia Berserker",
     "descrizione": "Un'ascia a doppia lama intrisa dell'essenza di antichi guerrieri berserker. Aumenta i danni inflitti del 15% ma riduce la difesa del 10%. Più la salute scende, più i danni aumentano, fino a un massimo del 40% quando si è sotto il 25% di vita.",
     "prezzo": 1900,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 6.8,
     "stock": 6,
     "disponibile": true,
     "rating": 4.4,
     "numeroRecensioni": 51,
     "rarita": "Rara",
-    "classe": ["Barbaro", "Guerriero"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armi/ascia-furia-berserker.png",
     "onSale": true
   },
@@ -126,14 +145,16 @@
     "nome": "Spada Stocco dell'Eleganza",
     "descrizione": "Una sottile spada da duellante forgiata per la precisione e la velocità. Aumenta la probabilità di colpo critico del 18% e garantisce un bonus all'agilità di +3. Perfetta per combattimenti uno contro uno basati sulla tecnica piuttosto che sulla forza bruta.",
     "prezzo": 1600,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 1.5,
     "stock": 7,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 44,
     "rarita": "Rara",
-    "classe": ["Spadaccino", "Nobile"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armi/stocco-eleganza.png"
   },
   {
@@ -141,14 +162,17 @@
     "nome": "Balestra Pesante dell'Assedio",
     "descrizione": "Una balestra da guerra massicci in grado di perforare anche le armature più spesse. I dardi ignorano il 40% dell'armatura nemica e possono trafiggere fino a 3 bersagli in linea retta. Richiede tempo di ricarica maggiore ma ogni colpo è devastante.",
     "prezzo": 2200,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 9.5,
     "stock": 3,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 29,
     "rarita": "Epica",
-    "classe": ["Guerriero", "Ranger"],
+    "classe": [
+      "Guerriero",
+      "Cacciatore"
+    ],
     "immagine": "/assets/armi/balestra-assedio.png"
   },
   {
@@ -156,14 +180,16 @@
     "nome": "Katana del Vento Sussurrante",
     "descrizione": "Una spada curva orientale di fattura impeccabile, leggera come una piuma. Permette di eseguire tre attacchi rapidi consecutivi e aumenta la velocità di movimento del 20%. La lama fischia nell'aria creando folate di vento che possono respingere i proiettili.",
     "prezzo": 2400,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 2.2,
     "stock": 4,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 67,
     "rarita": "Epica",
-    "classe": ["Samurai", "Monaco"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armi/katana-vento-sussurrante.png"
   },
   {
@@ -171,14 +197,17 @@
     "nome": "Flagello delle Anime Dannate",
     "descrizione": "Una mazza chiodata avvolta da catene spettrali che sussurrano lamenti. Ogni colpo ruba una piccola quantità di vita al bersaglio e la trasferisce al portatore. Ha una probabilità del 15% di terrorizzare i nemici, costringendoli a fuggire per alcuni secondi.",
     "prezzo": 2700,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 5.8,
     "stock": 2,
     "disponibile": true,
     "rating": 4.3,
     "numeroRecensioni": 34,
     "rarita": "Epica",
-    "classe": ["Negromante", "Cavaliere Oscuro"],
+    "classe": [
+      "Mago",
+      "Guerriero"
+    ],
     "immagine": "/assets/armi/flagello-anime-dannate.png"
   },
   {
@@ -186,14 +215,16 @@
     "nome": "Arco Lungo del Maestro Ranger",
     "descrizione": "Un arco lungo di fattura elfica realizzato con legno di tasso millenario. Permette di caricare fino a tre frecce contemporaneamente e aumenta la gittata del 50%. Le frecce scoccate hanno una traiettoria perfetta e non sono influenzate dal vento o dalla pioggia.",
     "prezzo": 1700,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 2.4,
     "stock": 5,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 55,
     "rarita": "Rara",
-    "classe": ["Ranger", "Elfo"],
+    "classe": [
+      "Cacciatore"
+    ],
     "immagine": "/assets/armi/arco-lungo-maestro.png"
   },
   {
@@ -201,14 +232,16 @@
     "nome": "Mazza d'Arme Benedetta",
     "descrizione": "Una mazza sacra utilizzata dai templari nelle crociate contro il male. Infligge danni radianti bonus contro demoni e non-morti. Ogni colpo purifica il terreno circostante e può dissipare maledizioni minori. Una volta al giorno può creare un'aura protettiva di 5 metri.",
     "prezzo": 1500,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 4.2,
     "stock": 6,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 42,
     "rarita": "Rara",
-    "classe": ["Chierico", "Paladino"],
+    "classe": [
+      "Paladino"
+    ],
     "immagine": "/assets/armi/mazza-arme-benedetta.png",
     "onSale": true
   },
@@ -217,14 +250,17 @@
     "nome": "Spada Bastarda del Cavaliere Errante",
     "descrizione": "Una spada versatile che può essere impugnata a una o due mani. Quando usata a due mani, i danni aumentano del 35%. Forgiata con acciaio di castello e benedetta da un ordine cavalleresco, garantisce un bonus al carisma di +2 quando si porta l'armatura completa.",
     "prezzo": 1400,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 3.8,
     "stock": 8,
     "disponibile": true,
     "rating": 4.4,
     "numeroRecensioni": 48,
     "rarita": "Rara",
-    "classe": ["Guerriero", "Paladino", "Cavaliere"],
+    "classe": [
+      "Guerriero",
+      "Paladino"
+    ],
     "immagine": "/assets/armi/spada-bastarda-cavaliere.png"
   },
   {
@@ -232,14 +268,16 @@
     "nome": "Verga del Controllore Elementale",
     "descrizione": "Una verga intarsiata con quattro gemme elementali: rubino, zaffiro, smeraldo e topazio. Permette di lanciare incantesimi di fuoco, acqua, terra e aria con potenza aumentata del 25%. Una volta ogni 4 ore può evocare un piccolo elementale per assistere in combattimento.",
     "prezzo": 3800,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 2.0,
     "stock": 1,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 31,
     "rarita": "Leggendaria",
-    "classe": ["Mago", "Elementalista"],
+    "classe": [
+      "Mago"
+    ],
     "immagine": "/assets/armi/verga-controllore-elementale.png"
   },
   {
@@ -247,14 +285,16 @@
     "nome": "Sciabola del Pirata Maledetto",
     "descrizione": "Una sciabola arrugginita che porta con sé la maledizione dei mari. Infligge danni da veleno continui e ha una probabilità del 12% di causare sanguinamento. Chi la impugna riceve un bonus alla destrezza di +2 ma deve superare un test di volontà ogni giorno o subire una penalità minore.",
     "prezzo": 1300,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 2.6,
     "stock": 4,
     "disponibile": true,
     "rating": 4.1,
     "numeroRecensioni": 27,
     "rarita": "Rara",
-    "classe": ["Pirata", "Ladro"],
+    "classe": [
+      "Assassino"
+    ],
     "immagine": "/assets/armi/sciabola-pirata-maledetto.png"
   },
   {
@@ -262,14 +302,16 @@
     "nome": "Randello del Gigante",
     "descrizione": "Un enorme randello ricavato dal femore di un gigante delle montagne. Richiede forza eccezionale per essere brandito, ma i danni sono devastanti. Ogni colpo ha una probabilità del 25% di stordire il bersaglio e può distruggere ostacoli e porte con facilità.",
     "prezzo": 1600,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 12.5,
     "stock": 3,
     "disponibile": true,
     "rating": 4.3,
     "numeroRecensioni": 19,
     "rarita": "Rara",
-    "classe": ["Barbaro", "Guerriero"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armi/randello-gigante.png"
   },
   {
@@ -277,14 +319,17 @@
     "nome": "Frusta della Dominazione",
     "descrizione": "Una frusta intrecciata con fili d'argento incantato. Può colpire nemici fino a 4 metri di distanza e ha una probabilità del 20% di disarmare l'avversario. Particolarmente efficace contro bestie e creature che possono essere domate, riducendone la resistenza.",
     "prezzo": 1100,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 1.2,
     "stock": 5,
     "disponibile": true,
     "rating": 4.0,
     "numeroRecensioni": 23,
     "rarita": "Non comune",
-    "classe": ["Domatore", "Monaco"],
+    "classe": [
+      "Cacciatore",
+      "Guerriero"
+    ],
     "immagine": "/assets/armi/frusta-dominazione.png",
     "onSale": true
   },
@@ -293,14 +338,18 @@
     "nome": "Spada Corta del Velocista",
     "descrizione": "Una spada corta leggera e perfettamente bilanciata. Garantisce tre attacchi per round invece di due e aumenta l'iniziativa di +4. Ideale per guerrieri agili che preferiscono la velocità alla potenza. Non adatta contro armature pesanti.",
     "prezzo": 1250,
-    "categoria": "Armi",
+    "categoria": "Arma",
     "peso": 1.8,
     "stock": 7,
     "disponibile": true,
     "rating": 4.4,
     "numeroRecensioni": 39,
     "rarita": "Rara",
-    "classe": ["Ladro", "Ranger", "Duellante"],
+    "classe": [
+      "Assassino",
+      "Cacciatore",
+      "Guerriero"
+    ],
     "immagine": "/assets/armi/spada-corta-velocista.png"
   },
   {
@@ -308,14 +357,17 @@
     "nome": "Armatura Completa del Drago d'Argento",
     "descrizione": "Un'armatura a piastre completa forgiata con scaglie di drago argentato e acciaio celestiale. Fornisce una difesa eccezionale riducendo i danni fisici del 45% e garantisce resistenza al freddo e all'elettricità. Le scaglie riflettono una parte dei danni da incantesimo all'attaccante. Include elmo, corazza, guanti e stivali coordinati.",
     "prezzo": 5500,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 28.5,
     "stock": 1,
     "disponibile": true,
     "rating": 5.0,
     "numeroRecensioni": 18,
     "rarita": "Leggendaria",
-    "classe": ["Guerriero", "Paladino"],
+    "classe": [
+      "Guerriero",
+      "Paladino"
+    ],
     "immagine": "/assets/armature/completa-drago-argento.png"
   },
   {
@@ -323,14 +375,17 @@
     "nome": "Corazza di Cuoio Elfico Rinforzato",
     "descrizione": "Una corazza di cuoio finemente lavorata con tecniche elfiche millenarie. Leggera e flessibile, non penalizza i movimenti furtivi e garantisce un bonus alla destrezza di +2. Resistente all'acqua e autoripara piccoli danni nel tempo. Include protezioni per spalle e braccia.",
     "prezzo": 1800,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 6.5,
     "stock": 5,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 52,
     "rarita": "Epica",
-    "classe": ["Ranger", "Ladro", "Elfo"],
+    "classe": [
+      "Cacciatore",
+      "Assassino"
+    ],
     "immagine": "/assets/armature/cuoio-elfico-rinforzato.png"
   },
   {
@@ -338,14 +393,16 @@
     "nome": "Tunica delle Rune Arcane",
     "descrizione": "Una tunica tessuta con fili d'argento intrecciati a seta incantata, ricoperta di rune luminescenti. Riduce il costo in mana degli incantesimi del 20% e aumenta la rigenerazione magica del 15%. Fornisce protezione minima fisica ma eccellente resistenza magica. Include cappuccio e cintura runata.",
     "prezzo": 3200,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 2.8,
     "stock": 3,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 41,
     "rarita": "Epica",
-    "classe": ["Mago", "Stregone"],
+    "classe": [
+      "Mago"
+    ],
     "immagine": "/assets/armature/tunica-rune-arcane.png",
     "onSale": true
   },
@@ -354,14 +411,17 @@
     "nome": "Armatura a Piastre del Guardiano Inflessibile",
     "descrizione": "Un'armatura pesante forgiata per resistere agli assalti più brutali. Riduce tutti i danni fisici del 40% e aumenta la resistenza allo stordimento del 50%. Ogni volta che si blocca un attacco, si guadagna un piccolo bonus temporaneo alla difesa. Pesante ma incredibilmente protettiva.",
     "prezzo": 4200,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 32.0,
     "stock": 2,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 35,
     "rarita": "Epica",
-    "classe": ["Guerriero", "Paladino"],
+    "classe": [
+      "Guerriero",
+      "Paladino"
+    ],
     "immagine": "/assets/armature/piastre-guardiano.png"
   },
   {
@@ -369,14 +429,16 @@
     "nome": "Veste del Chierico Divino",
     "descrizione": "Una veste sacra tessuta con fili benedetti e decorata con simboli religiosi d'oro. Potenzia tutti gli incantesimi di guarigione del 25% e fornisce resistenza alle maledizioni e malattie. Una volta al giorno può attivare un'aura di protezione che benedice gli alleati vicini per 10 minuti.",
     "prezzo": 2800,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 3.5,
     "stock": 4,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 47,
     "rarita": "Epica",
-    "classe": ["Chierico", "Paladino"],
+    "classe": [
+      "Paladino"
+    ],
     "immagine": "/assets/armature/veste-chierico-divino.png"
   },
   {
@@ -384,14 +446,18 @@
     "nome": "Armatura di Maglia dell'Avventuriero",
     "descrizione": "Un'armatura di maglia versatile e affidabile, perfetta per lunghi viaggi. Offre un buon equilibrio tra protezione e mobilità, riducendo i danni del 30% senza penalizzare troppo i movimenti. Include protezioni per le articolazioni e tasche nascoste per piccoli oggetti.",
     "prezzo": 1200,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 15.0,
     "stock": 8,
     "disponibile": true,
     "rating": 4.3,
     "numeroRecensioni": 68,
     "rarita": "Rara",
-    "classe": ["Guerriero", "Ranger", "Paladino"],
+    "classe": [
+      "Guerriero",
+      "Cacciatore",
+      "Paladino"
+    ],
     "immagine": "/assets/armature/maglia-avventuriero.png"
   },
   {
@@ -399,14 +465,16 @@
     "nome": "Giacca dell'Ombra Furtiva",
     "descrizione": "Una giacca di cuoio nero imbottita con materiali che assorbono la luce e i suoni. Garantisce un bonus del 30% alle abilità di furtività e movimento silenzioso. Include numerose tasche segrete per attrezzi da scasso. Leggera e confortevole, ideale per operazioni notturne.",
     "prezzo": 1600,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 4.2,
     "stock": 6,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 56,
     "rarita": "Rara",
-    "classe": ["Ladro", "Assassino"],
+    "classe": [
+      "Assassino"
+    ],
     "immagine": "/assets/armature/giacca-ombra-furtiva.png"
   },
   {
@@ -414,14 +482,16 @@
     "nome": "Corazza a Scaglie del Berserker",
     "descrizione": "Un'armatura a scaglie rinforzata dipinta con simboli tribali. Riduce i danni del 32% e aumenta la resistenza ai veleni del 40%. Quando si entra in stato di furia berserker, l'armatura assorbe parte del dolore aumentando ulteriormente la soglia di resistenza al danno.",
     "prezzo": 2100,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 18.5,
     "stock": 4,
     "disponibile": true,
     "rating": 4.4,
     "numeroRecensioni": 31,
     "rarita": "Rara",
-    "classe": ["Barbaro", "Guerriero"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armature/scaglie-berserker.png",
     "onSale": true
   },
@@ -430,14 +500,16 @@
     "nome": "Abito da Combattimento del Monaco",
     "descrizione": "Un abito leggero realizzato con tessuti resistenti e benedetti dai maestri del monastero. Non ostacola i movimenti e aumenta la velocità di attacco a mani nude del 20%. Fornisce protezione minima ma permette di schivare con maggiore facilità. Include fascia per la testa e cintura.",
     "prezzo": 900,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 2.0,
     "stock": 7,
     "disponibile": true,
     "rating": 4.2,
     "numeroRecensioni": 44,
     "rarita": "Non comune",
-    "classe": ["Monaco", "Artista Marziale"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armature/abito-monaco.png"
   },
   {
@@ -445,14 +517,17 @@
     "nome": "Armatura Adamantina del Conquistatore",
     "descrizione": "Un'armatura completa forgiata con il rarissimo adamantio, il metallo più resistente conosciuto. Quasi indistruttibile, riduce i danni fisici del 50% e ha una probabilità del 25% di annullare completamente un colpo critico. Estremamente pesante ma offre protezione senza pari.",
     "prezzo": 8500,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 38.0,
     "stock": 1,
     "disponibile": false,
     "rating": 5.0,
     "numeroRecensioni": 9,
     "rarita": "Leggendaria",
-    "classe": ["Guerriero", "Paladino"],
+    "classe": [
+      "Guerriero",
+      "Paladino"
+    ],
     "immagine": "/assets/armature/adamantina-conquistatore.png"
   },
   {
@@ -460,14 +535,17 @@
     "nome": "Mantello dell'Illusionista",
     "descrizione": "Un mantello scintillante che cambia colore e riflette la luce in modo ipnotico. Garantisce un bonus del 15% alla difesa magica e permette di creare due copie illusorie di se stessi una volta ogni ora. Può anche rendere invisibile chi lo indossa per brevi periodi durante la notte.",
     "prezzo": 2400,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 1.5,
     "stock": 3,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 38,
     "rarita": "Epica",
-    "classe": ["Mago", "Illusionista", "Ladro"],
+    "classe": [
+      "Mago",
+      "Assassino"
+    ],
     "immagine": "/assets/armature/mantello-illusionista.png"
   },
   {
@@ -475,14 +553,17 @@
     "nome": "Corazza di Ossa del Negromante",
     "descrizione": "Un'armatura macabra costruita con ossa di creature non-morte e metallo oscuro. Aumenta il potere degli incantesimi di necromanzia del 30% e fornisce immunità al prosciugamento di vita. Emana un'aura inquietante che può terrorizzare i nemici più deboli. Include guanti ad artiglio.",
     "prezzo": 3500,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 14.0,
     "stock": 2,
     "disponibile": true,
     "rating": 4.1,
     "numeroRecensioni": 22,
     "rarita": "Epica",
-    "classe": ["Negromante", "Cavaliere Oscuro"],
+    "classe": [
+      "Mago",
+      "Guerriero"
+    ],
     "immagine": "/assets/armature/ossa-negromante.png"
   },
   {
@@ -490,14 +571,16 @@
     "nome": "Pettorale del Duellante",
     "descrizione": "Un pettorale leggero in acciaio brunito, progettato per proteggere gli organi vitali senza limitare i movimenti. Ideale per combattimenti rapidi e duelli. Aumenta la parata del 15% e garantisce un piccolo bonus alla schivata. Include protezione minima per le spalle.",
     "prezzo": 1100,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 8.0,
     "stock": 6,
     "disponibile": true,
     "rating": 4.3,
     "numeroRecensioni": 49,
     "rarita": "Rara",
-    "classe": ["Spadaccino", "Duellante"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armature/pettorale-duellante.png"
   },
   {
@@ -505,14 +588,17 @@
     "nome": "Armatura di Scaglie di Drago Nero",
     "descrizione": "Un'armatura realizzata con le scaglie di un drago nero paludoso. Fornisce immunità completa ai danni da acido e resistenza al veleno del 60%. Le scaglie sono incredibilmente resistenti e riducono i danni fisici del 38%. Emana un odore sulfureo caratteristico.",
     "prezzo": 4800,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 24.0,
     "stock": 2,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 27,
     "rarita": "Leggendaria",
-    "classe": ["Guerriero", "Ranger", "Cacciatore di Draghi"],
+    "classe": [
+      "Guerriero",
+      "Cacciatore"
+    ],
     "immagine": "/assets/armature/scaglie-drago-nero.png"
   },
   {
@@ -520,14 +606,16 @@
     "nome": "Gilet Rinforzato del Mercante",
     "descrizione": "Un gilet di cuoio rinforzato con placche metalliche nascoste, progettato per mercanti che viaggiano in territori pericolosi. Offre protezione discreta riducendo i danni del 20% e include tasche multiple per denaro e documenti. Confortevole per lunghi viaggi.",
     "prezzo": 650,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 5.5,
     "stock": 10,
     "disponibile": true,
     "rating": 4.0,
     "numeroRecensioni": 73,
     "rarita": "Non comune",
-    "classe": ["Mercante", "Viaggiatore"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armature/gilet-mercante.png",
     "onSale": true
   },
@@ -536,14 +624,17 @@
     "nome": "Armatura di Mithril Elfico",
     "descrizione": "Un capolavoro dell'artigianato elfico, forgiato con il prezioso mithril argentato. Leggera come una piuma ma resistente come l'acciaio, riduce i danni del 35% senza penalizzare movimenti o furtività. Aumenta la grazia e l'agilità di chi la indossa. Include decorazioni elfiche elaborate.",
     "prezzo": 6200,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 8.5,
     "stock": 1,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 16,
     "rarita": "Leggendaria",
-    "classe": ["Guerriero", "Ranger", "Elfo"],
+    "classe": [
+      "Guerriero",
+      "Cacciatore"
+    ],
     "immagine": "/assets/armature/mithril-elfico.png"
   },
   {
@@ -551,14 +642,17 @@
     "nome": "Tunica del Guaritore Wandering",
     "descrizione": "Una tunica bianca e verde decorata con simboli di guarigione e vita. Aumenta l'efficacia di tutti gli incantesimi e abilità di cura del 20% e fornisce resistenza alle malattie. Chi la indossa recupera salute più velocemente durante il riposo. Include borsa per erbe medicinali.",
     "prezzo": 1900,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 3.0,
     "stock": 5,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 54,
     "rarita": "Rara",
-    "classe": ["Chierico", "Druido", "Guaritore"],
+    "classe": [
+      "Paladino",
+      "Druido"
+    ],
     "immagine": "/assets/armature/tunica-guaritore.png"
   },
   {
@@ -566,14 +660,16 @@
     "nome": "Corazza Pesante del Crociato",
     "descrizione": "Un'armatura a piastre decorata con croci e simboli sacri, indossata dai crociati nelle guerre sante. Riduce i danni del 42% e fornisce resistenza radiante. Quando si combatte contro creature malvagie o non-morti, la resistenza aumenta ulteriormente del 15%.",
     "prezzo": 3800,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 29.5,
     "stock": 3,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 33,
     "rarita": "Epica",
-    "classe": ["Paladino", "Chierico"],
+    "classe": [
+      "Paladino"
+    ],
     "immagine": "/assets/armature/pesante-crociato.png"
   },
   {
@@ -581,14 +677,16 @@
     "nome": "Armatura di Cuoio Borchiato del Barbaro",
     "descrizione": "Un'armatura di cuoio rinforzata con borchie metalliche e decorata con trofei di battaglia. Riduce i danni del 25% e aumenta l'intimidazione. Le borchie possono infliggere danni minori agli avversari che attaccano in corpo a corpo. Robusta e pratica per la vita tribale.",
     "prezzo": 1000,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 12.0,
     "stock": 7,
     "disponibile": true,
     "rating": 4.2,
     "numeroRecensioni": 61,
     "rarita": "Rara",
-    "classe": ["Barbaro", "Guerriero"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/armature/cuoio-borchiato-barbaro.png"
   },
   {
@@ -596,14 +694,16 @@
     "nome": "Veste Stellata dell'Astromante",
     "descrizione": "Una veste blu notte tempestata di piccole gemme che brillano come stelle. Aumenta il potere degli incantesimi di divinazione e astrologia del 25%. Durante la notte, tutti gli incantesimi costano il 10% in meno di mana. Include cappello a punta con motivi celesti.",
     "prezzo": 2700,
-    "categoria": "Armature",
+    "categoria": "Armatura",
     "peso": 2.5,
     "stock": 3,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 29,
     "rarita": "Epica",
-    "classe": ["Mago", "Astromante"],
+    "classe": [
+      "Mago"
+    ],
     "immagine": "/assets/armature/veste-stellata-astromante.png"
   },
   {
@@ -611,14 +711,16 @@
     "nome": "Pozione di Guarigione Maggiore",
     "descrizione": "Una pozione rosso rubino che brilla di luce propria, preparata con erbe rare e magia divina. Ripristina istantaneamente il 60% della salute massima e rimuove sanguinamenti e veleni minori. Il sapore è sorprendentemente dolce con note di miele e menta. Effetto immediato.",
     "prezzo": 150,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 25,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 312,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pozione-guarigione-maggiore.png"
   },
   {
@@ -626,14 +728,17 @@
     "nome": "Pozione di Mana Suprema",
     "descrizione": "Un liquido blu elettrico contenuto in una fiala di cristallo. Ripristina il 70% del mana massimo e aumenta la rigenerazione magica del 25% per 10 minuti. Essenziale per maghi impegnati in lunghe battaglie. Il sapore ricorda l'ozono e le bacche selvatiche.",
     "prezzo": 180,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 20,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 267,
     "rarita": "Rara",
-    "classe": ["Mago", "Stregone", "Chierico"],
+    "classe": [
+      "Mago",
+      "Paladino"
+    ],
     "immagine": "/assets/consumabili/pozione-mana-suprema.png"
   },
   {
@@ -641,14 +746,17 @@
     "nome": "Elisir di Forza del Titano",
     "descrizione": "Una pozione densa e dorata che pulsa di energia. Aumenta la forza fisica di +5 e i danni da mischia del 30% per 30 minuti. Gli effetti si manifestano con un leggero bagliore dorato attorno ai muscoli. Usato dai guerrieri prima delle battaglie più impegnative.",
     "prezzo": 200,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.4,
     "stock": 15,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 189,
     "rarita": "Epica",
-    "classe": ["Guerriero", "Barbaro", "Paladino"],
+    "classe": [
+      "Guerriero",
+      "Paladino"
+    ],
     "immagine": "/assets/consumabili/elisir-forza-titano.png",
     "onSale": true
   },
@@ -657,14 +765,16 @@
     "nome": "Antidoto Universale",
     "descrizione": "Una pozione verde smeraldo con proprietà purificanti. Rimuove tutti i veleni, malattie e tossine dal corpo istantaneamente. Fornisce anche immunità temporanea ai veleni per 1 ora. Sapore amaro ma estremamente efficace. Indispensabile quando si esplorano paludi o si combattono creature velenose.",
     "prezzo": 120,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 18,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 156,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/antidoto-universale.png"
   },
   {
@@ -672,14 +782,17 @@
     "nome": "Pozione di Invisibilità",
     "descrizione": "Un liquido trasparente quasi impercettibile che ondeggia nella fiala. Rende completamente invisibili per 5 minuti o fino al primo attacco. Perfetta per infiltrazioni e fughe disperate. L'effetto si dissolve gradualmente negli ultimi 30 secondi. Non ha sapore né odore.",
     "prezzo": 250,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 8,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 143,
     "rarita": "Epica",
-    "classe": ["Ladro", "Assassino", "Ranger"],
+    "classe": [
+      "Assassino",
+      "Cacciatore"
+    ],
     "immagine": "/assets/consumabili/pozione-invisibilita.png"
   },
   {
@@ -687,14 +800,16 @@
     "nome": "Pozione di Resistenza Elementale",
     "descrizione": "Una pozione multicolore che cambia tonalità continuamente tra rosso, blu, verde e bianco. Fornisce resistenza del 50% a fuoco, ghiaccio, fulmine e acido per 20 minuti. Ideale quando si affrontano nemici che utilizzano magia elementale. Sapore piccante e rinfrescante insieme.",
     "prezzo": 160,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 12,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 201,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pozione-resistenza-elementale.png"
   },
   {
@@ -702,14 +817,18 @@
     "nome": "Elisir di Velocità Fulminea",
     "descrizione": "Una pozione argentata che scintilla come mercurio. Raddoppia la velocità di movimento e aumenta l'agilità di +4 per 15 minuti. Gli attacchi diventano più rapidi e le schivate più efficaci. Dopo l'effetto, può causare lieve stanchezza. Sapore metallico e frizzante.",
     "prezzo": 190,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 14,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 178,
     "rarita": "Epica",
-    "classe": ["Ladro", "Monaco", "Ranger"],
+    "classe": [
+      "Assassino",
+      "Guerriero",
+      "Cacciatore"
+    ],
     "immagine": "/assets/consumabili/elisir-velocita-fulminea.png"
   },
   {
@@ -717,14 +836,17 @@
     "nome": "Pozione di Visione Vera",
     "descrizione": "Un liquido opalescente che rivela la verità nascosta. Permette di vedere attraverso illusioni, invisibilità e oscurità magica per 10 minuti. Rivela anche le vere forme di creature polimorfe. Gli occhi brillano di una luce argentea durante l'effetto.",
     "prezzo": 220,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 10,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 134,
     "rarita": "Epica",
-    "classe": ["Mago", "Chierico", "Paladino"],
+    "classe": [
+      "Mago",
+      "Paladino"
+    ],
     "immagine": "/assets/consumabili/pozione-visione-vera.png",
     "onSale": true
   },
@@ -733,14 +855,16 @@
     "nome": "Tonico di Rigenerazione",
     "descrizione": "Una pozione verde brillante con proprietà curative prolungate. Rigenera il 5% della salute massima ogni 10 secondi per 5 minuti, per un totale del 150% di guarigione. Non fornisce guarigione immediata ma è eccellente per recupero sostenuto. Sapore erbaceo e leggermente amaro.",
     "prezzo": 140,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 16,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 224,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/tonico-rigenerazione.png"
   },
   {
@@ -748,14 +872,16 @@
     "nome": "Elisir di Intelligenza Arcana",
     "descrizione": "Una pozione viola scuro che emana energia arcana. Aumenta l'intelligenza di +4 e il potere di tutti gli incantesimi del 20% per 30 minuti. La mente diventa più acuta e i calcoli magici più precisi. Usato dai maghi prima di rituali complessi.",
     "prezzo": 210,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 11,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 167,
     "rarita": "Epica",
-    "classe": ["Mago", "Stregone"],
+    "classe": [
+      "Mago"
+    ],
     "immagine": "/assets/consumabili/elisir-intelligenza-arcana.png"
   },
   {
@@ -763,14 +889,16 @@
     "nome": "Pozione di Levitazione",
     "descrizione": "Un liquido azzurro chiaro leggero come l'aria. Permette di levitare e volare a bassa altitudine per 10 minuti. La velocità di volo è moderata ma sufficiente per attraversare burroni o raggiungere luoghi alti. Il controllo migliora con la pratica.",
     "prezzo": 180,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 9,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 145,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pozione-levitazione.png"
   },
   {
@@ -778,14 +906,16 @@
     "nome": "Elisir della Mente Ferrea",
     "descrizione": "Una pozione cristallina che rinforza la volontà. Fornisce immunità a charme, paura e controllo mentale per 20 minuti. Aumenta anche la saggezza di +3. Essenziale quando si affrontano nemici che usano magia mentale. Sapore neutro quasi insapore.",
     "prezzo": 170,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 13,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 118,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/elisir-mente-ferrea.png"
   },
   {
@@ -793,14 +923,16 @@
     "nome": "Pozione di Crescita Gigante",
     "descrizione": "Una pozione arancione con bolle grosse che scoppiano. Fa crescere chi la beve fino a 3 metri di altezza per 10 minuti. La forza aumenta di +6 e i danni in mischia raddoppiano, ma si diventa un bersaglio più facile. Effetto impressionante e potente.",
     "prezzo": 230,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.4,
     "stock": 7,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 92,
     "rarita": "Epica",
-    "classe": ["Guerriero", "Barbaro"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/consumabili/pozione-crescita-gigante.png"
   },
   {
@@ -808,14 +940,16 @@
     "nome": "Antidoto al Piombo Fuso",
     "descrizione": "Una rara pozione grigio metallico. Fornisce immunità temporanea al fuoco estremo e al calore per 15 minuti. Permette di camminare sulla lava, resistere a esplosioni e sopportare temperature infernali. La pelle assume una leggera lucentezza metallica durante l'effetto.",
     "prezzo": 280,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 5,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 76,
     "rarita": "Epica",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/antidoto-piombo-fuso.png",
     "onSale": true
   },
@@ -824,14 +958,16 @@
     "nome": "Pozione di Guarigione Minore",
     "descrizione": "Una semplice pozione rossa contenuta in una piccola fiala. Ripristina il 30% della salute massima. Economica e affidabile, è la scelta standard per avventurieri alle prime armi o per scorte di emergenza. Sapore leggermente medicinale ma tollerabile.",
     "prezzo": 50,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 50,
     "disponibile": true,
     "rating": 4.3,
     "numeroRecensioni": 487,
     "rarita": "Comune",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pozione-guarigione-minore.png"
   },
   {
@@ -839,14 +975,16 @@
     "nome": "Elisir del Berserker Furioso",
     "descrizione": "Una pozione rosso sangue che ribolle nella fiala. Aumenta i danni da mischia del 40% e fornisce resistenza al dolore, ma riduce la difesa del 15%. Induce uno stato di furia controllata per 10 minuti. Usare con cautela. Sapore ferroso e intenso.",
     "prezzo": 190,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 10,
     "disponibile": true,
     "rating": 4.4,
     "numeroRecensioni": 163,
     "rarita": "Rara",
-    "classe": ["Barbaro", "Guerriero"],
+    "classe": [
+      "Guerriero"
+    ],
     "immagine": "/assets/consumabili/elisir-berserker-furioso.png"
   },
   {
@@ -854,14 +992,16 @@
     "nome": "Pozione di Respiro Acquatico",
     "descrizione": "Un liquido blu-verde con piccole bolle che salgono continuamente. Permette di respirare sott'acqua come un pesce per 1 ora. Durante l'effetto, si sviluppano temporaneamente branchie sul collo. Essenziale per esplorazioni subacquee. Sapore salato come l'acqua di mare.",
     "prezzo": 130,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 14,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 128,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pozione-respiro-acquatico.png"
   },
   {
@@ -869,14 +1009,18 @@
     "nome": "Tonico di Carisma del Nobile",
     "descrizione": "Una pozione dorata con particelle scintillanti. Aumenta il carisma di +5 e migliora tutte le abilità sociali per 30 minuti. Rende più persuasivi, affascinanti e convincenti. Ideale prima di negoziazioni importanti o incontri diplomatici. Sapore di miele e fiori.",
     "prezzo": 150,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 12,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 141,
     "rarita": "Rara",
-    "classe": ["Nobile", "Bardo", "Paladino"],
+    "classe": [
+      "Guerriero",
+      "Mago",
+      "Paladino"
+    ],
     "immagine": "/assets/consumabili/tonico-carisma-nobile.png"
   },
   {
@@ -884,14 +1028,16 @@
     "nome": "Elisir di Fortuna del Giocatore",
     "descrizione": "Una pozione color ambra che brilla debolmente. Aumenta la fortuna e la probabilità di colpi critici del 15% per 20 minuti. I tiri salvezza hanno maggiore probabilità di successo. L'effetto è sottile ma può fare la differenza nei momenti cruciali.",
     "prezzo": 200,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 8,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 107,
     "rarita": "Epica",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/elisir-fortuna-giocatore.png"
   },
   {
@@ -899,14 +1045,17 @@
     "nome": "Pozione di Forma Gassosa",
     "descrizione": "Un liquido grigio nebbioso che si dissolve quasi istantaneamente. Trasforma il corpo in gas incolore per 5 minuti, permettendo di attraversare fessure, grate e piccole aperture. Immunità ai danni fisici ma impossibilità di attaccare. Richiede concentrazione per mantenere la forma.",
     "prezzo": 260,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 6,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 89,
     "rarita": "Epica",
-    "classe": ["Ladro", "Mago"],
+    "classe": [
+      "Assassino",
+      "Mago"
+    ],
     "immagine": "/assets/consumabili/pozione-forma-gassosa.png"
   },
   {
@@ -914,14 +1063,17 @@
     "nome": "Pergamena di Palla di Fuoco",
     "descrizione": "Una pergamena antica scritta con inchiostro rosso fuoco. Quando letta ad alta voce, evoca una devastante palla di fuoco che esplode nel punto designato, causando danni massicci in un'area di 6 metri. La pergamena si consuma dopo l'uso. Richiede conoscenze magiche basilari.",
     "prezzo": 180,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 12,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 156,
     "rarita": "Rara",
-    "classe": ["Mago", "Stregone", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-palla-fuoco.png"
   },
   {
@@ -929,14 +1081,17 @@
     "nome": "Pergamena di Fulmine a Catena",
     "descrizione": "Una pergamena carica di energia elettrica che crepita al tatto. Lancia un potente fulmine che salta tra i nemici colpendone fino a 5. Ogni salto riduce leggermente il danno. Particolarmente efficace contro gruppi di nemici ravvicinati. Si distrugge dopo l'uso.",
     "prezzo": 220,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 8,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 134,
     "rarita": "Epica",
-    "classe": ["Mago", "Stregone", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-fulmine-catena.png",
     "onSale": true
   },
@@ -945,14 +1100,17 @@
     "nome": "Pergamena di Guarigione di Massa",
     "descrizione": "Una pergamena benedetta scritta con inchiostro dorato e simboli divini. Quando attivata, cura tutti gli alleati in un raggio di 10 metri ripristinando il 50% della loro salute. Incredibilmente utile in situazioni disperate. Richiede una breve preghiera per l'attivazione.",
     "prezzo": 280,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 6,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 98,
     "rarita": "Epica",
-    "classe": ["Chierico", "Paladino", "Tutte"],
+    "classe": [
+      "Paladino",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-guarigione-massa.png"
   },
   {
@@ -960,14 +1118,16 @@
     "nome": "Pergamena di Teletrasporto",
     "descrizione": "Una rara pergamena intarsiata con rune spaziali luminescenti. Permette di teletrasportarsi istantaneamente in un luogo precedentemente visitato e memorizzato, entro 100 km di distanza. Può trasportare fino a 4 persone che si tengono per mano. Uso singolo estremamente prezioso.",
     "prezzo": 450,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 3,
     "disponibile": true,
     "rating": 5.0,
     "numeroRecensioni": 67,
     "rarita": "Leggendaria",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-teletrasporto.png"
   },
   {
@@ -975,14 +1135,17 @@
     "nome": "Pergamena di Evocazione Elementale",
     "descrizione": "Una pergamena decorata con simboli dei quattro elementi. Evoca un elementale medio (fuoco, acqua, terra o aria) che combatte al tuo fianco per 10 minuti. L'elementale obbedisce ai comandi basilari. Il tipo può essere scelto al momento dell'evocazione.",
     "prezzo": 320,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 5,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 112,
     "rarita": "Epica",
-    "classe": ["Mago", "Stregone", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-evocazione-elementale.png"
   },
   {
@@ -990,14 +1153,17 @@
     "nome": "Pergamena di Muro di Ghiaccio",
     "descrizione": "Una pergamena fredda al tatto decorata con cristalli di ghiaccio. Crea un muro solido di ghiaccio magico lungo 10 metri e alto 3 metri. Il muro dura 5 minuti o fino a quando viene distrutto. Perfetto per bloccare passaggi o creare coperture improvvisate.",
     "prezzo": 150,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 10,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 143,
     "rarita": "Rara",
-    "classe": ["Mago", "Stregone", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-muro-ghiaccio.png"
   },
   {
@@ -1005,14 +1171,16 @@
     "nome": "Pergamena di Dissolvi Magie",
     "descrizione": "Una pergamena argentata che vibra con energia anti-magica. Può dissolvere incantesimi attivi, disperdere illusioni e rimuovere effetti magici in un'area di 5 metri. Particolarmente utile contro nemici che si affidano alla magia. Altamente ricercata dai cacciatori di maghi.",
     "prezzo": 240,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 7,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 128,
     "rarita": "Epica",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-dissolvi-magie.png"
   },
   {
@@ -1020,14 +1188,16 @@
     "nome": "Pergamena di Metamorfosi",
     "descrizione": "Una pergamena cangiante che cambia colore continuamente. Permette di trasformarsi in qualsiasi creatura di taglia simile per 30 minuti. Si acquisiscono le caratteristiche fisiche ma non le abilità speciali. Richiede concentrazione per mantenere la forma. Uso singolo.",
     "prezzo": 380,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 4,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 87,
     "rarita": "Leggendaria",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-metamorfosi.png"
   },
   {
@@ -1035,14 +1205,16 @@
     "nome": "Pergamena di Resurrezione Minore",
     "descrizione": "Una pergamena sacra estremamente rara scritta con inchiostro divino. Può riportare in vita una persona morta da meno di 24 ore, purché il corpo sia relativamente intatto. Il resuscitato ritorna con metà salute e necessita di riposo. Miracolo in forma cartacea.",
     "prezzo": 800,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 1,
     "disponibile": true,
     "rating": 5.0,
     "numeroRecensioni": 42,
     "rarita": "Leggendaria",
-    "classe": ["Chierico", "Paladino"],
+    "classe": [
+      "Paladino"
+    ],
     "immagine": "/assets/consumabili/pergamena-resurrezione-minore.png"
   },
   {
@@ -1050,14 +1222,17 @@
     "nome": "Pergamena di Tempesta di Ghiaccio",
     "descrizione": "Una pergamena gelida che emana aria fredda. Scatena una violenta tempesta di ghiaccio in un'area di 8 metri che infligge danni da freddo continui per 10 secondi. Il terreno diventa ghiacciato e scivoloso. I nemici hanno movimento ridotto. Devastante contro gruppi.",
     "prezzo": 260,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 6,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 119,
     "rarita": "Epica",
-    "classe": ["Mago", "Stregone", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-tempesta-ghiaccio.png",
     "onSale": true
   },
@@ -1066,14 +1241,16 @@
     "nome": "Pergamena di Scudo Arcano",
     "descrizione": "Una pergamena protettiva con simboli difensivi. Crea uno scudo magico invisibile che assorbe fino a 500 punti danno per 15 minuti. Lo scudo protegge sia da danni fisici che magici. Si dissolve se viene assorbito tutto il danno prima della scadenza.",
     "prezzo": 200,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 9,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 167,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-scudo-arcano.png"
   },
   {
@@ -1081,14 +1258,17 @@
     "nome": "Pergamena di Charme di Massa",
     "descrizione": "Una pergamena rosa chiaro decorata con cuori e simboli di fascino. Incanta fino a 6 creature che falliscono un tiro salvezza su volontà, rendendole amichevoli e propense ad aiutare per 10 minuti. Non funziona su creature immuni agli effetti mentali.",
     "prezzo": 190,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 8,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 103,
     "rarita": "Rara",
-    "classe": ["Mago", "Bardo", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-charme-massa.png"
   },
   {
@@ -1096,14 +1276,16 @@
     "nome": "Pergamena di Volo",
     "descrizione": "Una pergamena leggera come una piuma decorata con ali stilizzate. Concede la capacità di volare liberamente per 20 minuti a velocità moderata. Il volo è stabile e controllabile. Permette di trasportare fino a 50 kg di equipaggiamento senza penalità.",
     "prezzo": 230,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 7,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 145,
     "rarita": "Epica",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-volo.png"
   },
   {
@@ -1111,14 +1293,18 @@
     "nome": "Pergamena di Terremoto",
     "descrizione": "Una pergamena che trema costantemente decorata con crepe e simboli tellurici. Causa un terremoto localizzato in un'area di 15 metri che infligge danni, fa cadere i nemici e può crollare strutture deboli. Estremamente pericolosa anche per gli alleati nell'area.",
     "prezzo": 340,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 4,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 76,
     "rarita": "Epica",
-    "classe": ["Mago", "Druido", "Tutte"],
+    "classe": [
+      "Mago",
+      "Druido",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-terremoto.png"
   },
   {
@@ -1126,14 +1312,17 @@
     "nome": "Pergamena di Benedizione di Gruppo",
     "descrizione": "Una pergamena santa con preghiere scritte in lingue antiche. Benedice tutti gli alleati in un raggio di 12 metri, aumentando la loro precisione del 10%, resistenza magica del 15% e morale. L'effetto dura 30 minuti. Ideale prima di battaglie importanti.",
     "prezzo": 170,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 11,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 189,
     "rarita": "Rara",
-    "classe": ["Chierico", "Paladino", "Tutte"],
+    "classe": [
+      "Paladino",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-benedizione-gruppo.png"
   },
   {
@@ -1141,14 +1330,17 @@
     "nome": "Pergamena di Nube Mortale",
     "descrizione": "Una pergamena color verde velenoso che emana un odore sgradevole. Crea una nube di gas tossico in un'area di 6 metri che infligge danni da veleno massicci per 15 secondi. La nube è opaca e blocca la visuale. Mortale per creature che respirano.",
     "prezzo": 210,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 6,
     "disponibile": true,
     "rating": 4.4,
     "numeroRecensioni": 94,
     "rarita": "Rara",
-    "classe": ["Mago", "Alchimista", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-nube-mortale.png"
   },
   {
@@ -1156,14 +1348,17 @@
     "nome": "Pergamena di Portale Dimensionale",
     "descrizione": "Una pergamena intarsiata con rune spazio-temporali complesse. Crea un portale che collega due punti nello spazio entro 1 km di distanza per 5 minuti. Il portale può essere attraversato in entrambe le direzioni da chiunque. Richiede di visualizzare chiaramente la destinazione.",
     "prezzo": 420,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 3,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 61,
     "rarita": "Leggendaria",
-    "classe": ["Mago", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-portale-dimensionale.png"
   },
   {
@@ -1171,14 +1366,17 @@
     "nome": "Pergamena di Luce del Giorno",
     "descrizione": "Una pergamena luminosa che brilla come il sole. Crea un'intensa luce diurna in un raggio di 20 metri per 1 ora. La luce disperde oscurità magica, danneggia creature sensibili alla luce solare e rivela creature invisibili. Perfetta nelle segrete oscure.",
     "prezzo": 140,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 13,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 172,
     "rarita": "Rara",
-    "classe": ["Chierico", "Paladino", "Tutte"],
+    "classe": [
+      "Paladino",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-luce-giorno.png",
     "onSale": true
   },
@@ -1187,14 +1385,17 @@
     "nome": "Pergamena di Rallentamento Temporale",
     "descrizione": "Una pergamena argentea con simboli dell'orologio. Rallenta il tempo per tutti i nemici in un'area di 8 metri, riducendo la loro velocità di movimento e attacco del 60% per 12 secondi. Chi lancia la pergamena non è affetto. Vantaggio tattico enorme.",
     "prezzo": 290,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 5,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 108,
     "rarita": "Epica",
-    "classe": ["Mago", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-rallentamento-temporale.png"
   },
   {
@@ -1202,14 +1403,16 @@
     "nome": "Pergamena di Identificazione",
     "descrizione": "Una pergamena semplice ma estremamente utile con simboli di rivelazione. Identifica completamente un oggetto magico, rivelando tutte le sue proprietà, maledizioni e storia. Funziona anche su creature per rivelare tipo, vulnerabilità e capacità speciali. Indispensabile per avventurieri.",
     "prezzo": 80,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 20,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 234,
     "rarita": "Non comune",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pergamena-identificazione.png"
   },
   {
@@ -1217,14 +1420,16 @@
     "nome": "Bomba Alchemica da Fuoco",
     "descrizione": "Una sfera di vetro piena di liquido rosso instabile che brucia all'interno. Quando lanciata, esplode in un raggio di 3 metri infliggendo danni da fuoco significativi. Può incendiare materiali infiammabili. Maneggiare con cautela. Confezionata in imbottitura protettiva.",
     "prezzo": 75,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.5,
     "stock": 18,
     "disponibile": true,
     "rating": 4.4,
     "numeroRecensioni": 203,
     "rarita": "Non comune",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/bomba-alchemica-fuoco.png"
   },
   {
@@ -1232,14 +1437,16 @@
     "nome": "Bomba di Gelo Alchemico",
     "descrizione": "Una sfera di vetro contenente liquido blu ghiacciato. All'impatto esplode congelando tutto in un raggio di 3 metri. Infligge danni da freddo e rallenta i nemici del 40% per 8 secondi. Il terreno diventa ghiacciato. Complementare alle bombe di fuoco.",
     "prezzo": 80,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.5,
     "stock": 15,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 187,
     "rarita": "Non comune",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/bomba-gelo-alchemico.png"
   },
   {
@@ -1247,14 +1454,16 @@
     "nome": "Granata Fumogena",
     "descrizione": "Un cilindro metallico che emette denso fumo nero quando attivato. Crea una nube di fumo opaco in un'area di 5 metri che dura 1 minuto. Blocca completamente la visuale, perfetta per fughe o imboscate. Non tossica ma può causare tosse.",
     "prezzo": 40,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 25,
     "disponibile": true,
     "rating": 4.3,
     "numeroRecensioni": 256,
     "rarita": "Comune",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/granata-fumogena.png",
     "onSale": true
   },
@@ -1263,14 +1472,17 @@
     "nome": "Fiala di Acido Corrosivo",
     "descrizione": "Una fiala rinforzata contenente acido verde brillante estremamente corrosivo. Quando lanciata contro un bersaglio, l'acido corrode armature e carne, infliggendo danni continui per 15 secondi. Particolarmente efficace contro armature pesanti. Estremamente pericolosa.",
     "prezzo": 95,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.4,
     "stock": 12,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 142,
     "rarita": "Rara",
-    "classe": ["Alchimista", "Tutte"],
+    "classe": [
+      "Mago",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/fiala-acido-corrosivo.png"
   },
   {
@@ -1278,14 +1490,16 @@
     "nome": "Bomba Luminosa Accecante",
     "descrizione": "Una sfera bianca che emette luce pulsante. Quando esplode, crea un flash di luce abbagliante che acceca tutti i nemici in un raggio di 4 metri per 10 secondi. Non infligge danni ma fornisce un vantaggio tattico enorme. Chiudere gli occhi prima dell'esplosione.",
     "prezzo": 60,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 20,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 178,
     "rarita": "Non comune",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/bomba-luminosa-accecante.png"
   },
   {
@@ -1293,14 +1507,16 @@
     "nome": "Elisir della Fenice",
     "descrizione": "Una rarissima pozione dorata con piume di fenice disciolte. Se si muore con questa pozione nell'inventario, essa si attiva automaticamente riportando in vita con il 50% di salute e mana. Può salvare la vita una sola volta. Incredibilmente preziosa e difficile da ottenere.",
     "prezzo": 1200,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 1,
     "disponibile": true,
     "rating": 5.0,
     "numeroRecensioni": 34,
     "rarita": "Leggendaria",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/elisir-fenice.png"
   },
   {
@@ -1308,14 +1524,17 @@
     "nome": "Polvere di Tracciamento",
     "descrizione": "Una borsa di polvere magica argentata impalpabile. Quando cosparsa su una superficie o creatura, rivela tracce invisibili e impronte per 1 ora. Brilla debolmente al buio. Indispensabile per trackers e investigatori. Una borsa contiene 10 utilizzi.",
     "prezzo": 90,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 14,
     "disponibile": true,
     "rating": 4.4,
     "numeroRecensioni": 167,
     "rarita": "Rara",
-    "classe": ["Ranger", "Investigatore", "Tutte"],
+    "classe": [
+      "Cacciatore",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/polvere-tracciamento.png"
   },
   {
@@ -1323,14 +1542,16 @@
     "nome": "Corda Magica Infinita",
     "descrizione": "Un gomitolo di corda magica che sembra normale ma può estendersi fino a 100 metri senza mai finire. Incredibilmente resistente, può sostenere fino a 500 kg. Si ritira automaticamente quando non più necessaria. Indispensabile per scalatori e esploratori di dungeon.",
     "prezzo": 180,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 1.0,
     "stock": 8,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 145,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/corda-magica-infinita.png"
   },
   {
@@ -1338,14 +1559,16 @@
     "nome": "Kit di Pronto Soccorso Avanzato",
     "descrizione": "Una borsa di cuoio contenente bende magiche, unguenti curativi, stecche rinforzate e strumenti chirurgici. Permette di stabilizzare alleati morenti e curare ferite medie senza magia. Ogni kit contiene materiali per 5 utilizzi. Include istruzioni illustrate.",
     "prezzo": 100,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 1.5,
     "stock": 16,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 198,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/kit-pronto-soccorso.png",
     "onSale": true
   },
@@ -1354,14 +1577,16 @@
     "nome": "Razione da Viaggio Corroborante",
     "descrizione": "Un pasto compatto conservato magicamente che non si deteriora mai. Fornisce nutrimento completo per un giorno e aumenta la resistenza alla fatica. Il sapore è sorprendentemente buono. Ogni confezione pesa poco ed è perfetta per lunghe spedizioni. Pacchetto da 7 razioni.",
     "prezzo": 35,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.8,
     "stock": 40,
     "disponibile": true,
     "rating": 4.2,
     "numeroRecensioni": 421,
     "rarita": "Comune",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/razione-viaggio-corroborante.png"
   },
   {
@@ -1369,14 +1594,16 @@
     "nome": "Torcia Eterna",
     "descrizione": "Una torcia che brucia con fiamma magica perpetua senza mai consumarsi. Fornisce luce chiara in un raggio di 10 metri e può essere spenta e riaccesa a comando. Non produce calore pericoloso. Versione ricaricabile mai più necessaria.",
     "prezzo": 120,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.5,
     "stock": 12,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 287,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/torcia-eterna.png"
   },
   {
@@ -1384,14 +1611,16 @@
     "nome": "Polvere di Fata Dormiente",
     "descrizione": "Una piccola borsa di polvere dorata scintillante raccolta dalle ali di fate. Quando soffiata verso un bersaglio, induce sonno profondo per 1 ora se la creatura fallisce un tiro salvezza. Funziona meglio su creature piccole. Contiene 3 dosi.",
     "prezzo": 110,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 9,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 134,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/polvere-fata-dormiente.png"
   },
   {
@@ -1399,14 +1628,16 @@
     "nome": "Pietra del Ritorno",
     "descrizione": "Una piccola pietra lucida incisa con rune di viaggio. Può essere attivata per memorizzare la posizione corrente. Quando schiacciata successivamente, teletrasporta istantaneamente l'utilizzatore alla posizione memorizzata. Uso singolo ma può salvare la vita.",
     "prezzo": 280,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 6,
     "disponibile": true,
     "rating": 4.8,
     "numeroRecensioni": 156,
     "rarita": "Epica",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/pietra-ritorno.png"
   },
   {
@@ -1414,14 +1645,16 @@
     "nome": "Unguento Anti-Cicatrici Miracoloso",
     "descrizione": "Un balsamo argentato dal profumo delicato. Applicato su ferite guarite, rimuove cicatrici e segni permanenti nel giro di un'ora. Può anche riparare danni estetici minori. Molto apprezzato da nobili e avventurieri vanitosi. Barattolo da 5 applicazioni.",
     "prezzo": 70,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 11,
     "disponibile": true,
     "rating": 4.3,
     "numeroRecensioni": 219,
     "rarita": "Non comune",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/unguento-anti-cicatrici.png"
   },
   {
@@ -1429,14 +1662,16 @@
     "nome": "Cristallo di Comunicazione",
     "descrizione": "Un cristallo a forma di piramide che brilla debolmente. Permette di comunicare mentalmente con chi possiede il cristallo gemello per 10 minuti, indipendentemente dalla distanza. La comunicazione è bidirezionale. Venduto in coppia. Richiede 24 ore di ricarica tra usi.",
     "prezzo": 320,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.4,
     "stock": 4,
     "disponibile": true,
     "rating": 4.9,
     "numeroRecensioni": 98,
     "rarita": "Epica",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/cristallo-comunicazione.png"
   },
   {
@@ -1444,14 +1679,16 @@
     "nome": "Sacchetto Dimensionale",
     "descrizione": "Un piccolo sacchetto di tela che contiene uno spazio extra-dimensionale. Può contenere fino a 50 kg di oggetti pur pesando solo 500 grammi. Gli oggetti all'interno sono preservati dal tempo. L'apertura può essere sigillata magicamente. Incredibilmente pratico per viaggi lunghi.",
     "prezzo": 450,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.5,
     "stock": 5,
     "disponibile": true,
     "rating": 5.0,
     "numeroRecensioni": 176,
     "rarita": "Epica",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/sacchetto-dimensionale.png"
   },
   {
@@ -1459,14 +1696,18 @@
     "nome": "Olio di Affilatura Superiore",
     "descrizione": "Un olio denso con sfumature metalliche. Applicato su un'arma da taglio, aumenta i danni del 15% e la probabilità di critico del 10% per 1 ora. Non danneggia la lama. Efficace su qualsiasi arma metallica. Bottiglia da 5 applicazioni.",
     "prezzo": 85,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.3,
     "stock": 17,
     "disponibile": true,
     "rating": 4.7,
     "numeroRecensioni": 245,
     "rarita": "Rara",
-    "classe": ["Guerriero", "Ranger", "Tutte"],
+    "classe": [
+      "Guerriero",
+      "Cacciatore",
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/olio-affilatura-superiore.png",
     "onSale": true
   },
@@ -1475,14 +1716,16 @@
     "nome": "Essenza di Coraggio Liquido",
     "descrizione": "Una piccola fiala di liquido rosso coraggio. Garantisce immunità alla paura e aumenta la volontà di +3 per 30 minuti. Il bevitore si sente intrepido e determinato. Particolarmente utile contro creature che usano terrore come arma. Gusto forte e speziato.",
     "prezzo": 95,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 13,
     "disponibile": true,
     "rating": 4.5,
     "numeroRecensioni": 167,
     "rarita": "Rara",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/essenza-coraggio-liquido.png"
   },
   {
@@ -1490,14 +1733,18 @@
     "nome": "Incenso della Meditazione Profonda",
     "descrizione": "Bastoncini di incenso dal profumo rilassante di lavanda e sandalo. Quando bruciato, aumenta la rigenerazione di mana del 50% e migliora la concentrazione per incantesimi complessi. Dura 1 ora. Particolarmente apprezzato da maghi e chierici per lo studio. Pacchetto da 10 bastoncini.",
     "prezzo": 75,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.2,
     "stock": 15,
     "disponibile": true,
     "rating": 4.6,
     "numeroRecensioni": 188,
     "rarita": "Rara",
-    "classe": ["Mago", "Chierico", "Monaco"],
+    "classe": [
+      "Mago",
+      "Paladino",
+      "Guerriero"
+    ],
     "immagine": "/assets/consumabili/incenso-meditazione-profonda.png"
   },
   {
@@ -1505,14 +1752,16 @@
     "nome": "Amuleto di Protezione Monouso",
     "descrizione": "Un piccolo amuleto di argento con un cristallo azzurro incastonato. Quando si subisce un colpo che ridurrebbe la salute a 0, l'amuleto si attiva automaticamente impedendo la morte e lasciando 1 punto vita. Il cristallo si frantuma dopo l'uso. Assicurazione sulla vita letterale.",
     "prezzo": 400,
-    "categoria": "Consumabili",
+    "categoria": "Consumabile",
     "peso": 0.1,
     "stock": 4,
     "disponibile": true,
     "rating": 5.0,
     "numeroRecensioni": 127,
     "rarita": "Epica",
-    "classe": ["Tutte"],
+    "classe": [
+      "Tutte"
+    ],
     "immagine": "/assets/consumabili/amuleto-protezione-monouso.png"
   }
 ]

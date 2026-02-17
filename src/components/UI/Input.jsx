@@ -9,6 +9,7 @@ export default function Input({
   value,
   classOfLabel,
   classOfInput,
+  onChange,
 }) {
   if (type === "textarea") {
     return (
@@ -20,10 +21,6 @@ export default function Input({
   }
   return (
     <>
-    
-      <label className={classInput[classOfLabel]} htmlFor={id}>
-        {label}
-      </label>
       <input
         className={classInput[classOfInput]}
         hidden={hidden}
@@ -31,7 +28,11 @@ export default function Input({
         id={id}
         name={name}
         value={value}
+        onChange={onChange}
       />
+      <label className={classInput[classOfLabel]} htmlFor={id}>
+        {label}
+      </label>
     </>
   );
 }
