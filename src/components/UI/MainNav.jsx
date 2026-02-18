@@ -1,6 +1,6 @@
 //! nav fissa una volta dentro. pensare se mettere
 //! filti qui  o creare barra laterale
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import classMainNav from "./style/MainNav.module.css";
@@ -21,18 +21,8 @@ export default function MainNav({ setIsFilterOpen, isFilterOpen }) {
   }, [theme]);
 
   return (
-    <nav className={classMainNav.nav}>
-      <ul className={classMainNav.ul}>
-        {path === "/app/shop" && (
-          <div className={classMainNav["filter-container"]}>
-            <li >
-              <Button text={"Filter"} onClick={setIsFilterOpen} />
-            </li>
-            <li  className={classMainNav["search-container"]}>
-              <Input type="text" id="search" name="search" label="Search" />
-            </li>
-          </div>
-        )}
+    <nav className={classMainNav.nav} style={path === "/app/shop" ? {height: "fit-content"} : {}}>
+      <ul className={classMainNav.ul1}>
         <li>
           <Button text={"Home"} isLink={true} path={"home"} />
         </li>
@@ -61,6 +51,17 @@ export default function MainNav({ setIsFilterOpen, isFilterOpen }) {
           />
         </li>
       </ul>
+
+      {path === "/app/shop" && (
+        <ul className={classMainNav.ul2}>
+          <li className={classMainNav["filter-li"]}>
+            <Button text={"Filter"} onClick={setIsFilterOpen} />
+          </li>
+          <li className={classMainNav["search-li"]}>
+            <Input type="text" id="search" name="search" label="Search" />
+          </li>
+        </ul>
+      )}
     </nav>
   );
 }

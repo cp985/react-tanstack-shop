@@ -15,12 +15,12 @@ export default function MainPageShop() {
 
 
   return (
-    <>
-      <>
-        <h1>MainPageShop</h1> <ItemContainer list={filtered ? filtered : items} />
+    <section>
+      
+         <ItemContainer list={filtered ? filtered : items} />
        
-      </>
-    </>
+      
+    </section>
   );
 }
 

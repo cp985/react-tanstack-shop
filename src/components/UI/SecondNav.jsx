@@ -4,12 +4,12 @@ import classSecondNav from "./style/SecondNav.module.css";
 export default function SecondNav() {
   //!sbloccare per  margin-top dinamico
 
-  //     const [marginTop, setMarginTop] = useState(130);
+  //     const [marginTop, setMarginTop] = useState(0);
 
   // useEffect(() => {
   //   const handleScroll = () => {
   //     const scrollY = window.scrollY;
-  //     const altezzaNavbar = 130;
+  //     const altezzaNavbar = -30;
 
   //     const nuovoMargine = Math.max(50, altezzaNavbar - scrollY);
 
@@ -21,7 +21,7 @@ export default function SecondNav() {
   // }, []);
 
   return (
-    <nav
+    <aside
       className={classSecondNav.secondNav}
       // style={{ marginTop: `${marginTop}px` }}
     >
@@ -29,6 +29,6 @@ export default function SecondNav() {
       <Button text={"Profilo"} isLink path={"profile"} />
       <Button text={"Ordini"} isLink path={"orders"} />
       <Button text={"Logout"} isLink path={"logout"} />
-    </nav>
+    </aside>
   );
 }
