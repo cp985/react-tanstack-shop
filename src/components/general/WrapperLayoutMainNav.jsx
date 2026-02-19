@@ -76,7 +76,7 @@ export default function WrapperLayoutMainNav() {
       <Header />
       <ItemsProvider items={items.products}>
         <MainNav setIsFilterOpen={toggleFilter} isFilterOpen={isFilterOpen} />
-        <main>
+        <main className={classWrapperLayoutMainNav.main}>
           {isFilterOpen && (
             <aside
               className={classWrapperLayoutMainNav.aside}

@@ -17,8 +17,9 @@ import OrdersHistory from "./pages/OrdersHistory";
 import ProfileUser from "./pages/ProfileUser";
 import FirstPage from "./pages/FirstPage";
 import LogOut from "./pages/LogOut";
-
+import ItemDetails from "./components/UI/ItemDetails";
 import Sales from "./pages/Sales";
+
 import Spinner from "./components/UI/Spinner";
 import { authCheck } from "./util/auth";
 import { httpLoader } from "./util/httpRequest";
@@ -58,6 +59,10 @@ const router = createHashRouter(
           path: "shop",
 
           element: <MainPageShop />,
+        },
+        {
+         path: "shop/item/:id", 
+          element: <ItemDetails />,
         },
         {
           path: "sales",
