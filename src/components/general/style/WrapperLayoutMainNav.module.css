@@ -12,6 +12,7 @@
 main{
 
     width: 100%;
+    min-height: 60dvh;
     display: flex;
     justify-content: center;
     align-items: center;

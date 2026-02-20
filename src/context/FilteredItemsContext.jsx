@@ -1,4 +1,4 @@
-import { createContext, useContext, useState,useMemo } from "react";
+import { createContext, useContext, useState, useMemo } from "react";
 
 const ItemsContext = createContext();
 
@@ -12,6 +12,8 @@ export function ItemsProvider({ children, items }) {
     prezzoMax: 10000,
     sortBy: "prezzo",
     sortOrder: "asc",
+    onSale: false,
+    search: "",
   });
 
   if (!items) {
@@ -26,36 +28,55 @@ export function ItemsProvider({ children, items }) {
     Leggendaria: 5,
   };
 
-  const filtered = useMemo(() =>  items
-    .filter((item) => {
-      const matchRarita =
-        formData.rarita.length === 0 || formData.rarita.includes(item.rarita);
-      const matchClasse =
-        formData.classe.length === 0 ||
-        item.classe.some((c) => formData.classe.includes(c));
-      const matchCategoria =
-        formData.categoria.length === 0 ||
-        formData.categoria.includes(item.categoria);
-      const matchPrezzo =
-        item.prezzo >= formData.prezzoMin && item.prezzo <= formData.prezzoMax;
-      return matchRarita && matchClasse && matchCategoria && matchPrezzo;
-    })
-    .sort((a, b) => {
-      const order = formData.sortOrder === "asc" ? 1 : -1;
-      if (formData.sortBy === "prezzo") {
-        return (a.prezzo - b.prezzo) * order;
-      }
-      if (formData.sortBy === "nome") {
-        return a.nome.localeCompare(b.nome) * order;
-      }
-      if (formData.sortBy === "rarita") {
-        const rarityA = RARITA_ORDER[a.rarita] || 0;
-        const rarityB = RARITA_ORDER[b.rarita] || 0;
-        return (rarityA - rarityB) * order;
-      }
-    },
-    [items, formData])
-  )
+  const filtered = useMemo(() =>
+    items
+      .filter((item) => {
+        const matchRarita =
+          formData.rarita.length === 0 || formData.rarita.includes(item.rarita);
+        const matchClasse =
+          formData.classe.length === 0 ||
+          item.classe.some((c) => formData.classe.includes(c));
+        const matchCategoria =
+          formData.categoria.length === 0 ||
+          formData.categoria.includes(item.categoria);
+        const matchPrezzo =
+          item.prezzo >= formData.prezzoMin &&
+          item.prezzo <= formData.prezzoMax;
+        const matchOnSale = !formData.onSale || item.onSale === formData.onSale;
+        const searchTerm = formData.search.toLowerCase();
+
+        const matchSearch =
+          item.nome.toLowerCase().includes(searchTerm) ||
+          item.categoria.toLowerCase().includes(searchTerm) ||
+          item.classe.some((c) => c.toLowerCase().includes(searchTerm));
+
+        return (
+          matchRarita &&
+          matchClasse &&
+          matchCategoria &&
+          matchPrezzo &&
+          matchOnSale&&
+          matchSearch
+        );
+      })
+      .sort(
+        (a, b) => {
+          const order = formData.sortOrder === "asc" ? 1 : -1;
+          if (formData.sortBy === "prezzo") {
+            return (a.prezzo - b.prezzo) * order;
+          }
+          if (formData.sortBy === "nome") {
+            return a.nome.localeCompare(b.nome) * order;
+          }
+          if (formData.sortBy === "rarita") {
+            const rarityA = RARITA_ORDER[a.rarita] || 0;
+            const rarityB = RARITA_ORDER[b.rarita] || 0;
+            return (rarityA - rarityB) * order;
+          }
+        },
+        [items, formData],
+      ),
+  );
   //cart and logic
 
   const [cart, setCart] = useState([]);
@@ -89,20 +110,45 @@ export function ItemsProvider({ children, items }) {
     });
   }
 
-function clearCart() {
-  setCart([]);
-}
+  function clearCart() {
+    setCart([]);
+  }
 
-function quantityCart(){
-  return cart.reduce((tot,next)=>tot + next.quantity,0)
-}
+  function quantityCart() {
+    return cart.reduce((tot, next) => tot + next.quantity, 0);
+  }
 
-function totalPrice(){
- return  cart.reduce((tot,next)=> tot + next.quantity*next.prezzo,0)
-}
+  function totalPrice() {
+    return cart.reduce((tot, next) => tot + next.quantity * next.prezzo, 0);
+  }
+
+
+
+
+  function handleSearchChange(e) {
+    const { value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      search: value, // Aggiorna solo il campo search
+    }));
+  }
 
   return (
-    <ItemsContext.Provider value={{ items, filtered, formData, setFormData,cart,addCart,removeCart,clearCart,quantityCart ,totalPrice}}>
+    <ItemsContext.Provider
+      value={{
+        items,
+        filtered,
+        formData,
+        setFormData,
+        cart,
+        addCart,
+        removeCart,
+        clearCart,
+        quantityCart,
+        totalPrice,
+        handleSearchChange,
+      }}
+    >
       {children}
     </ItemsContext.Provider>
   );
@@ -111,5 +157,3 @@ function totalPrice(){
 export function useItems() {
   return useContext(ItemsContext);
 }
-
-

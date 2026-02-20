@@ -7,14 +7,14 @@ import classMainNav from "./style/MainNav.module.css";
 import Button from "./Button";
 import Input from "./Input";
 
-export default function MainNav({ setIsFilterOpen, isFilterOpen }) {
+export default function MainNav({ setIsFilterOpen }) {
   const [theme, setTheme] = useState("light");
   const [isOpenAccount, setIsOpenAccount] = useState(false);
   const location = useLocation();
   const path = location.pathname;
   const username = localStorage.getItem("username");
   const menuAccountRef = useRef(null);
-  const {quantityCart}=useItems();
+  const {quantityCart,handleSearchChange}=useItems();
 
   function toggleTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -87,7 +87,7 @@ useEffect(() => {
             <Button text={"Filter"} onClick={setIsFilterOpen} />
           </li>
           <li className={classMainNav["search-li"]}>
-            <Input type="text" id="search" name="search" label="Search" />
+            <Input type="text" id="search" name="search" label="Search" onChange={handleSearchChange}/>
           </li>
         </ul>
       )}

@@ -10,8 +10,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 import classWrapperLayoutMainNav from "./style/WrapperLayoutMainNav.module.css";
 export default function WrapperLayoutMainNav() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const sidebarRef = useRef(null); // Riferimento alla sidebar
-  const [marginTop, setMarginTop] = useState(190); // Il tuo margine iniziale (es. altezza navbar)
+  const sidebarRef = useRef(null); 
+  const [marginTop, setMarginTop] = useState(190); 
 
   const { data: items } = useSuspenseQuery({
     queryKey: ["items"],
@@ -53,20 +53,34 @@ export default function WrapperLayoutMainNav() {
     setIsFilterOpen((prev) => !prev);
   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const altezzaNavbar = 190; 
-      const nuovoMargine = Math.max(90, altezzaNavbar - scrollY);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollY = window.scrollY;
+  //     const altezzaNavbar = 190; 
+  //     const nuovoMargine = Math.max(90, altezzaNavbar - scrollY);
 
-      setMarginTop(nuovoMargine);
-    };
+  //     setMarginTop(nuovoMargine);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
-
+useEffect(() => {
+  let ticking = false;
+  const handleScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        setMarginTop(Math.max(90, 190 - scrollY));
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   if (!items) {
     return <div>Caricamento...</div>;

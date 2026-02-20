@@ -1,5 +1,4 @@
 import classFormFilter from "./style/FormFilter.module.css";
-import { useState } from "react";
 import Input from "./Input";
 import { useItems } from "../../context/FilteredItemsContext";
 
@@ -10,12 +9,16 @@ export default function FormFilter() {
     const { name, value, checked, type } = e.target;
 
     if (type === "checkbox") {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: checked
-          ? [...prev[name], value] // aggiunge se spuntato
-          : prev[name].filter((v) => v !== value), // rimuove se de-spuntato
-      }));
+      if (name === "onSale") {
+        setFormData((prev) => ({ ...prev, [name]: checked }));
+      } else {
+        setFormData((prev) => ({
+          ...prev,
+          [name]: checked
+            ? [...prev[name], value]
+            : prev[name].filter((v) => v !== value),
+        }));
+      }
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
@@ -35,6 +38,15 @@ export default function FormFilter() {
           <option value="asc">Crescente</option>
           <option value="desc">Decrescente</option>
         </select>
+        <Input
+          type="checkbox"
+          id="onSale"
+          name="onSale"
+          value={"onSale"}
+          label="On Sale"
+          hidden
+          onChange={handlerStatusChange}
+        />
       </fieldset>
 
       <fieldset>
@@ -112,10 +124,10 @@ export default function FormFilter() {
           classOfInput="input-filter"
           classOfLabel={"label-filter"}
           type="checkbox"
-          id="consumabili"
+          id="consumabile"
           name="categoria"
-          label="Consumabili"
-          value="Consumabili"
+          label="Consumabile"
+          value="Consumabile"
           onChange={handlerStatusChange}
           hidden
         />
@@ -188,31 +200,31 @@ export default function FormFilter() {
           hidden
         />
       </fieldset>
-      <fieldset>
+      <fieldset className={classFormFilter["fieldset-prezzo"]}>
         <legend>Prezzo</legend>
 
-        <label>Prezzo Min: {formData.prezzoMin} monete</label>
-        <input
+        <Input
           type="range"
           id="prezzoMin"
           name="prezzoMin"
           min="0"
           max="10000"
-          step="100" // Salta di 100 in 100
+          step="100"
           onChange={handlerStatusChange}
           value={formData.prezzoMin}
+          label={`Prezzo Min: ${formData.prezzoMin} monete`}
         />
 
-        <label>Prezzo Max: {formData.prezzoMax} monete</label>
-        <input
+        <Input
           type="range"
           id="prezzoMax"
           name="prezzoMax"
           min="0"
           max="10000"
-          step="100" // Salta di 100 in 100
+          step="100"
           onChange={handlerStatusChange}
           value={formData.prezzoMax}
+          label={`Prezzo Max: ${formData.prezzoMax} monete`}
         />
       </fieldset>
     </form>

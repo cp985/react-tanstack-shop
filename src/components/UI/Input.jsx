@@ -10,6 +10,9 @@ export default function Input({
   classOfLabel,
   classOfInput,
   onChange,
+  min,
+  max,
+  step,
 }) {
   if (type === "textarea") {
     return (
@@ -29,6 +32,9 @@ export default function Input({
         name={name}
         value={value}
         onChange={onChange}
+        min={min}
+        max={max}
+        step={step}
       />
       <label className={classInput[classOfLabel]} htmlFor={id}>
         {label}
