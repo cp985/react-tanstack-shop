@@ -1,12 +1,12 @@
 import { useItems } from "../../context/FilteredItemsContext";
-import { useParams } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import classItemDetails from "./style/ItemDetails.module.css";
 import Button from "./Button";
 import ItemImage from "./ItemImage";
-
 import { imageSprite } from "../../util/imageSprite";
 export default function ItemDetails() {
-  const { items } = useItems();
+
+  const { items,addCart, cart } = useItems();
   const id = useParams();
   let item = {};
 
@@ -17,8 +17,11 @@ export default function ItemDetails() {
     item = items?.find((item) => item.id === id.id);
   }
 
-  function handleAddToCart() {
-    console.log("aggiunto");
+  function handleAddToCart(item) {
+  addCart(item);
+    console.log("aggiunto",item);
+    console.log('cart', cart);
+    
   }
 
   return (
@@ -49,8 +52,8 @@ export default function ItemDetails() {
         </div>
       </article>
       <div className={classItemDetails["button-container"]}>
-        <Button text={"Torna allo shop"} isLink path={"/app/shop"} />
-        <Button text={"Aggiungi al carrello"} onClick={handleAddToCart} />
+        <Button text={"Torna allo shop"}  isLink path={"/app/shop"} />
+        <Button text={"Aggiungi al carrello"} onClick={()=>handleAddToCart(item)} />
       </div>
     </section>
   );

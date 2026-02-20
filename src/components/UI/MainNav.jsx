@@ -2,7 +2,7 @@
 //! filti qui  o creare barra laterale
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-
+import { useItems } from "../../context/FilteredItemsContext";
 import classMainNav from "./style/MainNav.module.css";
 import Button from "./Button";
 import Input from "./Input";
@@ -14,6 +14,7 @@ export default function MainNav({ setIsFilterOpen, isFilterOpen }) {
   const path = location.pathname;
   const username = localStorage.getItem("username");
   const menuAccountRef = useRef(null);
+  const {quantityCart}=useItems();
 
   function toggleTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -55,13 +56,13 @@ useEffect(() => {
 
         <li>
           <Button
-            text={"NewsLetterContact"}
+            text={"Contact"}
             isLink={true}
             path={"newsLetterContact"}
           />
         </li>
         <li>
-          <Button text={`Cart(${0})`} isLink={true} path={"cart"} />
+          <Button text={`Cart(${quantityCart()})`} isLink={true} path={"cart"} />
         </li>
 
         <li className={`${classMainNav["account-li"]} `}>
