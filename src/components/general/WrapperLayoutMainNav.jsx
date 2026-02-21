@@ -5,13 +5,14 @@ import MainNav from "../UI/MainNav";
 import Footer from "../UI/Footer";
 import FormFilter from "../UI/FormFilter";
 import Header from "../UI/Header";
+import Modal from "../UI/Modal";
 import { ItemsProvider } from "../../context/FilteredItemsContext";
 const API_URL = import.meta.env.VITE_API_URL;
 import classWrapperLayoutMainNav from "./style/WrapperLayoutMainNav.module.css";
 export default function WrapperLayoutMainNav() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const sidebarRef = useRef(null); 
-  const [marginTop, setMarginTop] = useState(190); 
+  const sidebarRef = useRef(null);
+  const [marginTop, setMarginTop] = useState(190);
 
   const { data: items } = useSuspenseQuery({
     queryKey: ["items"],
@@ -44,7 +45,7 @@ export default function WrapperLayoutMainNav() {
       document.removeEventListener("click", handleClickOutside);
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isFilterOpen]); 
+  }, [isFilterOpen]);
 
   function toggleFilter(e) {
     if (e && e.stopPropagation) {
@@ -56,7 +57,7 @@ export default function WrapperLayoutMainNav() {
   // useEffect(() => {
   //   const handleScroll = () => {
   //     const scrollY = window.scrollY;
-  //     const altezzaNavbar = 190; 
+  //     const altezzaNavbar = 190;
   //     const nuovoMargine = Math.max(90, altezzaNavbar - scrollY);
 
   //     setMarginTop(nuovoMargine);
@@ -66,29 +67,42 @@ export default function WrapperLayoutMainNav() {
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
 
-useEffect(() => {
-  let ticking = false;
-  const handleScroll = () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
-        setMarginTop(Math.max(90, 190 - scrollY));
-        ticking = false;
-      });
-      ticking = true;
-    }
-  };
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          setMarginTop(Math.max(90, 190 - scrollY));
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (!items) {
     return <div>Caricamento...</div>;
   }
+
+  //modal
+  function openModal() {
+    modalRef.current.showModal();
+  }
+
+  function closeModal() {
+    modalRef.current.close();
+  }
+
+  const modalRef = useRef();
   return (
     <>
+     
       <Header />
-      <ItemsProvider items={items.products}>
+      <ItemsProvider items={items.products} openModal={openModal}>
+        <Modal ref={modalRef} closeModal={closeModal} openModal={openModal} />
         <MainNav setIsFilterOpen={toggleFilter} isFilterOpen={isFilterOpen} />
         <main className={classWrapperLayoutMainNav.main}>
           {isFilterOpen && (
@@ -103,7 +117,6 @@ useEffect(() => {
           <Outlet />
         </main>
       </ItemsProvider>
-
       <Footer />
     </>
   );

@@ -62,7 +62,7 @@ useEffect(() => {
           />
         </li>
         <li>
-          <Button text={`Cart(${quantityCart()})`} isLink={true} path={"cart"} />
+          <Button text={`Cart(${quantityCart()})`} isLink={true} path={`${username}/cart`} />
         </li>
 
         <li className={`${classMainNav["account-li"]} `}>

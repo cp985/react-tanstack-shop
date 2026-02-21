@@ -40,6 +40,7 @@ const router = createHashRouter(
       element: <WrapperLayoutMainNav />,
       errorElement: <ErrorPage />,
       loader: async () => {
+        authCheck();
         await queryClient.ensureQueryData({
           queryKey: ["items"],
           queryFn: async () => {
@@ -47,7 +48,7 @@ const router = createHashRouter(
             return res.json();
           },
         });
-          return authCheck();
+        return null;
       },
 
       children: [
@@ -61,7 +62,7 @@ const router = createHashRouter(
           element: <MainPageShop />,
         },
         {
-         path: "shop/item/:id", 
+          path: "shop/item/:id",
           element: <ItemDetails />,
         },
         {
@@ -70,7 +71,7 @@ const router = createHashRouter(
         },
 
         {
-          path: "cart",
+          path: ":user/cart",
           element: <Cart />,
         },
         {
@@ -89,6 +90,21 @@ const router = createHashRouter(
             {
               path: "orders",
               element: <OrdersHistory />,
+              loader: async () => {
+                authCheck();
+                await queryClient.ensureQueryData({
+                  queryKey: ["orders"],
+                  queryFn: async () => {
+                    const res = await fetch(`${API_URL}/orders/myorders`, {
+                      headers: {
+                        Authorization: `Bearer ${localStorage.getItem("token")}`,
+                      },
+                    });
+                    return res.json();
+                  },
+                });
+                return null;
+              },
             },
             {
               path: "logout",

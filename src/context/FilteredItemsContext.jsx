@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useMemo } from "react";
 
 const ItemsContext = createContext();
 
-export function ItemsProvider({ children, items }) {
+export function ItemsProvider({ children, items,openModal }) {
   //items e bfiltered items
   const [formData, setFormData] = useState({
     rarita: [],
@@ -147,6 +147,7 @@ export function ItemsProvider({ children, items }) {
         quantityCart,
         totalPrice,
         handleSearchChange,
+        openModal
       }}
     >
       {children}

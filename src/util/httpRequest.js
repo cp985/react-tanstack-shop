@@ -5,7 +5,6 @@ export async function signUp(user) {
   try {
     const response = await axios.post(`${API_URL}/users/register`, user);
 
-
     return response.data;
   } catch (error) {
     console.error(
@@ -28,7 +27,7 @@ export async function logIn(user) {
   try {
     const response = await axios.post(`${API_URL}/users/login`, user);
 
-    if (response.status !== 200) {
+    if (response.status !== 200 && response.status !== 201) {
       throw new Error("Errore nel server");
     }
     const foundUser = response.data;
@@ -56,7 +55,29 @@ export async function httpLoader(queryClient) {
     });
   } catch (e) {
     const message =
-      e.response?.data?.message || "Errore del server" || e.message;
+      e.response?.data?.message|| e.message || "Errore del server" ;
+    const error = new Error(message);
+    error.status = e.response?.status || 500;
+
+    throw error;
+  }
+}
+
+export async function postOrders(order) {
+  try {
+    const response = await axios.post(`${API_URL}/orders`, order, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    if (response.status !== 200 && response.status !== 201) {
+      throw new Error("Errore nel server");
+    }
+    return response.data;
+  } catch (e) {
+    const message =
+      e.response?.data?.message|| e.message || "Errore del server" ;
     const error = new Error(message);
     error.status = e.response?.status || 500;
 
