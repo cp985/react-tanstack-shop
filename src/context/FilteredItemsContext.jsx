@@ -1,8 +1,15 @@
 import { createContext, useContext, useState, useMemo } from "react";
-
+import { useNavigate } from "react-router-dom";
 const ItemsContext = createContext();
 
-export function ItemsProvider({ children, items,openModal }) {
+export function ItemsProvider({ children, items, openModal }) {
+  //user
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    isLogIn: false,
+  });
+
   //items e bfiltered items
   const [formData, setFormData] = useState({
     rarita: [],
@@ -17,7 +24,7 @@ export function ItemsProvider({ children, items,openModal }) {
   });
 
   if (!items) {
-    return <div>Caricamento...</div>; // o un loader/spinner
+    return <div>Caricamento...</div>;
   }
 
   const RARITA_ORDER = {
@@ -55,7 +62,7 @@ export function ItemsProvider({ children, items,openModal }) {
           matchClasse &&
           matchCategoria &&
           matchPrezzo &&
-          matchOnSale&&
+          matchOnSale &&
           matchSearch
         );
       })
@@ -122,15 +129,28 @@ export function ItemsProvider({ children, items,openModal }) {
     return cart.reduce((tot, next) => tot + next.quantity * next.prezzo, 0);
   }
 
-
-
-
   function handleSearchChange(e) {
     const { value } = e.target;
     setFormData((prev) => ({
       ...prev,
       search: value, // Aggiorna solo il campo search
     }));
+  }
+
+  //logout
+
+
+  const navigate = useNavigate();
+  function logOut() {
+    if (user.isLogIn) {
+      console.log("log out");
+
+      localStorage.clear();
+      setUser(null);
+      navigate("/", { replace: true });
+    } else {
+      return;
+    }
   }
 
   return (
@@ -147,7 +167,10 @@ export function ItemsProvider({ children, items,openModal }) {
         quantityCart,
         totalPrice,
         handleSearchChange,
-        openModal
+        openModal,
+        logOut,
+        user,
+        setUser,
       }}
     >
       {children}

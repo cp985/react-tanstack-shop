@@ -24,6 +24,6 @@ div.input-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 0.2rem;
 }
