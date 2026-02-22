@@ -1,8 +1,8 @@
 import classProfileUser from "./style/ProfileUser.module.css";
+
 import FormProfile from "../components/UI/FormProfile";
 import Button from "../components/UI/Button";
 import { useItems } from "../context/FilteredItemsContext";
-
 export default function ProfileUser() {
 
   const { openModal } = useItems();

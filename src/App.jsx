@@ -86,6 +86,21 @@ const router = createHashRouter(
             {
               path: "profile",
               element: <ProfileUser />,
+              loader: async () => {
+                authCheck();
+                await queryClient.ensureQueryData({
+                  queryKey: ["user"],
+                  queryFn: async () => {
+                    const res = await fetch(`${API_URL}/users/profile`, {
+                      headers: {
+                        Authorization: `Bearer ${localStorage.getItem("token")}`,
+                      },
+                    });
+                    return res.json();
+                  },
+                });
+                return null;
+              },
             },
             {
               path: "orders",

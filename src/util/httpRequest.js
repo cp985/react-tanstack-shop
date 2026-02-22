@@ -84,3 +84,34 @@ export async function postOrders(order) {
     throw error;
   }
 }
+
+
+export async function updateUser(userData) {
+  try {
+    const response = await axios.put(`${API_URL}/users/profile`, userData, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    if (response.status !== 200 && response.status !== 201) {
+      throw new Error("Errore nel server");
+    }
+
+    return response.data;
+  } catch (error) {
+    console.error(
+      "❌ Errore modifica utente:",
+      error.response?.data || error.message,
+    );
+
+    // Gestisci gli errori dal backend
+    if (error.response?.data?.message) {
+      throw new Error(error.response.data.message);
+    } else if (error.request) {
+      throw new Error("Errore di connessione al server");
+    } else {
+      throw new Error("Errore imprevisto durante la modifica");
+    }
+  }
+}
