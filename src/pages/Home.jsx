@@ -8,7 +8,7 @@ import classHome from "./style/Home.module.css";
 export default function Home() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const navigate = useNavigate();
-  const { mutate, isLoading, isError, error, data } = useMutation({
+  const { mutate, isLoading, isError, error, data , reset} = useMutation({
     mutationFn: (user) => logIn(user),
     onSuccess: (response) => {
       console.log("onSuccess data", response);
@@ -26,6 +26,7 @@ export default function Home() {
     isError: isErrorSub,
     error: errorSub,
     data: dataSub,
+    reset: resetSub,
   } = useMutation({
     mutationFn: (user) => signUp(user),
     onSuccess: (response) => {
@@ -39,6 +40,8 @@ export default function Home() {
 
   function toggleSubscribe() {
     setIsSubscribed(!isSubscribed);
+    reset();
+    resetSub();
   }
 
   function submitHandler(user) {
@@ -51,14 +54,15 @@ export default function Home() {
 
   return (
     <div className={classHome.home}>
-      <h1>Home Login{data && data.password}</h1>
-      {isError && <p>{error.message}</p>}
+      <h1>Home Login</h1>
+    
 
       <LogInForm
         subscribe={isSubscribed}
         toggleSubscribe={toggleSubscribe}
         submitHandler={submitHandler}
         submitHandlerSub={submitHandlerSub}
+        backendError={isSubscribed ? errorSub?.message : error?.message}
       />
     </div>
   );

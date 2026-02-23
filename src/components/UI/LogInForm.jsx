@@ -3,43 +3,65 @@ import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import classLogInForm from "./style/LogInForm.module.css";
+import { textReg, emailReg, usernameReg, passwordReg } from "../../util/auth";
 
 export default function LogInForm({
   submitHandler,
   subscribe,
   toggleSubscribe,
   submitHandlerSub,
+  backendError,
 }) {
-  const [error, setError] = useState([]);
+  const [errorList, setErrorList] = useState([]);
+
   function formData(e) {
-      e.preventDefault();
+    e.preventDefault();
+    const error = [];
     const data = new FormData(e.currentTarget);
-
     const datiForm = Object.fromEntries(data.entries());
+    const { email, username, password, passwordConfirm } = datiForm;
 
+    if (!emailReg(email)) {
+      error.push("Email non valida");
+    }
+    if (!passwordReg(password)) {
+      error.push(
+        "Password non valida: almeno 8 caratteri, una maiuscola, una minuscola, un numero e un carattere speciale (@$!%*?&).",
+      );
+    }
     if (subscribe) {
-      if (datiForm.password !== datiForm.passwordConfirm) {
-       
-        setError("Le password non corrispondono");
-        return
+      if (!usernameReg(username)) {
+        error.push("Username non valido");
       }
-      delete datiForm.passwordConfirm;
+      if (password !== passwordConfirm) {
+        error.push("Le password non corrispondono");
+      }
+    }
+
+    setErrorList(error); // sempre, sia login che subscribe
+    if (error.length > 0) return; // sempre, sia login che subscribe
+
+    delete datiForm.passwordConfirm;
+    if (subscribe) {
       submitHandlerSub(datiForm);
     } else {
       submitHandler(datiForm);
     }
-
-    console.log(datiForm);
   }
-
   return (
     <>
-    {error && <h4>{error}</h4>}
+      {(errorList.length > 0 || backendError) && (
+        <ul>
+          {errorList?.map((err) => (
+            <li key={err}>{err}</li>
+          ))}
+          {backendError && <li>{backendError}</li>}
+        </ul>
+      )}
       <Form
         className={classLogInForm["form-login"]}
         noValidate
         onSubmit={formData}
-        
       >
         <h3>{subscribe ? "Registrati" : "Accedi"}</h3>
 
@@ -83,7 +105,10 @@ export default function LogInForm({
             type="button"
             classOf="second"
             text={subscribe ? "Accedi" : "Registrati"}
-            onClick={toggleSubscribe}
+            onClick={() => {
+              toggleSubscribe();
+              setErrorList([]);
+            }}
           />
         </div>
       </Form>
