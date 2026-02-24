@@ -1,6 +1,6 @@
 import { useImmer } from "use-immer";
 import { createPortal } from "react-dom";
-import { forwardRef, useState ,useEffect} from "react";
+import { forwardRef, useState, useEffect } from "react";
 const API_URL = import.meta.env.VITE_API_URL;
 
 import { useNavigate, useParams } from "react-router-dom";
@@ -18,16 +18,17 @@ const ModalCheckout = forwardRef(function ModalCheckout(
 ) {
   const { clearCart, cart, totalPrice } = useItems();
   const navigate = useNavigate();
+  const [error, setError] = useState(null);
+  const [cc, setCC] = useState("");
   const user = localStorage.getItem("username");
   const [indirizzoSpedizione, setIndirizzoSpedizione] = useImmer({
-    name: "",
+    nome: "",
     cognome: "",
     via: "",
     citta: "",
     cap: "",
     paese: "",
   });
-
 
   const {
     data: userData,
@@ -45,7 +46,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
     },
   });
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: (order) => postOrders(order),
     onSuccess: () => {
       clearCart();
@@ -54,15 +55,32 @@ const ModalCheckout = forwardRef(function ModalCheckout(
     },
   });
   function handleCheckout(e) {
-      const order = {
-    prodotti: cart.map((item) => ({
-      prodottoId: item._id,
-      quantita: item.quantity,
-    })),
-    indirizzoSpedizione,
-    metodoPagamento: `carta`,
-    pagato: true,
-  };
+    if (
+      !indirizzoSpedizione.nome ||
+      !indirizzoSpedizione.cognome ||
+      !indirizzoSpedizione.via ||
+      !indirizzoSpedizione.citta ||
+      !indirizzoSpedizione.cap ||
+      !indirizzoSpedizione.paese
+    ) {
+      setError("Compila tutti i campi dell'indirizzo");
+      return;
+    }
+    if (cc === "") {
+      setError("Inserisci la carta di credito");
+      return;
+    }
+
+    setError(null);
+    const order = {
+      prodotti: cart.map((item) => ({
+        prodottoId: item._id,
+        quantita: item.quantity,
+      })),
+      indirizzoSpedizione,
+      metodoPagamento: `carta`,
+      pagato: true,
+    };
 
     console.log("paga");
     console.log("order ", order);
@@ -71,26 +89,30 @@ const ModalCheckout = forwardRef(function ModalCheckout(
   }
 
   function onChange(e) {
-    setIndirizzoSpedizione((draft) => (draft[e.target.name] = e.target.value));
-  }
-
-  useEffect(() => {
-  if (userData?.user) {
-    setIndirizzoSpedizione(draft => {
-      draft.nome = userData.user.nome || "";
-      draft.cognome = userData.user.cognome || "";
-      draft.via = userData.user.indirizzo?.via || "";
-      draft.citta = userData.user.indirizzo?.citta || "";
-      draft.cap = userData.user.indirizzo?.cap || "";
-      draft.paese = userData.user.indirizzo?.paese || "Italia";
+    setIndirizzoSpedizione((draft) => {
+      draft[e.target.name] = e.target.value;
     });
   }
-}, [userData]);
-
+  function onChangeCC(e) {
+    setCC(e.target.value);
+  }
+  useEffect(() => {
+    if (userData?.user) {
+      setIndirizzoSpedizione((draft) => {
+        draft.nome = userData.user.nome || "";
+        draft.cognome = userData.user.cognome || "";
+        draft.via = userData.user.indirizzo?.via || "";
+        draft.citta = userData.user.indirizzo?.citta || "";
+        draft.cap = userData.user.indirizzo?.cap || "";
+        draft.paese = userData.user.indirizzo?.paese || "Italia";
+      });
+    }
+  }, [userData]);
 
   return (
     <Modal ref={ref}>
       <h2>Modal</h2>
+      {error &&<h2>{error}</h2>}
       <form className={classModalCheckout["modal-checkout"]}>
         <div className={classModalCheckout["input-container"]}>
           <Input
@@ -161,15 +183,27 @@ const ModalCheckout = forwardRef(function ModalCheckout(
               name="cartaDiCredito"
               label="Carta Di Credito"
               placeholder="Carta Di Credito"
+              onChange={(e) => onChangeCC(e)}
             />
           </div>
 
           <Button type="button" onClick={closeModal} text="Indietro" />
           <Button
-            disabled={cart.length === 0 || totalPrice() === 0}
             type="button"
             text="Paga"
-            onClick={ handleCheckout}
+            disabled={
+              isPending ||
+              cart.length === 0 ||
+              totalPrice() === 0 ||
+              cc === "" ||
+              !indirizzoSpedizione.nome ||
+              !indirizzoSpedizione.cognome ||
+              !indirizzoSpedizione.via ||
+              !indirizzoSpedizione.citta ||
+              !indirizzoSpedizione.cap ||
+              !indirizzoSpedizione.paese
+            }
+            onClick={handleCheckout}
           />
         </div>
       </form>
