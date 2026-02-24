@@ -1,10 +1,10 @@
 import { useImmer } from "use-immer";
 import { createPortal } from "react-dom";
-import { forwardRef, useState } from "react";
+import { forwardRef, useState ,useEffect} from "react";
 const API_URL = import.meta.env.VITE_API_URL;
 
 import { useNavigate, useParams } from "react-router-dom";
-import { useMutation,useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { postOrders } from "../../util/httpRequest";
 import Button from "./Button";
 import Input from "./Input";
@@ -19,7 +19,6 @@ const ModalCheckout = forwardRef(function ModalCheckout(
   const { clearCart, cart, totalPrice } = useItems();
   const navigate = useNavigate();
   const user = localStorage.getItem("username");
-
   const [indirizzoSpedizione, setIndirizzoSpedizione] = useImmer({
     name: "",
     cognome: "",
@@ -28,15 +27,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
     cap: "",
     paese: "",
   });
-  const order = {
-    prodotti: cart.map((item) => ({
-      prodottoId: item._id,
-      quantita: item.quantity,
-    })),
-    indirizzoSpedizione,
-    metodoPagamento: `carta`,
-    pagato: true,
-  };
+
 
   const {
     data: userData,
@@ -54,8 +45,6 @@ const ModalCheckout = forwardRef(function ModalCheckout(
     },
   });
 
-
-
   const { mutate } = useMutation({
     mutationFn: (order) => postOrders(order),
     onSuccess: () => {
@@ -65,45 +54,103 @@ const ModalCheckout = forwardRef(function ModalCheckout(
     },
   });
   function handleCheckout(e) {
-const formData = new FormData(e.target);
-    setIndirizzoSpedizione((draft) => {
-      draft.name = formData.get("name");
-      draft.cognome = formData.get("lastname");
-      draft.via = formData.get("address");
-      draft.citta = formData.get("city");
-      draft.cap = formData.get("cap");
-      draft.paese = formData.get("country");
-    });
+      const order = {
+    prodotti: cart.map((item) => ({
+      prodottoId: item._id,
+      quantita: item.quantity,
+    })),
+    indirizzoSpedizione,
+    metodoPagamento: `carta`,
+    pagato: true,
+  };
+
     console.log("paga");
-    console.log('order ',order);
-    
-    // mutate(order);
+    console.log("order ", order);
+    console.log("dati user da db", userData);
+    mutate(order);
   }
+
+  function onChange(e) {
+    setIndirizzoSpedizione((draft) => (draft[e.target.name] = e.target.value));
+  }
+
+  useEffect(() => {
+  if (userData?.user) {
+    setIndirizzoSpedizione(draft => {
+      draft.nome = userData.user.nome || "";
+      draft.cognome = userData.user.cognome || "";
+      draft.via = userData.user.indirizzo?.via || "";
+      draft.citta = userData.user.indirizzo?.citta || "";
+      draft.cap = userData.user.indirizzo?.cap || "";
+      draft.paese = userData.user.indirizzo?.paese || "Italia";
+    });
+  }
+}, [userData]);
+
 
   return (
     <Modal ref={ref}>
       <h2>Modal</h2>
-      <form
-        className={classModalCheckout["modal-checkout"]}
-        
-      >
+      <form className={classModalCheckout["modal-checkout"]}>
         <div className={classModalCheckout["input-container"]}>
-          <Input type="text" id="cognome" name="cognome" label="Cognome" defaultValue={userData?.user?.nome}/>
+          <Input
+            type="text"
+            id="cognome"
+            name="cognome"
+            label="Cognome"
+            defaultValue={userData?.user?.nome}
+            onChange={(e) => onChange(e)}
+          />
         </div>
         <div className={classModalCheckout["input-container"]}>
-          <Input type="text" id="nome" name="nome" label="Nome" defaultValue={userData?.user?.cognome} />
+          <Input
+            type="text"
+            id="nome"
+            name="nome"
+            label="Nome"
+            defaultValue={userData?.user?.cognome}
+            onChange={(e) => onChange(e)}
+          />
         </div>
         <div className={classModalCheckout["input-container"]}>
-          <Input type="text" id="via" name="via" label="Via"  defaultValue={userData?.user?.via} />
+          <Input
+            type="text"
+            id="via"
+            name="via"
+            label="Via"
+            defaultValue={userData?.user?.indirizzo.via}
+            onChange={(e) => onChange(e)}
+          />
         </div>
         <div className={classModalCheckout["input-container"]}>
-          <Input type="text" id="citta" name="citta" label="Citta" defaultValue={userData?.user?.citta} />
+          <Input
+            type="text"
+            id="citta"
+            name="citta"
+            label="Citta"
+            defaultValue={userData?.user?.indirizzo.citta}
+            onChange={(e) => onChange(e)}
+          />
         </div>
         <div className={classModalCheckout["input-container"]}>
-          <Input type="text" id="cap" name="cap" label="Cap" defaultValue={userData?.user?.cap} />
+          <Input
+            type="text"
+            id="cap"
+            name="cap"
+            label="Cap"
+            defaultValue={userData?.user?.indirizzo.cap}
+            onChange={(e) => onChange(e)}
+          />
         </div>
         <div className={classModalCheckout["input-container"]}>
-          <Input type="text" id="paese" name="paese" label="Paese" defaultValue={userData?.user?.paese} />
+          <Input
+            type="text"
+            id="paese"
+            name="paese"
+            label="Paese"
+            defaultValue={userData?.user?.indirizzo.paese || "Italia"}
+            onChange={(e) => onChange(e)}
+          />
         </div>
 
         <div className={classModalCheckout["button-container"]}>
@@ -122,7 +169,7 @@ const formData = new FormData(e.target);
             disabled={cart.length === 0 || totalPrice() === 0}
             type="button"
             text="Paga"
-            onClick={() => handleCheckout(order)}
+            onClick={ handleCheckout}
           />
         </div>
       </form>
