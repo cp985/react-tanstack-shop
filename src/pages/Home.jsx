@@ -1,14 +1,15 @@
 //! home in cui si ci logga e registra
-import { useState } from "react";
-import {  useNavigate } from "react-router-dom";
-import {  useMutation } from "@tanstack/react-query";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useMutation } from "@tanstack/react-query";
 import LogInForm from "../components/UI/LogInForm";
 import { logIn, signUp } from "../util/httpRequest";
 import classHome from "./style/Home.module.css";
 export default function Home() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const navigate = useNavigate();
-  const { mutate, isLoading, isError, error, data , reset} = useMutation({
+  const messageDeleteAccount = useLocation().state?.message;
+  const { mutate, isLoading, isError, error, data, reset } = useMutation({
     mutationFn: (user) => logIn(user),
     onSuccess: (response) => {
       console.log("onSuccess data", response);
@@ -52,10 +53,20 @@ export default function Home() {
     mutateSub(user);
   }
 
+  useEffect(() => {
+    if (messageDeleteAccount) {
+      const timer = setTimeout(() => {
+        navigate(".", { replace: true, state: {} });
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [messageDeleteAccount, navigate]);
+
   return (
     <div className={classHome.home}>
       <h1>Home Login</h1>
-    
+      {messageDeleteAccount && <h2> {messageDeleteAccount}</h2>}
 
       <LogInForm
         subscribe={isSubscribed}

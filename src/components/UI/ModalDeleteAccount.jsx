@@ -21,8 +21,15 @@ const ModalDeleteAccount = forwardRef(function ModalDeleteAccount(
   const { mutate, isError, isPending, error } = useMutation({
     mutationFn: (password) => deleteAccount(password),
     onSuccess: () => {
+      localStorage.clear();
       closeModalDeleteAccount();
-      navigate("/");
+      navigate("/", {
+        replace: true,
+        state: {
+          message:
+            "Il tuo account è stato eliminato correttamente. Ci mancherai! 😢",
+        },
+      });
     },
   });
 
@@ -52,7 +59,7 @@ const ModalDeleteAccount = forwardRef(function ModalDeleteAccount(
         <Button
           type="button"
           text="Conferma"
-          disabled={isPending}
+          disabled={isPending || password === ""}
           onClick={() => deleteAcc(password)}
         />
       </div>
