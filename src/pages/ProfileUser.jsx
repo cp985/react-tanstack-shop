@@ -4,15 +4,15 @@ import FormProfile from "../components/UI/FormProfile";
 import Button from "../components/UI/Button";
 import { useItems } from "../context/FilteredItemsContext";
 export default function ProfileUser() {
+  const { openModalDeleteAccount } = useItems();
 
-  const { openModal } = useItems();
   return (
     <section className={classProfileUser["section-profilo"]}>
       <h1> ProfileUser</h1>
       <FormProfile />
       <div>
         <h2>Vuoi cancellare il tuo account?</h2>
-        <Button onClick={openModal} text="Delete Account" />
+        <Button onClick={openModalDeleteAccount} text="Delete Account" />
       </div>
     </section>
   );

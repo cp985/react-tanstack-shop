@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 const ItemsContext = createContext();
 
-export function ItemsProvider({ children, items, openModal }) {
+export function ItemsProvider({ children, items, openModal,openModalDeleteAccount,closeModalDeleteAccount }) {
   //user
   const [user, setUser] = useState({
     username: "",
@@ -171,6 +171,8 @@ export function ItemsProvider({ children, items, openModal }) {
         logOut,
         user,
         setUser,
+        openModalDeleteAccount,
+        closeModalDeleteAccount
       }}
     >
       {children}

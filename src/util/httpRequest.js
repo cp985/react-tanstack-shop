@@ -55,7 +55,7 @@ export async function httpLoader(queryClient) {
     });
   } catch (e) {
     const message =
-      e.response?.data?.message|| e.message || "Errore del server" ;
+      e.response?.data?.message || e.message || "Errore del server";
     const error = new Error(message);
     error.status = e.response?.status || 500;
 
@@ -77,14 +77,13 @@ export async function postOrders(order) {
     return response.data;
   } catch (e) {
     const message =
-      e.response?.data?.message|| e.message || "Errore del server" ;
+      e.response?.data?.message || e.message || "Errore del server";
     const error = new Error(message);
     error.status = e.response?.status || 500;
 
     throw error;
   }
 }
-
 
 export async function updateUser(userData) {
   try {
@@ -112,6 +111,34 @@ export async function updateUser(userData) {
       throw new Error("Errore di connessione al server");
     } else {
       throw new Error("Errore imprevisto durante la modifica");
+    }
+  }
+}
+
+export async function deleteAccount(password) {
+  try {
+    const response = await axios.delete(`${API_URL}/users/profile`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      data: { password: password },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error(
+      "❌ Errore cancellazione utente:",
+      error.response?.data || error.message,
+    );
+
+    // Gestisci gli errori dal backend
+    if (error.response?.data?.message) {
+      throw new Error(error.response.data.message);
+    } else if (error.request) {
+      throw new Error("Errore di connessione al server");
+    } else {
+      throw new Error("Errore imprevisto durante la cancellazione");
     }
   }
 }

@@ -5,7 +5,8 @@ import MainNav from "../UI/MainNav";
 import Footer from "../UI/Footer";
 import FormFilter from "../UI/FormFilter";
 import Header from "../UI/Header";
-import Modal from "../UI/Modal";
+import ModalCheckout from "../UI/ModalCheckout";
+import ModalDeleteAccount from "../UI/ModalDeleteAccount";
 import { ItemsProvider } from "../../context/FilteredItemsContext";
 const API_URL = import.meta.env.VITE_API_URL;
 import classWrapperLayoutMainNav from "./style/WrapperLayoutMainNav.module.css";
@@ -87,7 +88,7 @@ export default function WrapperLayoutMainNav() {
     return <div>Caricamento...</div>;
   }
 
-  //modal
+  //modal checkout
   function openModal() {
     modalRef.current.showModal();
   }
@@ -97,12 +98,23 @@ export default function WrapperLayoutMainNav() {
   }
 
   const modalRef = useRef();
+
+//modal delete account
+const modalDeleteAccountRef = useRef();
+function openModalDeleteAccount() {
+  modalDeleteAccountRef.current.showModal();
+}
+function closeModalDeleteAccount() {
+  modalDeleteAccountRef.current.close();
+}
+
   return (
     <>
      
       <Header />
-      <ItemsProvider items={items.products} openModal={openModal}>
-        <Modal ref={modalRef} closeModal={closeModal} openModal={openModal} />
+      <ItemsProvider items={items.products} openModal={openModal} openModalDeleteAccount={openModalDeleteAccount} closeModalDeleteAccount={closeModalDeleteAccount}>
+        <ModalCheckout ref={modalRef} closeModal={closeModal} openModal={openModal} />
+        <ModalDeleteAccount ref={modalDeleteAccountRef} closeModalDeleteAccount={closeModalDeleteAccount} openModalDeleteAccount={openModalDeleteAccount} />
         <MainNav setIsFilterOpen={toggleFilter} isFilterOpen={isFilterOpen} />
         <main className={classWrapperLayoutMainNav.main}>
           {isFilterOpen && (
