@@ -29,42 +29,44 @@ export default function OrdersHistory() {
 
   return (
     <>
-      <h1>OrdersHistory</h1>
+      <h3>I tuoi Ordini</h3>
       {isLoading && <p>Loading...</p>}
       {isError && <p>{error.message}</p>}
 
       {data && (
-        <ul className={classOrdersHistory.ul}>
+        <ul className={classOrdersHistory["orders"]}>
           {data.orders?.map((order) => (
-            <li
+            <li className={classOrdersHistory["order"]}
               key={order._id}
               onClick={() =>
                 setShowProducts(showProducts === order._id ? null : order._id)
               }
             >
-              <h3>{order._id}</h3>
-              <p>{order.stato}</p>
-              <p>{new Date(order.createdAt).toLocaleDateString("it-IT")}</p>
-              <p>{order.totale}</p>
+              <div className={classOrdersHistory["order-status"]}>
+                <p>Ordine n: {order._id}</p>
+                <p>Status: {order.stato}</p>
+                <p>
+                  Del: {new Date(order.createdAt).toLocaleDateString("it-IT")}
+                </p>
+                <p>Totale: {order.totale}</p>
+              </div>
+
               {showProducts === order._id && (
-                <div>
-                  <p>
-                    {order.prodotti.map(
-                      (product) =>
-                        product.nome +
-                        " " +
-                        product.quantita +
-                        " " +
-                        product.prezzo,
-                    )}
-                  </p>
-                </div>
+                <article className={classOrdersHistory.products}>
+                  {order.prodotti.map((product) => (
+                    <ul className={classOrdersHistory.product} key={product._id}>
+                     <li><p>Dettagli: {product.nome}</p></li> 
+                     <li><p>Qta.: {product.quantita}</p></li> 
+                     <li><p>Prezzo: {product.prezzo}</p></li> 
+                    </ul>
+                  ))}
+                </article>
               )}
             </li>
           ))}
         </ul>
       )}
-      <h2>Ordini effettuati : {data.orders?.length || 0}</h2>
+      <h3>Ordini effettuati : {data.orders?.length || 0}</h3>
     </>
   );
 }

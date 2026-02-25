@@ -8,9 +8,9 @@ export default function ProfileUser() {
 
   return (
     <section className={classProfileUser["section-profilo"]}>
-      <h1> ProfileUser</h1>
+      <h3> I tuoi dati personali</h3>
       <FormProfile />
-      <div>
+      <div className={classProfileUser["delete-container"]}>
         <h2>Vuoi cancellare il tuo account?</h2>
         <Button onClick={openModalDeleteAccount} text="Delete Account" />
       </div>

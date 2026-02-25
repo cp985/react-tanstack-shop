@@ -9,7 +9,7 @@ export default function AccountUser() {
       <SecondNav />
       <div className={classAccountUser["account-container"]}>
        
-        <h1>AccountUser</h1>
+    <h2>Il tuo Profilo</h2>
         <Outlet />
       </div>
     </section>

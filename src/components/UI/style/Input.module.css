@@ -1,3 +1,15 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    /* Questo trucco usa un'ombra interna infinita per coprire il giallo del browser */
+    -webkit-box-shadow: 0 0 0 30px #1a1a2e inset !important;
+    
+    /* Colore del testo */
+    -webkit-text-fill-color: white !important;
+}
+
+
 .inputCntainer{
     display: flex;
     justify-content: center;

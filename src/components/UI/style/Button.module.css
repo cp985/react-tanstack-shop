@@ -30,6 +30,7 @@
     color: var(--font-color-dark);
     text-decoration: underline;
     font-weight: 600;
+     border: 2px solid var(--border-orange);
 }
 
 .active {
@@ -39,6 +40,7 @@
     cursor: pointer;
     padding: 0.5rem;
     font-weight: 600;
+     border: 2px solid var(--border-orange);
 }
 
 button:disabled {

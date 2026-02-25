@@ -1,23 +1,52 @@
-.ul{
+.orders{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 95%;
+    width: 90%;
+    border-bottom: 1px solid var(--border-gold-simple);
 }
 
-.ul li{
+.orders li.order{
     list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+flex-direction: column;
+    gap: 1rem;
+    border: 1px solid var(--border-gold-simple);
+    border-bottom: none;
+    padding: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.order-status{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    border: 1px solid #f2ef20;
-    border-radius: 0.3rem;
-    padding: 1rem;
-    width: 95%;
-    flex-wrap: wrap;
+    cursor: pointer;
+
+
 }
+.product,.products{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+        cursor: pointer;
+}
+
+.product{
+    padding: 1rem;
+    border-top: 1px dashed var(--border-gold-simple);
+
+}
+
+
+
+
 
 .containerProducts{
     display: flex;
@@ -32,4 +61,24 @@
 .containerProducts.active{
     height: 100%;
     opacity: 1;
+}
+
+
+.products {
+    animation: pixelAppear 0.2s steps(4) forwards;
+    overflow: hidden;
+}
+
+@keyframes pixelAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        max-height: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 200px;
+    }
 }

@@ -1,16 +1,16 @@
 .secondNav{
  position: sticky;
-    top: 0;
+    top: calc(var(--nav-height));
     left: 0;
     width: 30%;
     height: 50dvh;
-    background-color: #e4e000;
+    background-color: var(--bacground-color-nav);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-   
-
-   
+   border: 2px solid var(--border-gold-simple);
+   border-top: none;
+   /* padding-top:5rem; */
 }

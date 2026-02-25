@@ -88,7 +88,7 @@ input {
 
 .form-login .toggle-container button:hover {
  
-        border: 1px solid var(--border-gold-simple);
+ border: 1px solid var(--border-gold-simple);
 
 }
 
@@ -130,6 +130,5 @@ input {
         opacity: 1;
         transform: translateY(0);
         max-height: 200px;
-        /* Un valore sufficiente per i due input */
     }
 }
