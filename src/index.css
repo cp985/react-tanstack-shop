@@ -14,6 +14,17 @@
   -moz-osx-font-smoothing: grayscale;
 --header-height: 6rem;
 --nav-height: 3rem;
+--titleFont:'Jersey 10';
+--titlePage:Sixtyfour;
+--background-color-tr: rgba(26, 26, 46, 0.698);
+--background-color: rgb(26, 26, 46);
+--border-gold-simple:#ffd700;
+--button-background:#ffd700;
+--button-hover-background:rgb(255, 249, 214);
+--border-orange:rgb(141, 92, 0);
+--font-color-dark:rgb(26, 26, 46);
+--font-color-light:wihte;
+--font-color-error:rgb(255, 82, 82);
 }
 
 

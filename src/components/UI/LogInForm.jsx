@@ -11,6 +11,8 @@ export default function LogInForm({
   toggleSubscribe,
   submitHandlerSub,
   backendError,
+  isPendingLogin,
+  isPendingSub,
 }) {
   const [errorList, setErrorList] = useState([]);
 
@@ -48,10 +50,20 @@ export default function LogInForm({
       submitHandler(datiForm);
     }
   }
+
+  let title;
+  if (isPendingLogin || isPendingSub) {
+    title = "Caricamento Profilo...";
+  } else if (subscribe) {
+    title = "Registrati";
+  } else {
+    title = "Accedi";
+  }
+
   return (
     <>
       {(errorList.length > 0 || backendError) && (
-        <ul>
+        <ul className={classLogInForm["error-list"]}>
           {errorList?.map((err) => (
             <li key={err}>{err}</li>
           ))}
@@ -63,8 +75,7 @@ export default function LogInForm({
         noValidate
         onSubmit={formData}
       >
-        <h3>{subscribe ? "Registrati" : "Accedi"}</h3>
-
+        <h2>{title}</h2>
         <fieldset>
           <div className={classLogInForm["input-container"]}>
             <Input type="email" id="email" name="email" label="Email" />
@@ -79,7 +90,7 @@ export default function LogInForm({
           </div>
         </fieldset>
         {subscribe && (
-          <fieldset>
+          <fieldset className={classLogInForm["pixel-field-wrapper"]}>
             <div className={classLogInForm["input-container"]}>
               <Input
                 type="text"
@@ -98,13 +109,17 @@ export default function LogInForm({
             </div>
           </fieldset>
         )}
-        <Button text={subscribe ? "Registrati" : "Accedi"} />
-        <div>
+        <Button
+          disabled={isPendingLogin || isPendingSub}
+          text={subscribe ? "Registrati" : "Accedi"}
+        />
+        <div className={classLogInForm["toggle-container"]}>
           <p>{subscribe ? "Hai già un account?" : "Non hai un account?"}</p>
           <Button
             type="button"
             classOf="second"
             text={subscribe ? "Accedi" : "Registrati"}
+            disabled={isPendingLogin || isPendingSub}
             onClick={() => {
               toggleSubscribe();
               setErrorList([]);

@@ -9,17 +9,18 @@ export default function Home() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const navigate = useNavigate();
   const messageDeleteAccount = useLocation().state?.message;
-  const { mutate, isLoading, isError, error, data, reset } = useMutation({
-    mutationFn: (user) => logIn(user),
-    onSuccess: (response) => {
-      console.log("onSuccess data", response);
-      localStorage.setItem("token", response.token);
-      localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
-      localStorage.setItem("username", response.user.username);
-      localStorage.setItem("email", response.user.email);
-      navigate("/app/home");
-    },
-  });
+  const { mutate, isLoading, isError, error, data, isPending, reset } =
+    useMutation({
+      mutationFn: (user) => logIn(user),
+      onSuccess: (response) => {
+        console.log("onSuccess data", response);
+        localStorage.setItem("token", response.token);
+        localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
+        localStorage.setItem("username", response.user.username);
+        localStorage.setItem("email", response.user.email);
+        navigate("/app/home");
+      },
+    });
 
   const {
     mutate: mutateSub,
@@ -27,6 +28,7 @@ export default function Home() {
     isError: isErrorSub,
     error: errorSub,
     data: dataSub,
+    isPending: isPendingSub,
     reset: resetSub,
   } = useMutation({
     mutationFn: (user) => signUp(user),
@@ -65,8 +67,8 @@ export default function Home() {
 
   return (
     <div className={classHome.home}>
-      <h1>Home Login</h1>
-      {messageDeleteAccount && <h2> {messageDeleteAccount}</h2>}
+      <h1>The Golden-Pixel Inn</h1>
+      {messageDeleteAccount && <h2 className={classHome.message}> {messageDeleteAccount}</h2>}
 
       <LogInForm
         subscribe={isSubscribed}
@@ -74,6 +76,8 @@ export default function Home() {
         submitHandler={submitHandler}
         submitHandlerSub={submitHandlerSub}
         backendError={isSubscribed ? errorSub?.message : error?.message}
+        isPendingSub={isPendingSub}
+        isPendingLogin={isPending}
       />
     </div>
   );
