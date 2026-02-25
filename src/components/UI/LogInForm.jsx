@@ -75,7 +75,7 @@ export default function LogInForm({
         noValidate
         onSubmit={formData}
       >
-        <h2>{title}</h2>
+        <h2 className={title==="Caricamento Profilo..."?classLogInForm.loading:""}>{title}</h2>
         <fieldset>
           <div className={classLogInForm["input-container"]}>
             <Input type="email" id="email" name="email" label="Email" />

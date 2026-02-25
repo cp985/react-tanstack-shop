@@ -3,8 +3,11 @@
     position: fixed;
     left: 0;
     width: 30%;
-    height: 100vh;
-    background-color: #e4e000;
+    height: 100%;
+    /* padding-top: 1rem; */
+    background-color: var(--bacground-color-nav);
+    border: 2px solid var(--border-gold-simple);
+   
     z-index: 1;
     top:0;
 }

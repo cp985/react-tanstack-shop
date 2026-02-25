@@ -1,44 +1,48 @@
 .button {
 
     padding: 0.5rem;
-    background-color: #65d469;
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
+    background-color: var(--button-background);
+    color: var(--font-color-dark);
     cursor: pointer;
+    border: 2px solid var(--border-orange);
+    font-weight: 600;
 }
 
 .secondaryButton {
     padding: 0.5rem;
-    color: var(--text-color);
-    border: none;
-    border-radius: 0.5rem;
-    background-color: transparent;
+    color: var(--font-color-dark);
+
+    background-color: var(--border-orange);
+    border: 1px solid var(--border-gold-simple);
     cursor: pointer;
+    width: 80%;
+    font-weight: 600;
 }
 
 .button:hover {
-    background-color: #125b15;
-    color: white;
+    background-color: var(--button-hover-background);
+    color: var(--font-color-dark);
+
 }
 
 .button:active {
-    background-color: #125b15;
-    color: white;
+    background-color: var(--button-hover-background);
+    color: var(--font-color-dark);
     text-decoration: underline;
+    font-weight: 600;
 }
 
 .active {
-    background-color: #125b15;
-    color: white;
+    background-color: var(--button-hover-background);
+    color: var(--font-color-dark);
     text-decoration: underline;
-    border: none;
-    border-radius: 0.5rem;
     cursor: pointer;
     padding: 0.5rem;
+    font-weight: 600;
 }
 
 button:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+    font-weight: 600;
 }

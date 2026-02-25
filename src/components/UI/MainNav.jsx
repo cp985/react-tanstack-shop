@@ -87,7 +87,7 @@ useEffect(() => {
             <Button text={"Filter"} onClick={setIsFilterOpen} />
           </li>
           <li className={classMainNav["search-li"]}>
-            <Input type="text" id="search" name="search" label="Search" onChange={handleSearchChange}/>
+            <Input classOfInput={"search"} type="text" id="search" name="search" label="" onChange={handleSearchChange} placeholder={'Search'}/>
           </li>
         </ul>
       )}

@@ -1,19 +1,25 @@
 .form-filter {
+    width: 100%;
+    padding: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 0.1rem;
+    background-color: var(--bacground-color-nav);
+    border-top: none;
+
 
 
 }
 
 .form-filter label {
-    background-color: #3081fa;
+    background-color: var(--button-background);
     cursor: pointer;
     padding: 0.2rem;
-    border-radius: 0.5rem;
-    border: 1px solid #f2ef20;
+   color: var(--font-color-dark);
+   font-weight: 600;
+    border: 1px solid var(--border-orange);
 }
 
 
@@ -21,10 +27,14 @@
 
 .form-filter label:hover,
 .form-filter input:checked+label {
-    background-color: rgb(137, 137, 1);
+    background-color: var(--button-hover-background);
 }
 
-
+legend{
+    color: var(--font-color-light);
+    font-family: var(--titleFont);
+    font-weight: 600;
+    font-size: 1.2rem;}
 
 fieldset {
     font-size: 0.9rem;
@@ -36,16 +46,23 @@ fieldset {
     gap: 0.2rem;
     padding: 0.1rem;
     border-radius: 0.3rem;
+    border: 1px solid var(--border-gold-simple);
 }
 
 .fieldset-prezzo {
     gap: 0.1rem;
 }
 
-.fieldset-prezzo label,
-.fieldset-prezzo label:hover {
+.fieldset-prezzo label{
+  
+    /* background-color: none; */
+    color: var(--font-color-light);
     cursor: none;
-    background-color: transparent;
-    user-select: none;
 
+}
+
+.form-filter .fieldset-prezzo label:hover,
+.form-filter .fieldset-prezzo label {
+pointer-events: none;
+color: var(--font-color-dark);
 }

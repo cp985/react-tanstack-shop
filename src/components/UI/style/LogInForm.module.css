@@ -18,7 +18,7 @@
 
 }
 
-h2 {
+.form-login h2 {
     font-family: var(--titleFont);
     font-size: 2.5rem;
 }
@@ -45,7 +45,7 @@ div.input-container {
     gap: 0.2rem;
 }
 
-label {
+.form-login label {
     font-family: var(--titleFont);
     ;
     font-size: 1.3rem;
@@ -81,11 +81,37 @@ input {
 
 
 }
+.form-login .toggle-container{
+    width: 100%;
+    border-top: 1px solid var(--border-gold-simple);
+}
 
 .form-login .toggle-container button:hover {
  
         border: 1px solid var(--border-gold-simple);
 
+}
+
+.loading {
+  animation: pixel-gold-flash 0.6s steps(2) infinite;
+  
+
+}
+
+@keyframes pixel-gold-flash {
+  0% {
+   
+    color: var(--font-color-light);
+    box-shadow: 
+      0 4px 0 0 #bcbcbc, 
+      0 -4px 0 0 #000, 4px 0 0 0 #000, -4px 0 0 0 #000;
+  }
+  100% {
+    color: var(--border-gold-simple);
+    box-shadow: 
+      0 4px 0 0 #b87800, /* Ombra oro scuro */
+      0 -4px 0 0 #000, 4px 0 0 0 #000, -4px 0 0 0 #000;
+  }
 }
 
 .pixel-field-wrapper {
