@@ -41,6 +41,7 @@ gap: 0.5rem;
 
 .ul2 li.search-li input {
     width: 90%;
+    border-left: none;
 
 
 }
@@ -48,6 +49,19 @@ input.search,
 input.search::placeholder{
 
 color:var(--font-color-light);
+}
+
+.search-icon{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    color: var(--font-color-light);
+    border: 1px solid var(--border-gold-simple);
+    border-right: none;
+    background-color: var(--background-color);
+    padding: 0.2rem;
+    
 }
 
 

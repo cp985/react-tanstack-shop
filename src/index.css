@@ -4,6 +4,7 @@
   line-height: 1.5;
   font-weight: 400;
   font-size: 16px;
+  font-weight: 600;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
  background-color: #121238;
@@ -13,8 +14,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 --header-height: 6rem;
---nav-height: 4rem;
+--nav-height: 4rem ;
 --titleFont:'Jersey 10';
+--font-size-root:16px;
+--font-weight-root:600;
 --titlePage:Sixtyfour;
 --background-color-tr: rgba(26, 26, 46, 0.698);
 --background-color: rgb(26, 26, 46);

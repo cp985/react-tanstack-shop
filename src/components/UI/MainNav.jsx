@@ -6,36 +6,17 @@ import { useItems } from "../../context/FilteredItemsContext";
 import classMainNav from "./style/MainNav.module.css";
 import Button from "./Button";
 import Input from "./Input";
-
+import { Lightbulb, Moon,Search } from "pixelarticons/react";
 export default function MainNav({ setIsFilterOpen }) {
   const [theme, setTheme] = useState("light");
-  const [isOpenAccount, setIsOpenAccount] = useState(false);
   const location = useLocation();
   const path = location.pathname;
   const username = localStorage.getItem("username");
-  const menuAccountRef = useRef(null);
-  const {quantityCart,handleSearchChange}=useItems();
+  const { quantityCart, handleSearchChange } = useItems();
 
   function toggleTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
   }
-
-  function toggleAccount() {
-    setIsOpenAccount(!isOpenAccount);
-  }
-
-useEffect(() => {
-    const handleClickFuori = (event) => {
-      if (isOpenAccount && menuAccountRef.current && !menuAccountRef.current.contains(event.target)) {
-        setIsOpenAccount(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickFuori);
-    
-    return () => {
-      document.removeEventListener("mousedown", handleClickFuori);
-    };
-  }, [isOpenAccount]);
 
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
@@ -55,29 +36,28 @@ useEffect(() => {
         </li>
 
         <li>
+          <Button text={"Contact"} isLink={true} path={"newsLetterContact"} />
+        </li>
+        <li>
           <Button
-            text={"Contact"}
+            text={`Cart(${quantityCart()})`}
             isLink={true}
-            path={"newsLetterContact"}
+            path={`${username}/cart`}
+          />
+        </li>
+
+        <li>
+          <Button
+            text={"Account"}
+            isLink={true}
+            path={`accountUser/${username}/profile`}
           />
         </li>
         <li>
-          <Button text={`Cart(${quantityCart()})`} isLink={true} path={`${username}/cart`} />
-        </li>
-
-        <li className={`${classMainNav["account-li"]} `}>
-          <Button text={"Account"} onClick={toggleAccount} />
-          {isOpenAccount && (
-            <div ref={menuAccountRef} className={classMainNav["account-div"]}>
-              <Button text={"Profile"} isLink={true} path={`accountUser/${username}/profile`} />
-              <Button
-                classOf={"secondaryButton"}
-                text={theme === "dark" ? "Light" : "Dark"}
-                onClick={toggleTheme}
-              />
-               <Button text={"Logout"} isLink path={`accountUser/${username}/logout`} />
-            </div>
-          )}
+          <Button type="button" onClick={toggleTheme} npm install pixelarticons>
+            
+            {theme === "dark" ? <Moon /> : <Lightbulb />}
+          </Button>
         </li>
       </ul>
 
@@ -87,7 +67,18 @@ useEffect(() => {
             <Button text={"Filter"} onClick={setIsFilterOpen} />
           </li>
           <li className={classMainNav["search-li"]}>
-            <Input classOfInput={"search"} type="text" id="search" name="search" label="" onChange={handleSearchChange} placeholder={'Search'}/>
+           <div className={classMainNav['search-icon']}>
+             <Search />
+           </div>
+            <Input
+              classOfInput={"search"}
+              type="text"
+              id="search"
+              name="search"
+              label=""
+              onChange={handleSearchChange}
+              placeholder={"Search"}
+            />
           </li>
         </ul>
       )}

@@ -6,8 +6,8 @@ const { logOut } = useItems();
 
   return (
     <>
-      <h1>LogOut</h1>
-      <h1>Sei sicuro di voler uscire?</h1>
+      <h2>Log-Out</h2>
+      <h3>Sei sicuro di voler uscire?</h3>
       <p>Dovrai reinserire le tue credenziali per accedere al mercato.</p>
       <Button onClick={logOut} text="Logout" />
     </>

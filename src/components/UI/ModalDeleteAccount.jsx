@@ -6,7 +6,7 @@ import Modal from "./Modal";
 import Input from "./Input";
 import Button from "./Button";
 import { useItems } from "../../context/FilteredItemsContext";
-
+import classModalDelete from './style/ModalDeleteAccount.module.css'
 const ModalDeleteAccount = forwardRef(function ModalDeleteAccount(
   { children },
   ref,
@@ -40,28 +40,30 @@ const ModalDeleteAccount = forwardRef(function ModalDeleteAccount(
   return (
     <Modal ref={ref}>
       <h2>Sei sicuro di voler cancellare il tuo account?</h2>
-      <p>Inserisci la tua password per confermare</p>
+      <p className={classModalDelete["text"]}>Inserisci la tua password per confermare</p>
       {isError && <p>{error.message}</p>}
-      <Input
-        type="password"
-        id="password"
-        name="password"
-        label=""
-        placeholder="Password"
-        onChange={onChangePassword}
-      />
-      <div className="button-container">
-        <Button
-          type="button"
-          onClick={closeModalDeleteAccount}
-          text="Indietro"
+      <div className={classModalDelete["input-container"]}>
+        <Input
+          type="password"
+          id="password"
+          name="password"
+          label=""
+          placeholder="Password"
+          onChange={onChangePassword}
         />
-        <Button
-          type="button"
-          text="Conferma"
-          disabled={isPending || password === ""}
-          onClick={() => deleteAcc(password)}
-        />
+        <div className={classModalDelete["button-container"]}>
+          <Button
+            type="button"
+            onClick={closeModalDeleteAccount}
+            text="Indietro"
+          />
+          <Button
+            type="button"
+            text="Conferma"
+            disabled={isPending || password === ""}
+            onClick={() => deleteAcc(password)}
+          />
+        </div>
       </div>
     </Modal>
   );

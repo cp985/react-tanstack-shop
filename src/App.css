@@ -6,14 +6,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: var(--font-size-root);
+  font-weight: var(--font-weight-root);
   /* gap: 2rem; */
   --primary-theme-color: rgba(196, 181, 253, 0.3);
   --secondary-theme-color: rgba(251, 207, 232, 0.35);
   --tertiary-theme-color: rgba(191, 219, 254, 0.3);
   --quaternary-theme-color: rgba(254, 215, 170, 0.3);
   --quinary-theme-color: rgba(167, 243, 208, 0.2);
-  --text-color: #1a1a2e;
-  --background-base: #faf9f6;
+  --text-color: var(--font-color-dark);
+  --background-base: white;
 }
 
 [data-theme='dark'] {
@@ -22,7 +24,7 @@
   --tertiary-theme-color: rgba(59, 130, 246, 0.3);
   --quaternary-theme-color: rgba(245, 158, 11, 0.25);
   --quinary-theme-color: rgba(16, 185, 129, 0.15);
-  --text-color: white;
+  --text-color: var(--font-color-light);
   --background-base: #121238;
 }
 

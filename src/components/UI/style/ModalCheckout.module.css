@@ -1,11 +1,16 @@
 .modal-checkout{
     display: flex;
-    width: 100%;
+    width: 90%;
     justify-content: center;
     align-items: center;
-    
-    gap: 1rem
+    gap: 1rem;
+    margin: 0 auto;
 }
+
+.title{
+    text-align: center;
+}
+
 
 .input-container{
     display: flex;

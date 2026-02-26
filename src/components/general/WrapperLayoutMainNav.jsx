@@ -13,7 +13,7 @@ import classWrapperLayoutMainNav from "./style/WrapperLayoutMainNav.module.css";
 export default function WrapperLayoutMainNav() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const sidebarRef = useRef(null);
-  const [marginTop, setMarginTop] = useState(200);
+  const [marginTop, setMarginTop] = useState(210);
 
   const { data: items } = useSuspenseQuery({
     queryKey: ["items"],
@@ -74,7 +74,7 @@ export default function WrapperLayoutMainNav() {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const scrollY = window.scrollY;
-          setMarginTop(Math.max(110, 210 - scrollY));
+          setMarginTop(Math.max(120, 210 - scrollY));
           ticking = false;
         });
         ticking = true;

@@ -1,4 +1,4 @@
-.button {
+/* .button {
 
     padding: 0.5rem;
     background-color: var(--button-background);
@@ -47,4 +47,64 @@ button:disabled {
     cursor: not-allowed;
     opacity: 0.5;
     font-weight: 600;
+}
+
+ */
+
+ .button {
+    padding: 0.5rem;
+    background-color: var(--button-background);
+    color: var(--font-color-dark);
+    cursor: pointer;
+    border: 2px solid var(--border-orange);
+    font-weight: 600;
+    
+    position: relative;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s steps(2); 
+    box-shadow: 0 0 0 0 rgba(0,0,0,0); 
+}
+
+.secondaryButton {
+
+    padding: 0.5rem;
+    color: var(--font-color-dark);
+    background-color: var(--border-orange);
+    border: 1px solid var(--border-gold-simple);
+    cursor: pointer;
+    width: 80%;
+    font-weight: 600;
+}
+
+.button:hover {
+    background-color: var(--button-hover-background);
+    color: var(--font-color-dark);
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0px 0px var(--border-orange);
+}
+
+.button:active, .active {
+    background-color: var(--button-hover-background);
+    color: var(--font-color-dark);
+    text-decoration: underline;
+    font-weight: 600;
+    border: 2px solid var(--border-orange);
+    transform: translate(0px, 0px);
+    box-shadow: 0px 0px 0px 0px var(--border-orange);
+}
+
+.active {
+    cursor: pointer;
+    padding: 0.5rem;
+    border-color: var(--border-orange);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    font-weight: 600;
+    transform: none !important;
+    box-shadow: none !important;
 }

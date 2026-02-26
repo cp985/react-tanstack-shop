@@ -34,6 +34,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
     data: userData,
     isLoading: isLoadingData,
     isError: isErrorData,
+    error:isErrorM,
   } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
@@ -82,9 +83,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
       pagato: true,
     };
 
-    console.log("paga");
-    console.log("order ", order);
-    console.log("dati user da db", userData);
+
     mutate(order);
   }
 
@@ -111,8 +110,9 @@ const ModalCheckout = forwardRef(function ModalCheckout(
 
   return (
     <Modal ref={ref}>
-      <h2>Modal</h2>
-      {error &&<h2>{error}</h2>}
+      <h2 className={classModalCheckout['title']}>Compila i campi per la spedizione</h2>
+      {error &&<h3>{error}</h3>}
+      {isErrorData && <h3>{isErrorM.message}</h3>}
       <form className={classModalCheckout["modal-checkout"]}>
         <div className={classModalCheckout["input-container"]}>
           <Input
@@ -186,8 +186,10 @@ const ModalCheckout = forwardRef(function ModalCheckout(
               onChange={(e) => onChangeCC(e)}
             />
           </div>
+<div className={classModalCheckout["button-container"]}>
 
-          <Button type="button" onClick={closeModal} text="Indietro" />
+
+            <Button type="button" onClick={closeModal} text="Indietro" />
           <Button
             type="button"
             text="Paga"
@@ -205,6 +207,8 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             }
             onClick={handleCheckout}
           />
+</div>
+
         </div>
       </form>
     </Modal>
