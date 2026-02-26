@@ -34,7 +34,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
     data: userData,
     isLoading: isLoadingData,
     isError: isErrorData,
-    error:isErrorM,
+    error: isErrorM,
   } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
@@ -83,7 +83,6 @@ const ModalCheckout = forwardRef(function ModalCheckout(
       pagato: true,
     };
 
-
     mutate(order);
   }
 
@@ -110,8 +109,10 @@ const ModalCheckout = forwardRef(function ModalCheckout(
 
   return (
     <Modal ref={ref}>
-      <h2 className={classModalCheckout['title']}>Compila i campi per la spedizione</h2>
-      {error &&<h3>{error}</h3>}
+      <h2 className={classModalCheckout["title"]}>
+        Compila tutti i campi per la spedizione
+      </h2>
+      {error && <h3>{error}</h3>}
       {isErrorData && <h3>{isErrorM.message}</h3>}
       <form className={classModalCheckout["modal-checkout"]}>
         <div className={classModalCheckout["input-container"]}>
@@ -182,33 +183,30 @@ const ModalCheckout = forwardRef(function ModalCheckout(
               id="cartaDiCredito"
               name="cartaDiCredito"
               label="Carta Di Credito"
-              placeholder="Carta Di Credito"
+              placeholder="Numero C.C."
               onChange={(e) => onChangeCC(e)}
             />
           </div>
-<div className={classModalCheckout["button-container"]}>
-
-
+          <div className={classModalCheckout["buttons-container"]}>
             <Button type="button" onClick={closeModal} text="Indietro" />
-          <Button
-            type="button"
-            text="Paga"
-            disabled={
-              isPending ||
-              cart.length === 0 ||
-              totalPrice() === 0 ||
-              cc === "" ||
-              !indirizzoSpedizione.nome ||
-              !indirizzoSpedizione.cognome ||
-              !indirizzoSpedizione.via ||
-              !indirizzoSpedizione.citta ||
-              !indirizzoSpedizione.cap ||
-              !indirizzoSpedizione.paese
-            }
-            onClick={handleCheckout}
-          />
-</div>
-
+            <Button
+              type="button"
+              text="Paga"
+              disabled={
+                isPending ||
+                cart.length === 0 ||
+                totalPrice() === 0 ||
+                cc === "" ||
+                !indirizzoSpedizione.nome ||
+                !indirizzoSpedizione.cognome ||
+                !indirizzoSpedizione.via ||
+                !indirizzoSpedizione.citta ||
+                !indirizzoSpedizione.cap ||
+                !indirizzoSpedizione.paese
+              }
+              onClick={handleCheckout}
+            />
+          </div>
         </div>
       </form>
     </Modal>

@@ -14,13 +14,14 @@ export default function Input({
   max,
   step,
   placeholder,
-  defaultValue
+  defaultValue,
+  rows,
 }) {
   if (type === "textarea") {
     return (
       <>
         <label htmlFor={id}>{label}</label>
-        <textarea id={id} name={name}></textarea>;
+        <textarea onChange={onChange} value={value} className={classInput[classOf]} rows={rows} id={id} name={name} placeholder={placeholder} ></textarea>
       </>
     );
   }

@@ -1,6 +1,6 @@
 .modal-checkout{
     display: flex;
-    width: 90%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -14,7 +14,7 @@
 
 .input-container{
     display: flex;
-    width: 70%;
+    width: 60%;
     justify-content: space-between;
     align-items: center;
     flex-direction: row-reverse;
@@ -23,6 +23,16 @@
 
 .button-container{
     display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--border-gold-simple);
+
+}
+
+.buttons-container{
+       display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -36,4 +46,6 @@
     align-items: center;
     flex-direction: column-reverse;
     gap: 1rem;
+    border-right: 1px solid var(--border-gold-simple);
+margin-top: 1rem;
 }
