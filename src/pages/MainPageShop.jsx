@@ -10,7 +10,7 @@ export default function MainPageShop() {
 
   return (
     <section>
-      {filtered && <h1>{filtered.length} oggetti trovati</h1>}
+      {filtered && <h2>{filtered.length} oggetti trovati</h2>}
       <ItemContainer list={filtered ? filtered : items} />
     </section>
   );
