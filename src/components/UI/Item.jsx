@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import ItemImage from "./ItemImage";
+import { imageSprite } from "../../util/imageSprite";
 
 import classItem from "./style/Item.module.css";
 export default function Item({ item }) {
@@ -45,28 +47,34 @@ export default function Item({ item }) {
   }
   return (
     <Link to={`item/${item.id}`}>
-  
       <li
         key={item.id}
         className={`${classItem["item-card"]} ${classItem[backgroundStyle]}`}
       >
-        <h3 className={classItem.h3}>{item.nome}</h3>
-        <ul className={classItem["ul-classi"]}>
-          Classi:
-          {item.classe.map((classe) => (
-            <li key={classe}>{classe}</li>
-          ))}
-        </ul>
-        <div className={classItem["image-container"]}>
-          <img className={classItem.image} src="#" alt={item.name} />
+        <div className={classItem["item-info1"]}>
+          <h4>{item.rarita}</h4>
+          <h3>{item.nome}</h3>
+          <ul className={classItem["ul-class"]}>
+            Classi:
+            {item.classe.map((classe) => (
+              <li key={classe}>{classe},</li>
+            ))}
+          </ul>
         </div>
-        <p>
-          Tipo: {itemType} - Rarity: {item.rarita}
-        </p>
-        <p>
-          Rating: {item.rating} - Disponibili: {item.stock}
-        </p>
-        <p>Prezzo: {item.prezzo}</p>
+        <div className={classItem["image-container"]}>
+        
+          <ItemImage
+            spritePosX={imageSprite[item.id].x}
+            spritePosY={imageSprite[item.id].y}
+          />
+        </div>
+
+        <div className={classItem["item-info2"]}>
+          {" "}
+          <p>Tipo: {itemType}</p>
+          <p>Rating: {item.rating}</p>
+          <p className={classItem["price"]}>Prezzo: {item.prezzo}</p>
+        </div>
       </li>
     </Link>
   );

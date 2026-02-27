@@ -7,8 +7,7 @@
 }
 
 .ul{
-       border: 1px solid #f2ef20;
-    border-radius: 0.3rem;
+
     width: 98%;
     display: flex;
     justify-content: space-evenly;

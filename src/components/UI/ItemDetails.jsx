@@ -19,8 +19,7 @@ export default function ItemDetails() {
 
   function handleAddToCart(item) {
   addCart(item);
-    console.log("aggiunto",item);
-    console.log('cart', cart);
+
     
   }
 
@@ -29,8 +28,8 @@ export default function ItemDetails() {
       <h2>{item.nome}</h2>
 
       <ItemImage
-        spritePosX={imageSprite.id?.x}
-        spritePosY={imageSprite.id?.y}
+        spritePosX={imageSprite[item.id].x}
+        spritePosY={imageSprite[item.id].y}
       />
       <p>{item.descrizione}</p>
       <article className={classItemDetails["details-container"]}>

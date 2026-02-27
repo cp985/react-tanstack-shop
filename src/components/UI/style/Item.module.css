@@ -1,98 +1,144 @@
-.item{
-    list-style: none;
-  max-width: 15rem;
-  min-height: 25rem;
-    padding: 0.5rem;
-    border-radius: 6px;
-    border: 1px solid #f2ef20;
-    margin: 1rem;
-    background-color: rgba(23, 23, 23, 0.694);
+/* Contenitore Card Principale */
+.item-card {
+  position: relative;
+  /* Rimosso border-radius */
+  padding: 0.5rem;
+  /* Transizione scattosa: steps(4) invece di ease */
+  transition: transform 0.1s steps(2), filter 0.1s;
+  overflow: hidden;
+  background-color: #0f111a;
+  
+  /* Doppio Bordo Pixelato: Bordo Nero esterno, Bordo colorato interno */
+  border: 4px solid #000;
+  width: 15rem;
+  height: 25rem;
+  
+  /* Ombra solida (non sfumata) */
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+gap: 1rem;
 }
 
-.h3{
-    text-align: center;
-    padding: 0;
-    margin: 0;
+.item-card h3{
+  font-size: 1.8rem;
+letter-spacing:  0.1rem;
+line-height: 1.2;
 }
 
-.image{
-    margin: 0.5rem;
+
+
+.ul-class{
+  display: flex;
+flex-direction: row;
+  justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+
+
+  
 }
 
-.image-container{
+
+/* --- RARITÀ PIXELATE --- */
+/* Invece del gradiente, usiamo un "inset box-shadow" per creare un bagliore interno netto */
+
+.rarity-common {
+  border-color: #4a4a4a;
+  box-shadow: inset 0 0 0 4px #2a2a2a, 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.rarity-uncommon {
+  border-color: #1e88e5;
+  box-shadow: inset 0 0 0 4px #0d47a1, 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.rarity-rare {
+  border-color: #ffd700;
+  box-shadow: inset 0 0 0 4px #b8860b, 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.rarity-epic {
+  border-color: #e91e63;
+  box-shadow: inset 0 0 0 4px #880e4f, 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+.rarity-legendary {
+  border-color: #ff9800;
+  box-shadow: inset 0 0 0 4px #e65100, 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
+  animation: pulse-legendary 1s steps(2) infinite alternate;
+}
+
+/* Animazione Leggendaria: Scattosa, non fluida! */
+@keyframes pulse-legendary {
+  from { border-color: #ff9800; transform: scale(1); }
+  to { border-color: #fff; transform: scale(1.02); }
+}
+
+/* Hover: Il tasto si solleva (come i tuoi bottoni!) */
+.item-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0px 0px #000;
+  filter: brightness(1.1);
+  outline: 2px solid white; /* Un "flash" di selezione tipico degli RPG */
+  z-index: 0;
+}
+
+/* Lo slot dell'immagine (dove c'è lo sprite) */
+.image-container {
     width: 100%;
     height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Crea uno sfondo a "scacchiera" molto leggero o un piedistallo */
+    background-image: 
+      linear-gradient(45deg, #161925 25%, transparent 25%), 
+      linear-gradient(-45deg, #161925 25%, transparent 25%), 
+      linear-gradient(45deg, transparent 75%, #161925 75%), 
+      linear-gradient(-45deg, transparent 75%, #161925 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px 10px, 10px 0;
+    border-bottom: 4px solid #000;
+}
+
+.item-card h4{
+
+  background-color: var(--bacground-color-nav);
+  border: 1px solid var(--border-gold-simple);
+  padding: 0 0.5rem;
+
+  margin-right: auto ;
+}
+
+.item-info1,
+.item-info2
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-info1{
+  border-bottom: 1px solid var(--border-gold-simple);
+
+}
+.item-info2{
+  border-top: 1px solid var(--border-gold-simple);
+
+}
+
+.price{
+
+  background-color: var(--bacground-color-nav);
+  border: 1px solid var(--border-gold-simple);
+  padding: 0 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 
-/* Stile Base della Card */
-.item-card {
-  position: relative;
-  border-radius: 0.8rem;
-  padding: 1rem;
-  transition: all 0.3s ease-in-out;
-  overflow: hidden;
-  background-color: #0f111a; /* Sfondo scuro profondo */
-  border: 2px solid transparent;
-  width: 15rem;
- height: 25rem;
-
-}
-
-/* Comune - Grigio (Sottile) */
-.rarity-common {
-  border-color: #4a4a4a;
-  background: radial-gradient(circle at top left, rgba(120, 120, 120, 0.15), #0f111a 70%);
-}
-
-/* Non Comune - Blu (Fresco) */
-.rarity-uncommon {
-  border-color: #1e88e5;
-  background: radial-gradient(circle at top left, rgba(30, 136, 229, 0.2), #0f111a 70%);
-  box-shadow: 0 0 10px rgba(30, 136, 229, 0.1);
-}
-
-/* Rara - Giallo/Oro (Luminoso) */
-.rarity-rare {
-  border-color: #ffd700;
-  background: radial-gradient(circle at top left, rgba(255, 215, 0, 0.15), #0f111a 70%);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
-}
-
-/* Epica - Rosso/Viola (Energico) */
-.rarity-epic {
-  border-color: #e91e63;
-  background: radial-gradient(circle at top left, rgba(233, 30, 99, 0.2), #0f111a 70%);
-  box-shadow: 0 0 20px rgba(233, 30, 99, 0.15);
-}
-
-/* Leggendaria - Arancio/Fuoco (Divino) */
-.rarity-legendary {
-  border-color: #ff9800;
-  background: radial-gradient(circle at top left, rgba(255, 152, 0, 0.25), #0f111a 70%);
-  box-shadow: 0 0 25px rgba(255, 152, 0, 0.2);
-  /* Un piccolo tocco di luce extra */
-  animation: pulse-legendary 3s infinite alternate;
-}
-
-/* Animazione per la Leggendaria */
-@keyframes pulse-legendary {
-  from { box-shadow: 0 0 15px rgba(255, 152, 0, 0.2); }
-  to { box-shadow: 0 0 30px rgba(255, 152, 0, 0.4); }
-}
-
-/* Effetto al passaggio del mouse */
-.item-card:hover {
-  transform: scale(1.02);
-  filter: brightness(1.2);
-}
-
-.ul-classi{
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 0.5rem;
-}
