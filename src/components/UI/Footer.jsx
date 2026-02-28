@@ -1,27 +1,27 @@
-import Button from "./Button";
+
 
 import classFooter from './style/Footer.module.css'
 export default function Footer() {
   return (
     <footer className={classFooter.footer}>
-      <section>
-        <p>Vieni a trovarci</p>
+      <section className={classFooter.social}>
+        <p>Vieni a trovarci sulle nostre pagine social:</p>
     
           <ul>
-            <li>
-              <a href="https://www.Facebook.com" target="_blank">Facebook</a>
+            <li className={classFooter.social}>
+              <a href="https://www.Facebook.com" target="_blank">E </a>
             </li>
-            <li>
-              <a href="https://www.X.com" target="_blank">X</a>
+            <li className={classFooter.social} >
+              <a href="https://www.X.com" target="_blank">Ô</a>
             </li>
-            <li>
-              <a href=" https://www.Instagram.com" target="_blank">Instagram</a>
+            <li className={classFooter.social}>
+              <a href=" https://www.Instagram.com" target="_blank">c</a>
             </li>
           </ul>
       </section>
-      <section>
+      <section className={classFooter.contact}>
         <address>
-          <p>Indirizzo: Via Roma, 1, 00100 Roma</p>
+          <p>Indirizzo: Via Del Monte Kilimangiaro, 1 Mnt. Kilimangiaro, 00100 </p>
           <p>Telefono: 06 12345678</p>
           <p>Copyright &copy; 2026</p>
           <p>P.IVA: 123456789</p>

@@ -28,7 +28,7 @@ export default function FormProfile() {
   });
 
   const [errorForm, setErrorForm] = useState(undefined);
-  const { data, isLoading, isError, onSuccess, mutate } = useMutation({
+  const { data, isLoading, isError, onSuccess, mutate, error } = useMutation({
     mutationFn: (user) => updateUser(user),
     onSuccess: (response) => {
       setErrorForm(undefined);
@@ -83,8 +83,10 @@ export default function FormProfile() {
   }
   return (
     <form onSubmit={submitHandler} className={classFormProfile.form}>
-      {errorForm && <p>{errorForm}</p>}
-
+      {errorForm && <h3 className={classFormProfile["error"]}>{errorForm}</h3>}
+      {isError && (
+        <h3 className={classFormProfile["error"]}>{error.message}</h3>
+      )}
       <div className={classFormProfile["pass-container"]}>
         <div className={classFormProfile["input-container"]}>
           <Input
@@ -185,7 +187,7 @@ export default function FormProfile() {
       </div>
       <div>
         {data?.message ? (
-          <p>{data.message}</p>
+          <h3 className={classFormProfile["success"]}>{data.message}</h3>
         ) : (
           <p>Vuoi salvare i tuoi dati?</p>
         )}

@@ -188,7 +188,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             />
           </div>
           <div className={classModalCheckout["buttons-container"]}>
-            <Button type="button" onClick={closeModal} text="Indietro" />
+            <Button type="button" disabled={isPending} onClick={closeModal} text="Indietro" />
             <Button
               type="button"
               text="Paga"

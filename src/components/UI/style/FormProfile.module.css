@@ -45,3 +45,15 @@ border-bottom: 1px solid var(--border-gold-simple);
 
 
 }
+
+.error{
+    color: var(--font-color-error);
+
+}
+
+.success{
+   
+    color: var(--border-gold-simple);
+    font-size: 2rem;
+    text-decoration: underline;
+}

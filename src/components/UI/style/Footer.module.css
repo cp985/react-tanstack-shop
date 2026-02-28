@@ -1,20 +1,30 @@
+@font-face {
+  font-family: 'SocialFont'; 
+  src: url('../../../assets/font/fontsoc//Social_Shapes.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+
 .footer {
     width: 100%;
     margin-top: 2rem;
     background-color: rgb(88, 88, 88);
-    color: black;
+    color: var(--font-color-light);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 0.5rem;
     gap: 2rem;
+    border-top: 1px solid var(--border-gold-simple);
 }
 
 .footer section {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
 }
@@ -25,28 +35,53 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+
 }
 
 .footer ul li {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #f2ef20;
+    border: 1px solid var(--border-orange);
     border-radius: 0.3rem
 }
 
 .footer a {
     text-decoration: none;
     color: white;
+   width: 3rem;
+   height: 3rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   gap: 1rem;
+   
+}
+
+li.social{
+        font-family: "SocialFont";
+    font-size: 2.5rem;
+    color: var(--font-color-light);
+cursor: pointer;
+}
+
+li.social a:hover{
+    color: var(--border-gold-simple);
+}
+
+
+
+
+
+.footer .contact {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--border-gold-simple);
+ 
     padding: 0.1rem 0.2rem;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-.footer a:active {
-    text-decoration: underline;
 }
 
 .footer address{
@@ -56,3 +91,4 @@
     gap: 2rem;
   
 }
+
