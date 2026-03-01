@@ -12,7 +12,7 @@ export default function FirstPage() {
 
   return (
     <section className={classFirstPage.firstPage}>
-      <h1>Bentornato {user.username}</h1>
+      <h2>Bentornato {user.username}</h2>
       <div className={classFirstPage.bottonContainer}>
         <CardLink
           title={"Shop"}
@@ -30,7 +30,12 @@ export default function FirstPage() {
           description={"Organize your orders status "}
         />
       </div>
-      <CardLink classOf={"sales"} title={"Sales"} path={`/app/sales`} />
+      <CardLink classOf={"sales"}  path={`/app/sales`}>
+        <div className="sales-content">
+          <h2>OFFERTE LIMITATE</h2>
+          <p>Clicca per gli sconti di gilda!</p>
+        </div>
+      </CardLink>
     </section>
   );
 }

@@ -6,7 +6,8 @@ export default function CardLink({
 description,
   path,
   classImage,
-  classOf
+  classOf,
+  children,
   
 
 }) {
@@ -15,7 +16,7 @@ description,
      <h2>{title}</h2>
       <div  className={`${classCardLink.image} ${classCardLink[classImage] || ""}`} ></div>
       <p>{description}</p>
-      
+      {children}
       
     </Link>
   );
