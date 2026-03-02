@@ -15,26 +15,27 @@ export default function FirstPage() {
       <h2>Bentornato {user.username}</h2>
       <div className={classFirstPage.bottonContainer}>
         <CardLink
+        image
           title={"Shop"}
           path={"/app/shop"}
           description={"Go to the main shop page and find your staff!!"}
         />
         <CardLink
+        image
           title={"Profile"}
           path={`/app/accountUser/${user}/profile`}
           description={"Setting your profile options"}
         />
         <CardLink
+        image
           title={"Orders"}
           path={`/app/accountUser/${user}/orders`}
           description={"Organize your orders status "}
         />
       </div>
-      <CardLink classOf={"sales"}  path={`/app/sales`}>
-        <div className="sales-content">
-          <h2>OFFERTE LIMITATE</h2>
-          <p>Clicca per gli sconti di gilda!</p>
-        </div>
+      <CardLink classOf={"sales"}   title="Approfitta dei saldi leggendari!!"
+  path={`/app/sales`}>
+ 
       </CardLink>
     </section>
   );

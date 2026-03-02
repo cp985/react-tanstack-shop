@@ -32,6 +32,9 @@ const TEXT_REGEX= /^[a-zA-ZàáèéìíòóùúÀÁÈÉÌÍÒÓÙÚ\s']{2,50}$/
 const USERNAME_REGEX= /^[a-zA-Z0-9_]{3,16}$/;
 const EMAIL_REGEX= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PASSWORD_REGEX= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+const ADDRESS_REGEX = /^[a-zA-ZàáèéìíòóùúÀÁÈÉÌÍÒÓÙÚ0-9\s',./]{2,100}$/ 
+const CAP_REGEX = /^\d{5}$/
+const PHONE_REGEX = /^[+]?[\d\s\-().]{7,15}$/
 
 export function textReg(text){
   return !!text.match(TEXT_REGEX)
@@ -48,4 +51,17 @@ export function usernameReg(username){
 
 export function passwordReg(password){
   return !!password.match(PASSWORD_REGEX)
+}
+
+export function addressReg(address){
+  return !!address.match(ADDRESS_REGEX)
+}
+
+export function capReg(cap){
+  return !!cap.match(CAP_REGEX)
+}
+
+
+export function phoneReg(phone){
+  return !!phone.match(PHONE_REGEX)
 }

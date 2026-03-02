@@ -121,7 +121,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             id="cognome"
             name="cognome"
             label="Cognome"
-            defaultValue={userData?.user?.nome}
+            defaultValue={userData?.user?.cognome}
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -131,7 +131,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             id="nome"
             name="nome"
             label="Nome"
-            defaultValue={userData?.user?.cognome}
+            defaultValue={userData?.user?.nome}
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -141,7 +141,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             id="via"
             name="via"
             label="Via"
-            defaultValue={userData?.user?.indirizzo.via}
+            defaultValue={userData?.user?.indirizzo?.via}
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -151,7 +151,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             id="citta"
             name="citta"
             label="Citta"
-            defaultValue={userData?.user?.indirizzo.citta}
+            defaultValue={userData?.user?.indirizzo?.citta}
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -161,7 +161,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             id="cap"
             name="cap"
             label="Cap"
-            defaultValue={userData?.user?.indirizzo.cap}
+            defaultValue={userData?.user?.indirizzo?.cap}
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -171,7 +171,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             id="paese"
             name="paese"
             label="Paese"
-            defaultValue={userData?.user?.indirizzo.paese || "Italia"}
+            defaultValue={userData?.user?.indirizzo?.paese || "Italia"}
             onChange={(e) => onChange(e)}
           />
         </div>
