@@ -3,6 +3,7 @@ import { useItems } from "../context/FilteredItemsContext";
 import Button from "../components/UI/Button";
 
 import classCart from "./style/Cart.module.css";
+import Money from "../components/UI/Money";
 import {Plus,Minus} from 'pixelarticons/react'
 export default function Cart() {
   const { cart, removeCart, addCart, clearCart, totalPrice, openModal } =
@@ -35,7 +36,7 @@ export default function Cart() {
             text="Checkout"
             onClick={openModal}
           />
-          <p>Totale:{`${totalPrice()}`}</p>
+          <p>Totale: {`${totalPrice()}`}<Money /></p>
         </div>
       </div>
     </section>

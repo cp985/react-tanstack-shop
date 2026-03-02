@@ -11,6 +11,14 @@ import Input from "./Input";
 import classModalCheckout from "./style/ModalCheckout.module.css";
 import { useItems } from "../../context/FilteredItemsContext";
 import Modal from "./Modal";
+import {
+  addressReg,
+  capReg,
+  emailReg,
+  phoneReg,
+  textReg,
+  ccReg,
+} from "../../util/auth";
 
 const ModalCheckout = forwardRef(function ModalCheckout(
   { children, closeModal },
@@ -18,7 +26,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
 ) {
   const { clearCart, cart, totalPrice } = useItems();
   const navigate = useNavigate();
-  const [error, setError] = useState(null);
+  const [errorsList, setErrorsList] = useState([]);
   const [cc, setCC] = useState("");
   const user = localStorage.getItem("username");
   const [indirizzoSpedizione, setIndirizzoSpedizione] = useImmer({
@@ -55,36 +63,43 @@ const ModalCheckout = forwardRef(function ModalCheckout(
       navigate(`accountUser/${user}/orders`);
     },
   });
-  function handleCheckout(e) {
-    if (
-      !indirizzoSpedizione.nome ||
-      !indirizzoSpedizione.cognome ||
-      !indirizzoSpedizione.via ||
-      !indirizzoSpedizione.citta ||
-      !indirizzoSpedizione.cap ||
-      !indirizzoSpedizione.paese
-    ) {
-      setError("Compila tutti i campi dell'indirizzo");
-      return;
-    }
-    if (cc === "") {
-      setError("Inserisci la carta di credito");
-      return;
-    }
 
-    setError(null);
-    const order = {
-      prodotti: cart.map((item) => ({
-        prodottoId: item._id,
-        quantita: item.quantity,
-      })),
-      indirizzoSpedizione,
-      metodoPagamento: `carta`,
-      pagato: true,
-    };
+function handleCheckout(e) {
+  e.preventDefault(); 
+  
+  let currentErrors = [];
 
-    mutate(order);
+  if (!textReg(indirizzoSpedizione.nome)) currentErrors.push("Il Nome non è valido.");
+  if (!textReg(indirizzoSpedizione.cognome)) currentErrors.push("Il Cognome non è valido.");
+  if (!phoneReg(indirizzoSpedizione.telefono)) currentErrors.push("Il numero di Telefono non è valido.");
+  if (!addressReg(indirizzoSpedizione.via)) currentErrors.push("L'Indirizzo (Via) non è valido.");
+  if (!addressReg(indirizzoSpedizione.citta)) currentErrors.push("La Città non è valida.");
+  if (!capReg(indirizzoSpedizione.cap)) currentErrors.push("Il CAP deve essere di 5 cifre.");
+  if (!addressReg(indirizzoSpedizione.paese)) currentErrors.push("Il Paese non è valido.");
+  
+  if (!ccReg.test(cc)) {
+    currentErrors.push("Il numero della Carta di Credito deve avere tra 13 e 16 cifre.");
   }
+
+  if (currentErrors.length > 0) {
+    setErrorsList(currentErrors);
+    return;
+  }
+
+  setErrorsList([]); 
+  const order = {
+    prodotti: cart.map((item) => ({
+      prodottoId: item._id,
+      quantita: item.quantity,
+    })),
+    indirizzoSpedizione,
+    metodoPagamento: `carta`,
+    pagato: true,
+  };
+
+  mutate(order);
+}
+  
 
   function onChange(e) {
     setIndirizzoSpedizione((draft) => {
@@ -112,7 +127,13 @@ const ModalCheckout = forwardRef(function ModalCheckout(
       <h2 className={classModalCheckout["title"]}>
         Compila tutti i campi per la spedizione
       </h2>
-      {error && <h3>{error}</h3>}
+      {errorsList.length > 0 && (
+        <ul>
+          {errorsList.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+      )}
       {isErrorData && <h3>{isErrorM.message}</h3>}
       <form className={classModalCheckout["modal-checkout"]}>
         <div className={classModalCheckout["input-container"]}>
@@ -135,6 +156,18 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             onChange={(e) => onChange(e)}
           />
         </div>
+
+        <div className={classModalCheckout["input-container"]}>
+          <Input
+            type="text"
+            id="telefono"
+            name="telefono"
+            label="Telefono"
+            defaultValue={userData?.user?.telefono}
+            onChange={(e) => onChange(e)}
+          />
+        </div>
+
         <div className={classModalCheckout["input-container"]}>
           <Input
             type="text"
@@ -188,22 +221,16 @@ const ModalCheckout = forwardRef(function ModalCheckout(
             />
           </div>
           <div className={classModalCheckout["buttons-container"]}>
-            <Button type="button" disabled={isPending} onClick={closeModal} text="Indietro" />
+            <Button
+              type="button"
+              disabled={isPending}
+              onClick={closeModal}
+              text="Indietro"
+            />
             <Button
               type="button"
               text="Paga"
-              disabled={
-                isPending ||
-                cart.length === 0 ||
-                totalPrice() === 0 ||
-                cc === "" ||
-                !indirizzoSpedizione.nome ||
-                !indirizzoSpedizione.cognome ||
-                !indirizzoSpedizione.via ||
-                !indirizzoSpedizione.citta ||
-                !indirizzoSpedizione.cap ||
-                !indirizzoSpedizione.paese
-              }
+              disabled={isPending || cart.length === 0 || totalPrice() === 0 || errorsList.length > 0}
               onClick={handleCheckout}
             />
           </div>

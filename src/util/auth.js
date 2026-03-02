@@ -35,7 +35,7 @@ const PASSWORD_REGEX= /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$
 const ADDRESS_REGEX = /^[a-zA-ZàáèéìíòóùúÀÁÈÉÌÍÒÓÙÚ0-9\s',./]{2,100}$/ 
 const CAP_REGEX = /^\d{5}$/
 const PHONE_REGEX = /^[+]?[\d\s\-().]{7,15}$/
-
+const CREDIT_CARD_REGEX = /^(?:\d[ -]*?){13,16}$/
 export function textReg(text){
   return !!text.match(TEXT_REGEX)
 }
@@ -64,4 +64,8 @@ export function capReg(cap){
 
 export function phoneReg(phone){
   return !!phone.match(PHONE_REGEX)
+}
+
+export function ccReg(cc){
+  return !!cc.match(CREDIT_CARD_REGEX)
 }

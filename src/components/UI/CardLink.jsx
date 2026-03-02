@@ -8,12 +8,14 @@ export default function CardLink({
   classImage,
   classOf,
   children,
-  image
+  image,
+  relative
 }) {
   return (
     <Link
       className={`${classCardLink.card} ${classCardLink[classOf] || ""}`}
       to={path}
+      relative={relative}
     >
       <h2>{title}</h2>
       {image && (

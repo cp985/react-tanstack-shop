@@ -1,0 +1,16 @@
+.money{
+    display: inline-block;
+color: transparent;
+background-image: url(../../../assets/d3.png);
+background-size: 230%;
+background-repeat: no-repeat;
+background-position: -20px -10px;
+width: 2rem;
+height: 2rem;
+border-radius: 50%;
+image-rendering: pixelated;
+vertical-align: middle;
+
+
+
+}

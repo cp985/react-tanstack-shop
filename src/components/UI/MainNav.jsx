@@ -25,7 +25,7 @@ export default function MainNav({ setIsFilterOpen }) {
   return (
     <nav
       className={classMainNav.nav}
-      style={path === "/app/shop" ? { height: "fit-content" } : {}}
+      style={path === "/app/shop"|| path === "/app/shop/sales" ? { height: "fit-content" } : {}}
     >
       <ul className={classMainNav.ul1}>
         <li>
@@ -61,7 +61,7 @@ export default function MainNav({ setIsFilterOpen }) {
         </li>
       </ul>
 
-      {path === "/app/shop" && (
+      {(path === "/app/shop" || path === "/app/shop/sales") && (
         <ul className={classMainNav.ul2}>
           <li className={classMainNav["filter-li"]}>
             <Button text={"Filter"} onClick={setIsFilterOpen} />

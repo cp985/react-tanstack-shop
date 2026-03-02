@@ -22,7 +22,6 @@ import Sales from "./pages/Sales";
 
 import Spinner from "./components/UI/Spinner";
 import { authCheck } from "./util/auth";
-import { httpLoader } from "./util/httpRequest";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const queryClient = new QueryClient();
@@ -60,13 +59,14 @@ const router = createHashRouter(
           path: "shop",
 
           element: <MainPageShop />,
+          children: [],
         },
         {
           path: "shop/item/:id",
           element: <ItemDetails />,
         },
         {
-          path: "sales",
+          path: "shop/sales",
           element: <Sales />,
         },
 

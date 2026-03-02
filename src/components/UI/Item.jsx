@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ItemImage from "./ItemImage";
 import { imageSprite } from "../../util/imageSprite";
-
+import Money from "./Money";
 import classItem from "./style/Item.module.css";
 export default function Item({ item }) {
   let itemType = item.categoria;
@@ -46,7 +46,7 @@ export default function Item({ item }) {
       break;
   }
   return (
-    <Link to={`item/${item.id}`}>
+    <Link to={`/app/shop/item/${item.id}`}>
       <li
         key={item.id}
         className={`${classItem["item-card"]} ${classItem[backgroundStyle]}`}
@@ -73,7 +73,7 @@ export default function Item({ item }) {
           {" "}
           <p>Tipo: {itemType}</p>
           <p>Rating: {item.rating}</p>
-          <p className={classItem["price"]}>Prezzo: {item.prezzo}</p>
+          <p className={classItem["price"]}>Prezzo: {item.prezzo}<Money/></p>
         </div>
       </li>
     </Link>

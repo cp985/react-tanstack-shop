@@ -34,7 +34,7 @@ export default function FirstPage() {
         />
       </div>
       <CardLink classOf={"sales"}   title="Approfitta dei saldi leggendari!!"
-  path={`/app/sales`}>
+  path={`/app/shop/sales`} >
  
       </CardLink>
     </section>

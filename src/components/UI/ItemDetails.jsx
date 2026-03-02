@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import classItemDetails from "./style/ItemDetails.module.css";
 import Button from "./Button";
 import ItemImage from "./ItemImage";
+import Money from "./Money";
 import { imageSprite } from "../../util/imageSprite";
 export default function ItemDetails() {
   const { items, addCart, cart } = useItems();
@@ -49,10 +50,12 @@ export default function ItemDetails() {
             }
           >
             Prezzo:{item.prezzo}
+            <Money />
           </p>
           {item.onSale && (
             <p className={classItemDetails["special-price"]}>
               Special Price:{item.prezzo - item.prezzo * 0.3}
+            <Money />
             </p>
           )}
         </div>

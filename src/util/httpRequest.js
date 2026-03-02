@@ -43,16 +43,12 @@ export async function logIn(user) {
   }
 }
 
-export async function httpLoader(queryClient) {
-  const queryKey = ["products"];
+export async function httpLoaderItems() {
+ 
   try {
-    return await queryClient.ensureQueryData({
-      queryKey,
-      queryFn: async () => {
-        const response = await axios.get(`${API_URL}/products`);
-        return response.data;
-      },
-    });
+  const response =await axios.get(`${API_URL}/products`);
+  return response.data;
+
   } catch (e) {
     const message =
       e.response?.data?.message || e.message || "Errore del server";

@@ -1,9 +1,11 @@
 import classFormFilter from "./style/FormFilter.module.css";
 import Input from "./Input";
 import { useItems } from "../../context/FilteredItemsContext";
-
+import { useLocation } from "react-router-dom";
 export default function FormFilter() {
   const { formData, setFormData } = useItems();
+  let path = useLocation().pathname;
+
 
   function handlerStatusChange(e) {
     const { name, value, checked, type } = e.target;
@@ -38,7 +40,7 @@ export default function FormFilter() {
           <option value="asc">Crescente</option>
           <option value="desc">Decrescente</option>
         </select>
-        <Input
+        {path === "/app/shop" && (<Input
           type="checkbox"
           id="onSale"
           name="onSale"
@@ -46,7 +48,7 @@ export default function FormFilter() {
           label="On Sale"
           hidden
           onChange={handlerStatusChange}
-        />
+        />)}
       </fieldset>
 
       <fieldset>
