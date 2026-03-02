@@ -2,11 +2,9 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
-    /* Questo trucco usa un'ombra interna infinita per coprire il giallo del browser */
     -webkit-box-shadow: 0 0 0 30px #1a1a2e inset !important;
     
-    /* Colore del testo */
-    -webkit-text-fill-color: white !important;
+    -webkit-text-fill-color: var(--font-color-light) !important;
 }
 
 
@@ -31,18 +29,7 @@ input:-webkit-autofill:active {
 
 
 
-/* .input-filter1 label ~ div{
-height: 0;
-opacity: 0;
-z-index: -1;
-} */
 
-/* .input-filter1:checked ~ div{
-height: 100dvh;
-opacity: 1;
-z-index: 2;
-
-} */
 
 .input-filter + div label{
     cursor: pointer;
@@ -69,6 +56,7 @@ z-index: 2;
 
 
 .classSecondary{
+    
     display: flex;
     justify-content: center;
     align-items: center;

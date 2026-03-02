@@ -80,8 +80,9 @@ export default function LogInForm({
           <div className={classLogInForm["input-container"]}>
             <Input type="email" id="email" name="email" label="Email" />
           </div>
-          <div className={classLogInForm["input-container"]}>
+          <div  className={classLogInForm["input-container"]}>
             <Input
+            width={'9.3rem'}
               type="password"
               id="password"
               name="password"
@@ -101,6 +102,7 @@ export default function LogInForm({
             </div>
             <div className={classLogInForm["input-container"]}>
               <Input
+               width={'9.3rem'}
                 type="password"
                 id="passwordConfirm"
                 name="passwordConfirm"
@@ -117,7 +119,7 @@ export default function LogInForm({
           <p>{subscribe ? "Hai già un account?" : "Non hai un account?"}</p>
           <Button
             type="button"
-            classOf="second"
+           
             text={subscribe ? "Accedi" : "Registrati"}
             disabled={isPendingLogin || isPendingSub}
             onClick={() => {

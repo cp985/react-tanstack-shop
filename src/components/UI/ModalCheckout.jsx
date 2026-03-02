@@ -32,6 +32,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
   const [indirizzoSpedizione, setIndirizzoSpedizione] = useImmer({
     nome: "",
     cognome: "",
+    telefono: "",
     via: "",
     citta: "",
     cap: "",
@@ -77,7 +78,7 @@ function handleCheckout(e) {
   if (!capReg(indirizzoSpedizione.cap)) currentErrors.push("Il CAP deve essere di 5 cifre.");
   if (!addressReg(indirizzoSpedizione.paese)) currentErrors.push("Il Paese non è valido.");
   
-  if (!ccReg.test(cc)) {
+  if (!ccReg(cc)) {
     currentErrors.push("Il numero della Carta di Credito deve avere tra 13 e 16 cifre.");
   }
 
@@ -114,6 +115,7 @@ function handleCheckout(e) {
       setIndirizzoSpedizione((draft) => {
         draft.nome = userData.user.nome || "";
         draft.cognome = userData.user.cognome || "";
+        draft.telefono = userData.user.telefono || "";
         draft.via = userData.user.indirizzo?.via || "";
         draft.citta = userData.user.indirizzo?.citta || "";
         draft.cap = userData.user.indirizzo?.cap || "";
@@ -128,7 +130,7 @@ function handleCheckout(e) {
         Compila tutti i campi per la spedizione
       </h2>
       {errorsList.length > 0 && (
-        <ul>
+        <ul className={classModalCheckout["errors-list"]}>
           {errorsList.map((error) => (
             <li key={error}>{error}</li>
           ))}

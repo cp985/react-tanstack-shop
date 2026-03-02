@@ -39,9 +39,11 @@ const ModalDeleteAccount = forwardRef(function ModalDeleteAccount(
 
   return (
     <Modal ref={ref}>
-      <h2>Sei sicuro di voler cancellare il tuo account?</h2>
-      <p className={classModalDelete["text"]}>Inserisci la tua password per confermare</p>
-      {isError && <p>{error.message}</p>}
+      <h2 className={classModalDelete["title"]}>Sei sicuro di voler cancellare il tuo account?</h2>
+      <h3 className={classModalDelete["subtitle"]} >Inserisci la tua password per confermare</h3>
+      {isError && <p className={classModalDelete["error"]}>
+        {error.message}
+        </p>}
       <div className={classModalDelete["input-container"]}>
         <Input
           type="password"

@@ -28,3 +28,14 @@ text-align: center;
      margin-top: 1rem ;
    
 }
+
+.title, .subtitle{
+    text-align: center;
+}
+
+.error{
+    width: 100%;
+    text-align: center;
+    color: var(--font-color-error);
+    font-size: 1.2rem;
+}

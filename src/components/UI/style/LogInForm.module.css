@@ -42,7 +42,7 @@ div.input-container {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    gap: 0.2rem;
+    
 }
 
 .form-login label {
@@ -61,11 +61,13 @@ input {
 
 .form-login button {
     background-color: var(--button-background);
-    ;
+    
     color: var(--font-color-dark);
     border: 3px solid var(--border-orange);
     border-radius: 0;
 }
+
+
 
 .form-login button:hover {
     background-color: var(--button-hover-background);
@@ -77,7 +79,7 @@ input {
     background-color: var(--border-orange);
     color: var(--font-color-light);
     padding: 0.2rem;
-            border: 1px solid var(--border-orange);
+    border: 1px solid var(--border-orange);
 
 
 }
@@ -89,6 +91,8 @@ input {
 .form-login .toggle-container button:hover {
  
  border: 1px solid var(--border-gold-simple);
+ background-color: var(--button-hover-background);
+ color: var(--font-color-dark);
 
 }
 
