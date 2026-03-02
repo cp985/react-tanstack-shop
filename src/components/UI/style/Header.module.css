@@ -1,9 +1,79 @@
-.header{
+.header {
     width: 100%;
     height: var(--header-height);
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header {
+    font-family: var(--titlePage);
+    width: 100%;
+    padding: 1rem 2rem;
+    background: rgba(26, 26, 46, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(240, 192, 64, 0.3);
+}
 
 
+.logo-animazione-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    gap: 0;
+}
+
+.moneta-rotolante {
+    animation: rotola-e-trasla 1.2s ease-out forwards;
+    transform-origin: center;
+}
+
+.moneta-rotolante img {
+    width: 64px;
+    height: 64px;
+    display: block;
+}
+
+@keyframes rotola-e-trasla {
+    0% {
+        transform: translateX(-150px) rotate(0deg);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateX(10px) rotate(360deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0px) rotate(720deg);
+        opacity: 1;
+    }
+}
+
+.titolo-contenitore {
+    overflow: hidden;
+    margin-left: 1rem;
+}
+
+.reveal-title {
+    color: var(--border-gold-simple);
+    font-size: 3rem;
+    margin: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: rivela-titolo 0.6s ease-out 1s forwards;
+}
+
+@keyframes rivela-titolo {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

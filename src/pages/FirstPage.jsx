@@ -18,19 +18,19 @@ export default function FirstPage() {
         image
           title={"Shop"}
           path={"/app/shop"}
-          description={"Go to the main shop page and find your staff!!"}
+          description={"Vai allo shop e cerca i tuoi prodotti preferiti"}
         />
         <CardLink
         image
           title={"Profile"}
           path={`/app/accountUser/${user}/profile`}
-          description={"Setting your profile options"}
+          description={"Modifica il tuo profilo"}
         />
         <CardLink
         image
           title={"Orders"}
           path={`/app/accountUser/${user}/orders`}
-          description={"Organize your orders status "}
+          description={"Visualizza i tuoi ordini"}
         />
       </div>
       <CardLink classOf={"sales"}   title="Approfitta dei saldi leggendari!!"

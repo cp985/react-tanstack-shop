@@ -6,8 +6,18 @@
 
 .dialog{
     position: absolute;
-    top: 17dvh;
-    left: 20dvw;
+    top: 5%;
+    left: 0;
+    background-color: var(--background-color);
+    margin:0 auto;
+    width: 60%;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border: 2px solid var(--border-gold-simple);
+    z-index: 10;
+    margin: 0 auto;
     width: 60%;
     border: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
