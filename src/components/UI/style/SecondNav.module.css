@@ -2,8 +2,9 @@
  position: sticky;
     top: calc(var(--nav-height));
     left: 0;
-    width: 30%;
-    height: 50dvh;
+   width: 30%;
+    min-width: 25%;
+    height: 45dvh;
     background-color: var(--bacground-color-nav);
     display: flex;
     justify-content: center;

@@ -1,13 +1,14 @@
 .form-filter {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 0.1rem;
+ 
     background-color: var(--bacground-color-nav);
     border-top: none;
+    gap: 0.5rem;
 
 
 
@@ -30,28 +31,29 @@
     background-color: var(--button-hover-background);
 }
 
-legend{
-    color: var(--font-color-light);
-    font-family: var(--titleFont);
-    font-weight: 600;
-    font-size: 1.2rem;}
+.form-filter details{
+    cursor: pointer;
+    border: 1px solid var(--border-gold-simple);
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--background-color-tr);
+}
 
-fieldset {
+.details-container {
     font-size: 0.9rem;
-    width: 95%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.2rem;
-    padding: 0.1rem;
-    border-radius: 0.3rem;
-    border: 1px solid var(--border-gold-simple);
+    gap: 0.3rem;
+    padding: 0.5rem;
+    
+    
+  
 }
 
-.fieldset-prezzo {
-    gap: 0.1rem;
-}
+
 
 .fieldset-prezzo label{
   

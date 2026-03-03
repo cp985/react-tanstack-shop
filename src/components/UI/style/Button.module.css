@@ -6,7 +6,7 @@
     cursor: pointer;
     border: 2px solid var(--border-orange);
     font-weight: 600;
-    
+    font-size: 1rem;
     position: relative;
     display: inline-flex; 
     align-items: center;
