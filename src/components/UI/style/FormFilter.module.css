@@ -32,11 +32,16 @@
 }
 
 .form-filter details{
-    cursor: pointer;
+   
     border: 1px solid var(--border-gold-simple);
     width: 100%;
     padding: 0.5rem;
     background-color: var(--background-color-tr);
+}
+
+.form-filter summary{
+
+    cursor: pointer;
 }
 
 .details-container {
