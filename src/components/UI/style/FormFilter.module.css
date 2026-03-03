@@ -1,6 +1,6 @@
 .form-filter {
     width: 100%;
-    padding: 0.5rem 0.5rem;
+    padding-top: 0.7rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +8,8 @@
  
     background-color: var(--bacground-color-nav);
     border-top: none;
-    gap: 0.5rem;
+    
+    
 
 
 
@@ -33,16 +34,25 @@
 
 .form-filter details{
    
-    border: 1px solid var(--border-gold-simple);
+    border-bottom: 1px solid var(--border-gold-simple);
+
+
     width: 100%;
-    padding: 0.5rem;
+   padding: 0.4rem 0.2rem ;
     background-color: var(--background-color-tr);
 }
+
+
 
 .form-filter summary{
 
     cursor: pointer;
 }
+
+.form-filter:last-child{
+    border-bottom: none;
+}
+
 
 .details-container {
     font-size: 0.9rem;
@@ -62,7 +72,7 @@
 
 .fieldset-prezzo label{
   
-    /* background-color: none; */
+    
     color: var(--font-color-light);
     cursor: none;
 
@@ -73,3 +83,31 @@
 pointer-events: none;
 color: var(--font-color-dark);
 }
+
+.form-filter summary::-webkit-details-marker {
+  display: none;
+}
+
+.form-filter summary {
+  list-style: none;
+  cursor: pointer; 
+  outline: none; 
+}
+
+.form-filter summary::marker {
+  display: none;
+  content: "";
+}
+
+
+.form-filter details summary::before {
+  content: "[+] ";
+  font-family: 'Jersey 10', sans-serif;
+  color: var(--border-orange);
+}
+
+ .form-filter details[open] summary::before {
+  content: "[-] ";
+  color: var(--font-color-light);
+}
+

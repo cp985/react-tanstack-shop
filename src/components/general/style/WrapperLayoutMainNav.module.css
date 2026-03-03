@@ -4,7 +4,7 @@
     left: 0;
  width: 30%;
     min-width: 25%;
-    height: 100%;
+
     /* padding-top: 1rem; */
     background-color: var(--bacground-color-nav);
     border: 2px solid var(--border-gold-simple);
@@ -20,4 +20,23 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.aside {
+    animation: pixelAppear 0.3s steps(3) forwards;
+  
+}
+
+@keyframes pixelAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+        max-height: 0;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        max-height:100%;
+    }
 }

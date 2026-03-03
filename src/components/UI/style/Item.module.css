@@ -1,19 +1,14 @@
-/* Contenitore Card Principale */
 .item-card {
   position: relative;
-  /* Rimosso border-radius */
   padding: 0.5rem;
-  /* Transizione scattosa: steps(4) invece di ease */
   transition: transform 0.1s steps(2), filter 0.1s;
   overflow: hidden;
   background-color: #0f111a;
   
-  /* Doppio Bordo Pixelato: Bordo Nero esterno, Bordo colorato interno */
   border: 4px solid #000;
   width: 15rem;
   height: 25rem;
   
-  /* Ombra solida (non sfumata) */
   box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.5);
 display: flex;
 flex-direction: column;
