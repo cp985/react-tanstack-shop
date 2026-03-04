@@ -13,7 +13,7 @@ import classWrapperLayoutMainNav from "./style/WrapperLayoutMainNav.module.css";
 export default function WrapperLayoutMainNav() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const sidebarRef = useRef(null);
-  const [marginTop, setMarginTop] = useState(210);
+  // const [marginTop, setMarginTop] = useState(210);
 
   const { data: items } = useSuspenseQuery({
     queryKey: ["items"],
@@ -68,21 +68,21 @@ export default function WrapperLayoutMainNav() {
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
 
-  useEffect(() => {
-    let ticking = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-          setMarginTop(Math.max(120, 210 - scrollY));
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // useEffect(() => {
+  //   let ticking = false;
+  //   const handleScroll = () => {
+  //     if (!ticking) {
+  //       window.requestAnimationFrame(() => {
+  //         const scrollY = window.scrollY;
+  //         setMarginTop(Math.max(120, 210 - scrollY));
+  //         ticking = false;
+  //       });
+  //       ticking = true;
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   if (!items) {
     return <div>Caricamento...</div>;
@@ -120,7 +120,7 @@ function closeModalDeleteAccount() {
           {isFilterOpen && (
             <aside
               className={classWrapperLayoutMainNav.aside}
-              style={{ marginTop: `${marginTop}px` }}
+              // style={{ marginTop: `${marginTop}px` }}
               ref={sidebarRef}
             >
               <FormFilter />

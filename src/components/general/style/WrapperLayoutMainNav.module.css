@@ -1,5 +1,6 @@
 .aside {
 
+    top: 10rem;
     position: fixed;
     left: 0;
  width: 30%;
@@ -9,8 +10,8 @@
     background-color: var(--bacground-color-nav);
     border: 2px solid var(--border-gold-simple);
    
-    z-index: 1;
-    top:0;
+   
+    
 }
 
 main{
@@ -38,5 +39,6 @@ main{
         opacity: 1;
         transform: translateY(0);
         max-height:100%;
+         z-index: 1;
     }
 }
