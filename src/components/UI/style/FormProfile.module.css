@@ -28,6 +28,8 @@ border-bottom: 1px solid var(--border-gold-simple);
     justify-content: space-between;
     align-items: center;
     flex-direction: row-reverse;
+    flex-wrap: wrap;
+   
 
 }
 
@@ -57,4 +59,11 @@ border-bottom: 1px solid var(--border-gold-simple);
     color: var(--border-gold-simple);
     font-size: 2rem;
     text-decoration: underline;
+}
+
+@media screen and (max-width: 700px) {
+    .input-container {
+        flex-direction: row;
+    flex-direction: column-reverse;
+    }
 }
