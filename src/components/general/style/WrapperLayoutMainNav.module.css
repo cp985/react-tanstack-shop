@@ -1,17 +1,29 @@
-.aside {
-
+/* .aside {
     top: 10rem;
     position: fixed;
     left: 0;
  width: 30%;
     min-width: 25%;
-
-    /* padding-top: 1rem; */
     background-color: var(--bacground-color-nav);
     border: 2px solid var(--border-gold-simple);
    
-   
     
+} */
+
+.aside {
+    position: sticky;  
+    top: calc(var(--nav-height) + 3.7rem);
+    left: 0;
+    width: 30%;
+    min-width: 25%;
+    height: 100%;
+   
+    align-self: flex-start;
+    background-color: var(--bacground-color-nav);
+    border: 2px solid var(--border-gold-simple);
+    border-top: none;
+    z-index: 2;
+    animation: pixelAppear 0.3s steps(3) forwards;
 }
 
 main{
@@ -20,7 +32,8 @@ main{
     min-height: 60dvh;
     display: flex;
     justify-content: center;
-    align-items: center;
+  
+        align-items: flex-start; /* cambia solo questo */
 }
 
 .aside {

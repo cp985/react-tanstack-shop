@@ -84,6 +84,18 @@ export default function WrapperLayoutMainNav() {
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
 
+
+// In MainNav.jsx o WrapperLayoutMainNav.jsx
+const navRef = useRef(null);
+
+useEffect(() => {
+  if (navRef.current) {
+    const h = navRef.current.offsetHeight;
+    document.documentElement.style.setProperty('--nav-height', `${h}px`);
+  }
+}, []); // ricalcola al mount
+
+
   if (!items) {
     return <div>Caricamento...</div>;
   }
