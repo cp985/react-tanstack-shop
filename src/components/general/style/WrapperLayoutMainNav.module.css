@@ -1,23 +1,12 @@
-/* .aside {
-    top: 10rem;
-    position: fixed;
-    left: 0;
- width: 30%;
-    min-width: 25%;
-    background-color: var(--bacground-color-nav);
-    border: 2px solid var(--border-gold-simple);
-   
-    
-} */
+
 
 .aside {
     position: sticky;  
-    top: calc(var(--nav-height) + 3.7rem);
+    top: calc(var(--nav-height)  + 3.7rem);
     left: 0;
     width: 30%;
     min-width: 25%;
     height: 100%;
-   
     align-self: flex-start;
     background-color: var(--bacground-color-nav);
     border: 2px solid var(--border-gold-simple);
@@ -26,14 +15,16 @@
     animation: pixelAppear 0.3s steps(3) forwards;
 }
 
-main{
 
+
+main{
+position: relative;
     width: 100%;
     min-height: 60dvh;
     display: flex;
     justify-content: center;
-  
-        align-items: flex-start; /* cambia solo questo */
+
+        align-items: flex-start; 
 }
 
 .aside {

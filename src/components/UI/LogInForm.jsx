@@ -40,8 +40,8 @@ export default function LogInForm({
       }
     }
 
-    setErrorList(error); // sempre, sia login che subscribe
-    if (error.length > 0) return; // sempre, sia login che subscribe
+    setErrorList(error); 
+    if (error.length > 0) return; 
 
     delete datiForm.passwordConfirm;
     if (subscribe) {
