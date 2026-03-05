@@ -33,6 +33,23 @@ border-bottom: 1px solid var(--border-gold-simple);
 
 }
 
+
+.input-pass-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+   
+   
+    
+}
+
+.input-pass-container input{
+    width:calc(16px * 10.8) !important;
+}
+
 .pass-container {
     display: flex;
     width: 100%;
@@ -62,7 +79,7 @@ border-bottom: 1px solid var(--border-gold-simple);
 }
 
 @media screen and (max-width: 700px) {
-    .input-container {
+    .input-container, .input-pass-container{ 
         flex-direction: row;
     flex-direction: column-reverse;
     }

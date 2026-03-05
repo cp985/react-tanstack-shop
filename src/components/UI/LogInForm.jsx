@@ -80,9 +80,9 @@ export default function LogInForm({
           <div className={classLogInForm["input-container"]}>
             <Input type="email" id="email" name="email" label="Email" />
           </div>
-          <div  className={classLogInForm["input-container"]}>
+          <div  className={classLogInForm["input-pass-container"]}>
             <Input
-            width={'10.5rem'}
+           
               type="password"
               id="password"
               name="password"
@@ -100,9 +100,9 @@ export default function LogInForm({
                 label="Username"
               />
             </div>
-            <div className={classLogInForm["input-container"]}>
+            <div className={classLogInForm["input-pass-container"]}>
               <Input
-               width={'10.5rem'}
+           
                 type="password"
                 id="passwordConfirm"
                 name="passwordConfirm"

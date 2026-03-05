@@ -20,13 +20,11 @@
 
 
 .secondaryButton {
-
-  
     color: var(--font-color-dark);
     background-color: var(--border-gold-simple);
     border: 1px solid var(--border-gold-simple);
     cursor: pointer;
-min-width: 1.1rem;
+min-width: 32px;
 padding:0.2rem;
    
 }

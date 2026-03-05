@@ -29,6 +29,8 @@
 --font-color-light: white;
 --font-color-error:rgb(255, 82, 82);
 --bacground-color-nav:rgb(51, 51, 51);
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
 }
 
 

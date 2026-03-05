@@ -11,6 +11,12 @@ input{
     display: block;
 }
 
+input[type="password"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100% !important;
+}
+
 
 .inputCntainer{
     display: flex;
@@ -18,7 +24,7 @@ input{
     align-items: center;
     flex-direction: column;
     gap: 0.2rem;
-    min-width: 150rem;
+   
 }
 
 .label-filter1{
@@ -65,8 +71,8 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 13rem;
-  
+
+   
   
 }
 

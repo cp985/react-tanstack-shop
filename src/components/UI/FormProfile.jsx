@@ -98,11 +98,11 @@ export default function FormProfile() {
         </div>
       </div>
       <div className={classFormProfile["pass-container"]}>
-        <div className={classFormProfile["input-container"]}>
-          <Input type="password" id="password" name="password" label="Password" placeholder="Password" width={'10.7rem'} />
+        <div className={classFormProfile["input-pass-container"]}>
+          <Input type="password" id="password" name="password" label="Password" placeholder="Password"  />
         </div>
-        <div className={classFormProfile["input-container"]}>
-          <Input type="password" id="passwordConfirm" name="passwordConfirm" label="Password Confirm" placeholder="Password Confirm"   width={'10.7rem'}/>
+        <div className={classFormProfile["input-pass-container"]}>
+          <Input type="password" id="passwordConfirm" name="passwordConfirm" label="Password Confirm" placeholder="Password Confirm"  />
         </div>
       </div>
       <div className={classFormProfile["pass-container"]}>
