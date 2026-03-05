@@ -13,8 +13,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
---header-height: 6rem;
---nav-height: 4rem ;
+--header-height: calc(16px * 6);
+--nav-height: calc(16px * 4) ;
 --titleFont:'Jersey 10';
 --font-size-root:16px;
 --font-weight-root:600;

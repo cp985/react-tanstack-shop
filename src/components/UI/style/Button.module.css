@@ -1,6 +1,5 @@
-
- .button {
-    padding: 0.5rem;
+.button {
+    padding: calc(16px * 0.5);
     background-color: var(--button-background);
     color: var(--font-color-dark);
     cursor: pointer;
@@ -8,13 +7,13 @@
     font-weight: 600;
     font-size: 1rem;
     position: relative;
-    display: inline-flex; 
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.1s steps(2); 
-    box-shadow: 0 0 0 0 rgba(0,0,0,0); 
+    transition: all 0.1s steps(2);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 
@@ -24,9 +23,9 @@
     background-color: var(--border-gold-simple);
     border: 1px solid var(--border-gold-simple);
     cursor: pointer;
-min-width: 32px;
-padding:0.2rem;
-   
+    min-width: 32px;
+    padding: calc(16px * 0.2);
+
 }
 
 .button:hover {
@@ -36,7 +35,8 @@ padding:0.2rem;
     box-shadow: 4px 4px 0px 0px var(--border-orange);
 }
 
-.button:active, .active {
+.button:active,
+.active {
     background-color: var(--button-hover-background);
     color: var(--font-color-dark);
     text-decoration: underline;
@@ -48,7 +48,7 @@ padding:0.2rem;
 
 .active {
     cursor: pointer;
-    padding: 0.5rem;
+    padding: calc(16px * 0.5);
     border-color: var(--border-orange);
 }
 
@@ -61,7 +61,7 @@ button:disabled {
 }
 
 @media (hover: hover) {
-  .button:hover {
-    transform: translateY(-4px); 
-  }
+    .button:hover {
+        transform: translateY(-4px);
+    }
 }

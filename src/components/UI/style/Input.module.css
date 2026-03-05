@@ -23,7 +23,7 @@ input[type="password"]{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: calc(16px * 0.2);
    
 }
 
@@ -31,7 +31,7 @@ input[type="password"]{
   
     background-color: red;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: calc(16px * 0.5);
    
 }
 .label-filter1:hover{
@@ -46,7 +46,7 @@ input[type="password"]{
     cursor: pointer;
  
   
-    padding: 0.2rem;
+    padding: calc(16px * 0.2);
     background-color: #676fff;
     color: aqua;
 }
@@ -61,7 +61,7 @@ input[type="password"]{
 .input-filter{
   
     cursor: pointer;
-    padding: 0.2rem;
+    padding: calc(16px * 0.2);
   
 }
 
