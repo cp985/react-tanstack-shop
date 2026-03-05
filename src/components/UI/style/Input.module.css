@@ -14,8 +14,11 @@ input{
 input[type="password"]{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    width: 100% !important;
+    -webkit-appearance: none;
+    width: 100%;
+
 }
+
 
 
 .inputCntainer{
