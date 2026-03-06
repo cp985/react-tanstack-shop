@@ -88,4 +88,7 @@
         flex-direction: row;
         flex-direction: column-reverse;
     }
+    .input-pass-container div {
+    width: 100%;
+}
 }

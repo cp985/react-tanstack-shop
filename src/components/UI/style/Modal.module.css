@@ -5,9 +5,18 @@
 }
 
 .dialog{
-    position: absolute;
+    /* position: absolute;
     top: 5%;
     left: 0;
+margin: 0 auto; */
+
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+
     background-color: var(--background-color);
 
     width: 60%;
@@ -17,7 +26,7 @@
     background-color: var(--background-color);
     border: 2px solid var(--border-gold-simple);
     z-index: 10;
-    margin: 0 auto;
+    
     width: 60%;
     border: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);

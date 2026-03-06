@@ -27,6 +27,7 @@ export default function Button({
         to={path}
         end={end}
         relative={relative}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         {text}
         {children}

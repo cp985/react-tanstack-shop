@@ -46,7 +46,7 @@ export default function Item({ item }) {
       break;
   }
   return (
-    <Link to={`/app/shop/item/${item.id}`}>
+    <Link to={`/app/shop/item/${item.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
       <li
         key={item.id}
         className={`${classItem["item-card"]} ${classItem[backgroundStyle]}`}
