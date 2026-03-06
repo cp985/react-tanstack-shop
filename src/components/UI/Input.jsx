@@ -19,7 +19,7 @@ export default function Input({
   placeholder,
   defaultValue,
   rows,
-  width
+  
 }) {
   const [isPassword, setIsPassword] = useState(true);
 
@@ -59,7 +59,7 @@ export default function Input({
             max={max}
             step={step}
             placeholder={placeholder}
-            style={{ width:width }}
+           
             {...(value !== undefined ? { value } : { defaultValue })}
           />
           <Button classOf="secondaryButton" onClick={togglePassword}>{isPassword ? <Eye/> : <EyeOff/>}</Button>

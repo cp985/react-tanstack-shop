@@ -1,7 +1,7 @@
 .form-login {
     background-color: var(--background-color-tr);
     width: 60%;
-  
+
     padding: 16px;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
 flex-wrap: wrap;
-    gap: 16px;
+    gap: 28px;
 }
 
 div.input-container {
@@ -52,24 +52,14 @@ div.input-pass-container {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    width: calc(16px * 12.6);
+ width: calc(16px * 13);
    
     
 }
 
-.input-pass-container input{
-    width:calc(16px * 10.8) !important;
-}
 
-@media screen and (max-width: 720px) {
-  .input-pass-container input{
-    width:calc(16px * 12) !important;
 
-}
-.form-login{
-    gap: calc(16px * 0.5);
-}
-}
+
 
 .form-login label {
     font-family: var(--titleFont);
@@ -83,17 +73,12 @@ input {
     border: 1px solid var(--border-gold-simple);
     color: var(--font-color-light);
     padding: calc(16px * 0.2);
-}
-
-
-
-.form-login button {
-    background-color: var(--button-background);
     
-    color: var(--font-color-dark);
-    border: 3px solid var(--border-orange);
-    border-radius: 0;
 }
+
+
+
+
 
 
 
@@ -163,4 +148,13 @@ input {
         transform: translateY(0);
         max-height: 200px;
     }
+}
+
+
+
+@media screen and (max-width: 720px) {
+
+.form-login{
+    gap: calc(16px * 0.5);
+}
 }

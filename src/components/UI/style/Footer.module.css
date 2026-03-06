@@ -46,6 +46,8 @@
  
 }
 
+
+
 .footer a {
     text-decoration: none;
     color: white;
@@ -92,3 +94,13 @@ li.social a:hover{
   
 }
 
+
+
+@media only screen and (max-width: 7200px) {
+    .footer ul li {
+        border: none;
+    }
+    .footer p{
+        font-size: 0.9rem;
+    }
+}

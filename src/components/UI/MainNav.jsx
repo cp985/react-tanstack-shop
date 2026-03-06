@@ -1,6 +1,4 @@
-//! nav fissa una volta dentro. pensare se mettere
-//! filti qui  o creare barra laterale
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useItems } from "../../context/FilteredItemsContext";
 import classMainNav from "./style/MainNav.module.css";
@@ -54,7 +52,7 @@ export default function MainNav({ setIsFilterOpen }) {
           />
         </li>
         <li>
-          <Button type="button" onClick={toggleTheme} npm install pixelarticons>
+          <Button type="button" onClick={toggleTheme} >
             
             {theme === "dark" ? <Moon /> : <Lightbulb />}
           </Button>

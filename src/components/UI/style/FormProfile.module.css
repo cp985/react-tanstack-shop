@@ -43,21 +43,15 @@ border-bottom: 1px solid var(--border-gold-simple);
     flex-direction: row-reverse;
     flex-wrap: wrap;
    
-   
+    
     
 }
 
-.input-pass-container input{
-    width:calc(16px * 10.8) !important;
+.input-pass-container div{
+   width: calc(16px * 13);
 }
 
-@media screen and (max-width: 720px) {
-  .input-pass-container input{
-    width:calc(16px * 12) !important;
-  }
- 
 
-}
 
 .pass-container {
     display: flex;

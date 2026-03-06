@@ -9,12 +9,6 @@ input:-webkit-autofill:active {
 
 
 
-input[type="password"]{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    width: 100%;
-
-}
 
 
 
@@ -71,8 +65,16 @@ input[type="password"]{
     display: flex;
     justify-content: center;
     align-items: center;
-
+width: 100%;
    
   
 }
 
+.classSecondary input{
+    min-width: 0;
+   flex: 1 1 auto;
+}
+
+.classSecondary button{
+    flex-shrink: 0;
+}
