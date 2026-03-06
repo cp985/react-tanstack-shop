@@ -2,10 +2,10 @@
      background: fixed;
     background-image: url('/backHome.webp');
     width: 100%;
-min-height: 100vh;
+min-height: 100dvh;
     background-size: cover ;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     background-repeat: no-repeat;

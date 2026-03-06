@@ -17,17 +17,16 @@
 .card:nth-child(2) .image { background-position: -256px 0; }
 .card:nth-child(3) .image { background-position: -320px 0; }
 
-/* --- CARD BASE --- */
 .card {
     width: 30%;
     background-color: #1a1c2c; 
-    min-height: calc(16px * 22);
+    min-height: calc(16px * 20);
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
-    gap: calc(16px * 1.5);
-    padding: calc(16px * 1);
+    gap: calc(16px * 2);
+    padding: calc(16px * 0.5);
     border: 4px solid #000;
     box-shadow: 
         inset 4px 4px 0px rgba(255, 255, 255, 0.05),
@@ -73,9 +72,10 @@
     width: 90%;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #fff;
+  
+    color: var(--font-color-light);
     font-weight: bold;
+    font-size: 0.9rem;
     text-shadow: 2px 2px 0px #000;
 }
 
