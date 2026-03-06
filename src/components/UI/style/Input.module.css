@@ -1,9 +1,9 @@
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #1a1a2e inset !important;
-    
+
     -webkit-text-fill-color: var(--font-color-light) !important;
 }
 
@@ -12,23 +12,24 @@ input:-webkit-autofill:active {
 
 
 
-.inputCntainer{
+.inputCntainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: calc(16px * 0.2);
-   
+
 }
 
-.label-filter1{
-  
+.label-filter1 {
+
     background-color: red;
     cursor: pointer;
     padding: calc(16px * 0.5);
-   
+
 }
-.label-filter1:hover{
+
+.label-filter1:hover {
     background-color: rgb(243, 129, 0);
 }
 
@@ -36,45 +37,46 @@ input:-webkit-autofill:active {
 
 
 
-.input-filter + div label{
+.input-filter+div label {
     cursor: pointer;
- 
-  
+
+
     padding: calc(16px * 0.2);
     background-color: #676fff;
     color: aqua;
 }
 
-.input-filter + div label:hover,
-.input-filter + div form input:checked label{
+.input-filter+div label:hover,
+.input-filter+div form input:checked label {
     background-color: rgb(137, 73, 1);
 }
 
 
 
-.input-filter{
-  
+.input-filter {
+
     cursor: pointer;
     padding: calc(16px * 0.2);
-  
+
 }
 
 
-.classSecondary{
-    
+.classSecondary {
+
     display: flex;
     justify-content: center;
     align-items: center;
-width: 100%;
-   
-  
+    width: 100%;
+
+
 }
 
-.classSecondary input{
+.classSecondary input {
+
     min-width: 0;
-   flex: 1 1 auto;
+    
 }
 
-.classSecondary button{
-    flex-shrink: 0;
+.classSecondary button {
+    
 }

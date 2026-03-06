@@ -34,7 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 28px;
 }
 
@@ -43,8 +43,8 @@ div.input-container {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-   
-    
+
+
 }
 
 div.input-pass-container {
@@ -52,9 +52,9 @@ div.input-pass-container {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
- width: calc(16px * 13);
-   
-    
+    width: calc(16px * 13);
+
+
 }
 
 
@@ -63,7 +63,7 @@ div.input-pass-container {
 
 .form-login label {
     font-family: var(--titleFont);
-    
+
     font-size: 1.3rem;
 }
 
@@ -73,7 +73,7 @@ input {
     border: 1px solid var(--border-gold-simple);
     color: var(--font-color-light);
     padding: calc(16px * 0.2);
-    
+
 }
 
 
@@ -84,7 +84,7 @@ input {
 
 .form-login button:hover {
     background-color: var(--button-hover-background);
-    
+
     color: var(--font-color-dark);
 }
 
@@ -96,39 +96,42 @@ input {
 
 
 }
-.form-login .toggle-container{
+
+.form-login .toggle-container {
     width: 100%;
     border-top: 1px solid var(--border-gold-simple);
 }
 
 .form-login .toggle-container button:hover {
- 
- border: 1px solid var(--border-gold-simple);
- background-color: var(--button-hover-background);
- color: var(--font-color-dark);
+
+    border: 1px solid var(--border-gold-simple);
+    background-color: var(--button-hover-background);
+    color: var(--font-color-dark);
 
 }
 
 .loading {
-  animation: pixel-gold-flash 0.6s steps(2) infinite;
-  
+    animation: pixel-gold-flash 0.6s steps(2) infinite;
+
 
 }
 
 @keyframes pixel-gold-flash {
-  0% {
-   
-    color: var(--font-color-light);
-    box-shadow: 
-      0 4px 0 0 #bcbcbc, 
-      0 -4px 0 0 #000, 4px 0 0 0 #000, -4px 0 0 0 #000;
-  }
-  100% {
-    color: var(--border-gold-simple);
-    box-shadow: 
-      0 4px 0 0 #b87800, /* Ombra oro scuro */
-      0 -4px 0 0 #000, 4px 0 0 0 #000, -4px 0 0 0 #000;
-  }
+    0% {
+
+        color: var(--font-color-light);
+        box-shadow:
+            0 4px 0 0 #bcbcbc,
+            0 -4px 0 0 #000, 4px 0 0 0 #000, -4px 0 0 0 #000;
+    }
+
+    100% {
+        color: var(--border-gold-simple);
+        box-shadow:
+            0 4px 0 0 #b87800,
+            /* Ombra oro scuro */
+            0 -4px 0 0 #000, 4px 0 0 0 #000, -4px 0 0 0 #000;
+    }
 }
 
 .pixel-field-wrapper {
@@ -154,7 +157,7 @@ input {
 
 @media screen and (max-width: 720px) {
 
-.form-login{
-    gap: calc(16px * 0.5);
-}
+    .form-login {
+        gap: calc(16px * 0.5);
+    }
 }
