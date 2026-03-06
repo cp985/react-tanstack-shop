@@ -7,6 +7,7 @@
     flex-direction: column;
 border-bottom: 1px solid var(--border-gold-simple);
     padding: calc(16px * 1);
+   
 }
 
 .pass-container:first-of-type{
@@ -53,7 +54,9 @@ border-bottom: 1px solid var(--border-gold-simple);
 @media screen and (max-width: 720px) {
   .input-pass-container input{
     width:calc(16px * 12) !important;
-}
+  }
+ 
+
 }
 
 .pass-container {
