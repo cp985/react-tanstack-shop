@@ -1,12 +1,12 @@
 .form-login {
     background-color: var(--background-color-tr);
-    width: 50%;
+    width: 60%;
     padding: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 16px;
+    gap: calc(16px * 0.8);
     box-shadow:
         0 -4px 0 0 #000, 0 4px 0 0 #000, -4px 0 0 0 #000, 4px 0 0 0 #000,
         0 -8px 0 0 #f8b800, 0 8px 0 0 #f8b800, -8px 0 0 0 #f8b800, 8px 0 0 0 #f8b800,

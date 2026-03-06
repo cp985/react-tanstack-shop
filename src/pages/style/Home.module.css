@@ -5,7 +5,7 @@
 min-height: 100dvh;
     background-size: cover ;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-repeat: no-repeat;
