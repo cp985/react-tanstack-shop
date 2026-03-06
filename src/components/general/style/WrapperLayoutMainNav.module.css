@@ -6,7 +6,9 @@
     left: 0;
     width: 30%;
     min-width: 25%;
-    height: 70dvh;
+    height: 73dvh;
+    max-height: calc(16px * 22.5);
+ 
     align-self: flex-start;
     background-color: var(--bacground-color-nav);
     border: 2px solid var(--border-gold-simple);

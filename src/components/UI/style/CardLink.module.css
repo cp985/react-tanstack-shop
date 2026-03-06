@@ -7,6 +7,12 @@
     transform: scale(2);
 }
 
+@media screen and (max-width: 720px) {
+    .card .image {
+        transform: scale(1.5);
+    }
+}
+
 .card:nth-child(1) .image { background-position: 0 0; }
 .card:nth-child(2) .image { background-position: -256px 0; }
 .card:nth-child(3) .image { background-position: -320px 0; }
