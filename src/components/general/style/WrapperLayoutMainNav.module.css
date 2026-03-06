@@ -5,13 +5,14 @@
     top: calc(var(--nav-height)  + (16px * 3.7));
     left: 0;
     width: 30%;
-    min-width: 20%;
-    height: 100%;
+    min-width: 25%;
+    height: 70dvh;
     align-self: flex-start;
     background-color: var(--bacground-color-nav);
     border: 2px solid var(--border-gold-simple);
     border-top: none;
     z-index: 2;
+   overflow: auto;
     animation: pixelAppear 0.3s steps(3) forwards;
 }
 

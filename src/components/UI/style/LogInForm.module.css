@@ -56,6 +56,10 @@ div.input-pass-container {
     
 }
 
+.input-pass-container input{
+    width:calc(16px * 10.8) !important;
+}
+
 .form-login label {
     font-family: var(--titleFont);
     
