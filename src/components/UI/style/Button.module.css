@@ -16,6 +16,15 @@
     touch-action: manipulation;
 }
 
+@media screen and (max-width: 720px) {
+    .button {
+        
+        padding: calc(16px * 0.4);
+        font-size: 0.9rem;
+    }
+    
+}
+
 
 
 .secondaryButton {
@@ -23,7 +32,7 @@
     background-color: var(--border-gold-simple);
     border: 1px solid var(--border-gold-simple);
     cursor: pointer;
-    min-width: 32px;
+    min-width: 16px;
     padding: calc(16px * 0.2);
 
 }

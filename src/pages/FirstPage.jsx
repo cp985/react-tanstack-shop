@@ -18,7 +18,7 @@ export default function FirstPage() {
         image
           title={"Shop"}
           path={"/app/shop"}
-          description={"Vai allo shop e cerca i tuoi prodotti preferiti"}
+          description={"Vai allo shop"}
         />
         <CardLink
         image

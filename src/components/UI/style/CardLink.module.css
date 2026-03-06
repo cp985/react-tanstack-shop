@@ -14,9 +14,9 @@
 .card:nth-child(3) .image { background-position: -320px 0; }
 
 .card {
-    width: 30%;
+    width: 35%;
     background-color: #1a1c2c; 
-    min-height: calc(16px * 18);
+    min-height: calc(16px * 17);
     display: flex;
     justify-content: start;
     align-items: center;
@@ -167,6 +167,6 @@
         transform: scale(1.3);
     }
     .card p{
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 }
