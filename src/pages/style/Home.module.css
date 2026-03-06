@@ -2,7 +2,7 @@
      background: fixed;
     background-image: url('/backHome.webp');
     width: 100%;
-min-height: 100dvh;
+    height: 100dvh;
     background-size: cover ;
     display: flex;
     justify-content: center;
