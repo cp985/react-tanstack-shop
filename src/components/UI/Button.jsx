@@ -37,7 +37,9 @@ export default function Button({
   return (
     <button
       type={type}
-      className={`${classButton.button} ${classButton[classOf] || ""}`}
+      className={`${classButton.button} ${classOf 
+    ? classOf.split(" ").map(c => classButton[c] || "").join(" ") 
+    : ""}`}
       onClick={onClick}
       disabled={disabled}
     >

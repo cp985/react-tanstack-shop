@@ -1,6 +1,4 @@
 .form-filter {
-  
- 
     width: 100%;
   
     display: flex;
@@ -37,7 +35,7 @@
 
 
     width: 100%;
-   padding: calc(16px * 0.4) calc(16px * 0.2) ;
+   padding: calc(16px * 0.4) calc(16px * 0.4) ;
     background-color: var(--background-color-tr);
 }
 

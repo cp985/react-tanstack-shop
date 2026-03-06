@@ -62,7 +62,7 @@ export default function Input({
            
             {...(value !== undefined ? { value } : { defaultValue })}
           />
-          <Button classOf="secondaryButton" onClick={togglePassword}>{isPassword ? <Eye/> : <EyeOff/>}</Button>
+          <Button classOf="browserOnly secondaryButton" onClick={togglePassword}>{isPassword ? <Eye/> : <EyeOff/>}</Button>
         </div>
         <label className={classInput[classOfLabel]} htmlFor={id}>
           {label}

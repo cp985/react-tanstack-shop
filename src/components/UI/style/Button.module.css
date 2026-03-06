@@ -70,3 +70,9 @@ button:disabled {
         transform: translateY(-4px);
     }
 }
+
+@media screen and (max-width: 720px) {
+   .browserOnly{
+       display: none;
+   }
+}
