@@ -60,6 +60,12 @@ div.input-pass-container {
     width:calc(16px * 10.8) !important;
 }
 
+@media screen and (max-width: 720px) {
+  .input-pass-container input{
+    width:calc(16px * 12) !important;
+}
+}
+
 .form-login label {
     font-family: var(--titleFont);
     

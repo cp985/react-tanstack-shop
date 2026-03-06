@@ -73,6 +73,7 @@ export default function Item({ item }) {
           {" "}
           <p>Tipo: {itemType}</p>
           <p>Rating: {item.rating}</p>
+          
           <p className={classItem["price"]}>Prezzo: {item.prezzo}<Money/></p>
         </div>
       </li>

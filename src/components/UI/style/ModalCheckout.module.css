@@ -81,3 +81,12 @@ padding-right: calc(16px * 2);
     flex-direction: column;
     gap: calc(16px * 0.2);
 }
+
+.success-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: calc(16px * 0.2);
+}

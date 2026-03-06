@@ -40,7 +40,8 @@ export default function ItemDetails() {
         <p>Peso: {item.peso}</p>
       </article>
       <article className={classItemDetails["price-container"]}>
-        <p>Rating:{item.rating}</p>
+        <p>Rating: {item.rating}</p>
+        <p>Disponibilità: {item.stock}</p>
         <div>
           <p
             className={
@@ -49,12 +50,12 @@ export default function ItemDetails() {
                 : classItemDetails["price"]
             }
           >
-            Prezzo:{item.prezzo}
+            Prezzo: {item.prezzo}
             <Money />
           </p>
           {item.onSale && (
             <p className={classItemDetails["special-price"]}>
-              Special Price:{item.prezzo - item.prezzo * 0.3}
+              Special Price: {item.prezzo - item.prezzo * 0.3}
             <Money />
             </p>
           )}
@@ -62,9 +63,12 @@ export default function ItemDetails() {
       </article>
       <div className={classItemDetails["button-container"]}>
         <Button text={"Torna allo shop"} end isLink path={"/app/shop"} />
+        
+     
         <Button
-          text={"Aggiungi al carrello"}
+          text={item.disponibile && item.stock > 0 ? "Aggiungi al carrello" : "Non disponibile"}
           onClick={() => handleAddToCart(item)}
+        disabled={!item.disponibile || item.stock === 0}
         />
       </div>
     </section>

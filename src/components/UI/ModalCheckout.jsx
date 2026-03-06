@@ -1,5 +1,4 @@
 import { useImmer } from "use-immer";
-import { createPortal } from "react-dom";
 import { forwardRef, useState, useEffect } from "react";
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -27,6 +26,7 @@ const ModalCheckout = forwardRef(function ModalCheckout(
   const { clearCart, cart, totalPrice } = useItems();
   const navigate = useNavigate();
   const [errorsList, setErrorsList] = useState([]);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [cc, setCC] = useState("");
   const user = localStorage.getItem("username");
   const [indirizzoSpedizione, setIndirizzoSpedizione] = useImmer({
@@ -56,51 +56,63 @@ const ModalCheckout = forwardRef(function ModalCheckout(
     },
   });
 
-  const { mutate, isPending } = useMutation({
+  const { mutate, isPending , isError, error} = useMutation({
     mutationFn: (order) => postOrders(order),
     onSuccess: () => {
-      clearCart();
-      closeModal();
-      navigate(`accountUser/${user}/orders`);
+      setIsSuccess(true);
+      setTimeout(() => {
+        setIsSuccess(false);
+        clearCart();
+        closeModal();
+        navigate(`accountUser/${user}/orders`);
+      }, 4000);
     },
   });
 
-function handleCheckout(e) {
-  e.preventDefault(); 
-  
-  let currentErrors = [];
+  function handleCheckout(e) {
+    e.preventDefault();
 
-  if (!textReg(indirizzoSpedizione.nome)) currentErrors.push("Il Nome non è valido.");
-  if (!textReg(indirizzoSpedizione.cognome)) currentErrors.push("Il Cognome non è valido.");
-  if (!phoneReg(indirizzoSpedizione.telefono)) currentErrors.push("Il numero di Telefono non è valido.");
-  if (!addressReg(indirizzoSpedizione.via)) currentErrors.push("L'Indirizzo (Via) non è valido.");
-  if (!addressReg(indirizzoSpedizione.citta)) currentErrors.push("La Città non è valida.");
-  if (!capReg(indirizzoSpedizione.cap)) currentErrors.push("Il CAP deve essere di 5 cifre.");
-  if (!addressReg(indirizzoSpedizione.paese)) currentErrors.push("Il Paese non è valido.");
-  
-  if (!ccReg(cc)) {
-    currentErrors.push("Il numero della Carta di Credito deve avere tra 13 e 16 cifre.");
+    let currentErrors = [];
+
+    if (!textReg(indirizzoSpedizione.nome))
+      currentErrors.push("Il Nome non è valido.");
+    if (!textReg(indirizzoSpedizione.cognome))
+      currentErrors.push("Il Cognome non è valido.");
+    if (!phoneReg(indirizzoSpedizione.telefono))
+      currentErrors.push("Il numero di Telefono non è valido.");
+    if (!addressReg(indirizzoSpedizione.via))
+      currentErrors.push("L'Indirizzo (Via) non è valido.");
+    if (!addressReg(indirizzoSpedizione.citta))
+      currentErrors.push("La Città non è valida.");
+    if (!capReg(indirizzoSpedizione.cap))
+      currentErrors.push("Il CAP deve essere di 5 cifre.");
+    if (!addressReg(indirizzoSpedizione.paese))
+      currentErrors.push("Il Paese non è valido.");
+
+    if (!ccReg(cc)) {
+      currentErrors.push(
+        "Il numero della Carta di Credito deve avere tra 13 e 16 cifre.",
+      );
+    }
+
+    if (currentErrors.length > 0) {
+      setErrorsList(currentErrors);
+      return;
+    }
+
+    setErrorsList([]);
+    const order = {
+      prodotti: cart.map((item) => ({
+        prodottoId: item._id,
+        quantita: item.quantity,
+      })),
+      indirizzoSpedizione,
+      metodoPagamento: `carta`,
+      pagato: true,
+    };
+
+    mutate(order);
   }
-
-  if (currentErrors.length > 0) {
-    setErrorsList(currentErrors);
-    return;
-  }
-
-  setErrorsList([]); 
-  const order = {
-    prodotti: cart.map((item) => ({
-      prodottoId: item._id,
-      quantita: item.quantity,
-    })),
-    indirizzoSpedizione,
-    metodoPagamento: `carta`,
-    pagato: true,
-  };
-
-  mutate(order);
-}
-  
 
   function onChange(e) {
     setIndirizzoSpedizione((draft) => {
@@ -124,6 +136,16 @@ function handleCheckout(e) {
     }
   }, [userData]);
 
+  if (isSuccess)
+    return (
+      <Modal ref={ref}>
+        <div className={classModalCheckout["success-container"]}>
+          <h3>Il tuo acquisto è stato effettuato con successo</h3>
+          <p>Verrai reindirizzato a breve alla pagina dei tuoi ordini</p>
+        </div>
+      </Modal>
+    );
+
   return (
     <Modal ref={ref}>
       <h2 className={classModalCheckout["title"]}>
@@ -136,7 +158,8 @@ function handleCheckout(e) {
           ))}
         </ul>
       )}
-      {isErrorData && <h3>{isErrorM.message}</h3>}
+      {isErrorData && <p className={classModalCheckout["errors-list"]}>{isErrorM.message}</p>}
+      {isError && <p className={classModalCheckout["errors-list"]}>{error.message}</p>}
       <form className={classModalCheckout["modal-checkout"]}>
         <div className={classModalCheckout["input-container"]}>
           <Input
@@ -232,7 +255,7 @@ function handleCheckout(e) {
             <Button
               type="button"
               text="Paga"
-              disabled={isPending || cart.length === 0 || totalPrice() === 0 }
+              disabled={isPending || cart.length === 0 || totalPrice() === 0}
               onClick={handleCheckout}
             />
           </div>
