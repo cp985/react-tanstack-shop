@@ -3,7 +3,7 @@
  display: flex;
  justify-content: center;
  align-items: center;
- padding: 1rem;
+ padding: calc(16px * 1);
 }
 
 .ul{
@@ -13,6 +13,6 @@
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: calc(16px * 1);
 }
 

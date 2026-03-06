@@ -8,7 +8,6 @@
   align-items: center;
   font-size: var(--font-size-root);
   font-weight: var(--font-weight-root);
-  /* gap: 2rem; */
   --primary-theme-color: rgba(196, 181, 253, 0.3);
   --secondary-theme-color: rgba(251, 207, 232, 0.35);
   --tertiary-theme-color: rgba(191, 219, 254, 0.3);

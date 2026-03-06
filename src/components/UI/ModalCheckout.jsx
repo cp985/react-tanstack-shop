@@ -232,7 +232,7 @@ function handleCheckout(e) {
             <Button
               type="button"
               text="Paga"
-              disabled={isPending || cart.length === 0 || totalPrice() === 0 || errorsList.length > 0}
+              disabled={isPending || cart.length === 0 || totalPrice() === 0 }
               onClick={handleCheckout}
             />
           </div>

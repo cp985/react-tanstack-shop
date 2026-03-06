@@ -1,19 +1,19 @@
 nav {
-    width: calc(100% - 0.1rem);
-    margin-right: 1rem;
+    width: calc(100% - (calc(16px * 0.1)));
+    margin-right: calc(16px * 1);
     height: var(--nav-height);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 0.8rem;
+    padding: calc(16px * 0.8);
     background-color: var(--bacground-color-nav);
     border: 2px solid var(--border-gold-simple);
     border-left: none;
     border-right: none;
     color: var(--font-color-dark);
     position: sticky;
-gap: 0.5rem;
+gap: calc(16px * 0.5);
     top: 0;
     z-index: 2;
 }
@@ -25,7 +25,7 @@ gap: 0.5rem;
     display: flex;
     justify-content: end;
     align-items: center;
-    gap: 1rem;
+    gap: calc(16px * 1);
     flex-wrap: wrap;
 }
 
@@ -60,7 +60,7 @@ color:var(--font-color-light);
     border: 1px solid var(--border-gold-simple);
     border-right: none;
     background-color: var(--background-color);
-    padding: 0.2rem;
+    padding: calc(16px * 0.2);
     
 }
 
@@ -78,11 +78,11 @@ color:var(--font-color-light);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: calc(16px * 0.5);
 }
 
 .account-div {
-    padding-top: 0.5rem;
+    padding-top: calc(16px * 0.5);
     background-color: var(--bacground-color-nav);
     position: absolute;
     top: 100%;
@@ -91,7 +91,7 @@ color:var(--font-color-light);
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: calc(16px * 1);
 
 
 }

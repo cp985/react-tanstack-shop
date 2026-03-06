@@ -2,10 +2,10 @@
 
 .aside {
     position: sticky;  
-    top: calc(var(--nav-height)  + 3.7rem);
+    top: calc(var(--nav-height)  + (16px * 3.7));
     left: 0;
     width: 30%;
-    min-width: 25%;
+    min-width: 20%;
     height: 100%;
     align-self: flex-start;
     background-color: var(--bacground-color-nav);

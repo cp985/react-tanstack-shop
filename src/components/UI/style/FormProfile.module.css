@@ -6,7 +6,7 @@
     align-items: center;
     flex-direction: column;
 border-bottom: 1px solid var(--border-gold-simple);
-    padding: 1rem;
+    padding: calc(16px * 1);
 }
 
 .pass-container:first-of-type{
@@ -56,11 +56,11 @@ border-bottom: 1px solid var(--border-gold-simple);
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: calc(16px * 1);
     border-top: 1px solid var(--border-gold-simple);
     border-bottom: 1px solid var(--border-gold-simple);
   
-    padding: 1rem 0;
+    padding: calc(16px * 1) 0;
 
 
 }

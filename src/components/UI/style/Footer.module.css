@@ -9,15 +9,15 @@
 
 .footer {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: calc(16px * 2);
     background-color: rgb(88, 88, 88);
     color: var(--font-color-light);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 0.5rem;
-    gap: 2rem;
+    padding: calc(16px * 0.5);
+    gap: calc(16px * 2);
     border-top: 1px solid var(--border-gold-simple);
 }
 
@@ -26,7 +26,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: calc(16px * 1);
 }
 
 .footer ul {
@@ -34,7 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: calc(16px * 1);
 
 }
 
@@ -43,19 +43,19 @@
     justify-content: center;
     align-items: center;
     border: 1px solid var(--border-orange);
-    border-radius: 0.3rem
+ 
 }
 
 .footer a {
     text-decoration: none;
     color: white;
-   width: 3rem;
-   height: 3rem;
+   width: calc(16px * 3);
+   height: calc(16px * 3);
    display: flex;
    justify-content: center;
    align-items: center;
 
-   gap: 1rem;
+   gap: calc(16px * 1);
    
 }
 
@@ -81,14 +81,14 @@ li.social a:hover{
     align-items: center;
     border-top: 1px solid var(--border-gold-simple);
  
-    padding: 0.1rem 0.2rem;
+    padding: calc(16px * 0.1) calc(16px * 0.2);
 }
 
 .footer address{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: calc(16px * 2);
   
 }
 

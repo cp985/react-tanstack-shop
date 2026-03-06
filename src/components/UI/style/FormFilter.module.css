@@ -17,7 +17,7 @@
 .form-filter label {
     background-color: var(--button-background);
     cursor: pointer;
-    padding: 0.2rem;
+    padding: calc(16px * 0.2);
    color: var(--font-color-dark);
    font-weight: 600;
     border: 1px solid var(--border-orange);
@@ -37,7 +37,7 @@
 
 
     width: 100%;
-   padding: 0.4rem 0.2rem ;
+   padding: calc(16px * 0.4) calc(16px * 0.2) ;
     background-color: var(--background-color-tr);
 }
 
@@ -60,8 +60,8 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.3rem;
-    padding: 0.5rem;
+    gap: calc(16px * 0.3);
+    padding: calc(16px * 0.5);
     
     
   

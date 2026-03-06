@@ -7,14 +7,11 @@ input:-webkit-autofill:active {
     -webkit-text-fill-color: var(--font-color-light) !important;
 }
 
-input{
-    display: block;
-}
+
 
 input[type="password"]{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -webkit-appearance: none;
     width: 100%;
 
 }
