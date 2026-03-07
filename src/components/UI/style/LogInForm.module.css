@@ -52,7 +52,9 @@ div.input-pass-container {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    width: calc(16px * 12.9);
+    width: 100%;           /* era calc(16px * 13) */
+    max-width: calc(16px * 13); /* mantieni limite desktop */
+    box-sizing: border-box;
 
 
 }
