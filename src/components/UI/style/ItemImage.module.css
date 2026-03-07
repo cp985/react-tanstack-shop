@@ -1,0 +1,7 @@
+.item-sprite{}
+
+@media screen and (max-width: 720px) {
+  .item-sprite{
+     transform: scale(0.8) !important;
+    }
+}

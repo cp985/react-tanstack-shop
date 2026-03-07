@@ -1,5 +1,5 @@
 import sprite64x64 from "../../assets/sprite64x64.webp";
-
+import classItemImage from './style/ItemImage.module.css'
 export default function ItemImage({ spritePosX, spritePosY, size = 64 }) {
   const style = {
     width: `${size}px`,
@@ -12,5 +12,5 @@ export default function ItemImage({ spritePosX, spritePosY, size = 64 }) {
     display: "inline-block",
   };
 
-  return <div style={style} className="item-sprite" />;
+  return <div style={style} className={classItemImage["item-sprite"]} />;
 }
