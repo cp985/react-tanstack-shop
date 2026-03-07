@@ -36,7 +36,7 @@
 
 
 .input-pass-container {
-    display: flex;
+     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -47,9 +47,9 @@
 
 }
 
-.input-pass-container div {
+/* .input-pass-container div {
     width: calc(16px * 12.9);
-}
+} */
 
 
 
@@ -62,7 +62,6 @@
     gap: calc(16px * 1);
     border-top: 1px solid var(--border-gold-simple);
     border-bottom: 1px solid var(--border-gold-simple);
-
     padding: calc(16px * 1) 0;
 
 
@@ -88,7 +87,8 @@
         flex-direction: row;
         flex-direction: column-reverse;
     }
-    .input-pass-container div {
-    width: 100%;
+
+   .input-pass-container {
+        max-width: 100%;
 }
 }
