@@ -67,7 +67,11 @@ button:disabled {
 
 @media (hover: hover) {
     .button:hover {
-        transform: translateY(-4px);
+             background-color: var(--button-hover-background);
+        color: var(--font-color-dark);
+        transform: translate(-4px, -4px);
+        box-shadow: 4px 4px 0px 0px var(--border-orange);
+
     }
 }
 
