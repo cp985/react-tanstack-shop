@@ -51,6 +51,13 @@ input.search::placeholder{
 color:var(--font-color-light);
 }
 
+nav svg {
+    width: calc(16px * 1.5);
+    height: calc(16px * 1.5);
+    display: block; 
+}
+
+
 nav button svg {
     width: calc(16px * 1.5);
     height: calc(16px * 1.5);
@@ -121,10 +128,16 @@ justify-content: space-evenly;
         width: calc(16px * 1.2);
         height: calc(16px * 1.2);
     }
+       nav svg {
+        width: calc(16px * 1.2);
+        height: calc(16px * 1.2);
+    }
     
     .search-icon {
         width: calc(16px * 1.2);
         padding: calc(16px * 0.2);
     }
-
+.ul2 li.search-li input{
+    height: calc(16px * 1.7);
+}
 }
