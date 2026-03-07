@@ -51,9 +51,9 @@ input.search::placeholder{
 color:var(--font-color-light);
 }
 
-nav button svg{
-    width:100% !important;
-   
+nav button svg {
+    width: calc(16px * 1.5);
+    height: calc(16px * 1.5);
 }
 
 .search-icon{
@@ -115,6 +115,16 @@ justify-content: space-evenly;
     }
     .ul2 li.filter-li {
         margin: 0;
+    }
+
+    nav button svg {
+        width: calc(16px * 1.2);
+        height: calc(16px * 1.2);
+    }
+    
+    .search-icon {
+        width: calc(16px * 1.2);
+        padding: calc(16px * 0.2);
     }
 
 }
