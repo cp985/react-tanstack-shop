@@ -34,6 +34,10 @@ input:-webkit-autofill:active {
 }
 
 
+input[type="password"] {
+    max-width: calc(16px * 11);
+}
+
 
 
 
@@ -83,3 +87,4 @@ input:-webkit-autofill:active {
 .classSecondary button {
        flex-shrink: 0;
 }
+
