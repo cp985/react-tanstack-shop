@@ -33,12 +33,20 @@
 }
 
 
+<<<<<<< HEAD
 /* .button:hover {
+=======
+/*.button:hover {
+>>>>>>> 343abd55a3d853314b21f2592183e31b63558251
     background-color: var(--button-hover-background);
     color: var(--font-color-dark);
     transform: translate(-4px, -4px);
     box-shadow: 4px 4px 0px 0px var(--border-orange);
+<<<<<<< HEAD
 } */
+=======
+}*/
+>>>>>>> 343abd55a3d853314b21f2592183e31b63558251
 
 .button:active,
 .active {
@@ -75,8 +83,15 @@ button:disabled {
     }
 }
 
+<<<<<<< HEAD
 @media (hover: none) and (pointer: coarse) {
     
+=======
+@media (hover: none) and (pointer: none){ .browserOnly{
+       display: none;}
+
+@media screen and (max-width: 730px) {
+>>>>>>> 343abd55a3d853314b21f2592183e31b63558251
    .browserOnly{
        display: none;
    }
