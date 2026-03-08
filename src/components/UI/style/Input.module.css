@@ -34,9 +34,7 @@ input:-webkit-autofill:active {
 }
 
 
-input[type="password"] {
-    max-width: calc(16px * 11);
-}
+
 
 
 
@@ -88,3 +86,10 @@ input[type="password"] {
        flex-shrink: 0;
 }
 
+
+
+@media (hover: none) and (pointer: coarse) {
+   input[type="password"] {
+    max-width: calc(16px * 11);
+}
+}

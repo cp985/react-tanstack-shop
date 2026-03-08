@@ -52,8 +52,8 @@ div.input-pass-container {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    width: 100%;           /* era calc(16px * 13) */
-    max-width: calc(16px * 13); /* mantieni limite desktop */
+    width: auto;           
+    max-width: calc(16px * 13); 
     box-sizing: border-box;
 
 
@@ -155,7 +155,9 @@ input {
     }
 }
 
-
+div.input-pass-container input {
+    max-width: calc(16px * 11);
+}
 
 @media screen and (max-width: 720px) {
 

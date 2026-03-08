@@ -67,7 +67,7 @@ button:disabled {
     box-shadow: none !important;
 }
 
-@media screen and (max-width: 768px)   {
+@media screen and (hover: hover) and (pointer: fine) {
     .button:hover {
              background-color: var(--button-hover-background);
         color: var(--font-color-dark);
@@ -77,11 +77,9 @@ button:disabled {
     }
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (hover: none) and (pointer: coarse) { 
     .browserOnly{
-        background-color: transparent;
-        border: none;
-        color:var(--border-gold-simple);
+        display: none;
 
     }
 
@@ -95,11 +93,7 @@ button:disabled {
     padding: calc(16px * 0.2);
 }
     }
-/* @media screen and (max-width: 730px) {
-   .browserOnly{
-       display: none;
-   }
-} */
+
 
 
 
