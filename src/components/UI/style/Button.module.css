@@ -65,7 +65,7 @@ button:disabled {
     box-shadow: none !important;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
     .button:hover {
              background-color: var(--button-hover-background);
         color: var(--font-color-dark);
