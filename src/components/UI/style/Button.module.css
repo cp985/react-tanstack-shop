@@ -79,7 +79,8 @@ button:disabled {
 
 @media (hover: none){ 
     .browserOnly{
-        display: none;
+        background-color: transparent;
+        border: none;
     }
 
        .theme{
