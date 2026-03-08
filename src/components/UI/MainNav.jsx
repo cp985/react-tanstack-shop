@@ -52,7 +52,7 @@ export default function MainNav({ setIsFilterOpen }) {
           />
         </li>
         <li>
-          <Button type="button" onClick={toggleTheme} >
+          <Button type="button" classOf={"theme"} onClick={toggleTheme} >
             
             {theme === "dark" ? <Moon /> : <Lightbulb />}
           </Button>
