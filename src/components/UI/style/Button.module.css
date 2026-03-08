@@ -79,11 +79,11 @@ button:disabled {
 
 @media (hover: none){ 
     .browserOnly{
-        padding: calc(16px * 0.5);
+        padding: calc(16px * 0.2);
     }
 
        .theme{
-    padding: calc(16px * 0.1);
+    padding: calc(16px * 0.2);
 }
     }
 @media screen and (max-width: 730px) {
