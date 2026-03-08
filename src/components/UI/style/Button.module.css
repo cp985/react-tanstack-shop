@@ -83,7 +83,7 @@ button:disabled {
     }
 
        .theme{
-    padding: calc(16px * 0.5);
+    padding: calc(16px * 0.1);
 }
     }
 @media screen and (max-width: 730px) {
