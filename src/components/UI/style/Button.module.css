@@ -81,6 +81,14 @@ button:disabled {
     .browserOnly{
         background-color: transparent;
         border: none;
+        color:var(--border-gold-simple);
+
+    }
+
+    .active{
+        background-color: transparent;
+        border: none;
+       
     }
 
        .theme{
