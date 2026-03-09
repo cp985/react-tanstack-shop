@@ -142,7 +142,7 @@ justify-content: space-evenly;
 }
 }
 
-@media screen and (hover: none) and (pointer: coarse) {
+@media screen and (max-width: 768px) {
     nav button svg {
         width: calc(16px * 1.2);
         height: calc(16px * 1.2);
