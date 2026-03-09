@@ -77,13 +77,11 @@ button:disabled {
     }
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (hover: none) and (pointer: coarse) { 
     .browserOnly{
         display: none;
 
     }
-
-
 
        .theme{
     padding: calc(16px * 0.3);
