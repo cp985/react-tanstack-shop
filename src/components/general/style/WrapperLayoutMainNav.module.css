@@ -1,33 +1,55 @@
 
 
 .aside {
-    position: sticky;  
-    top: calc(var(--nav-height)  + (16px * 3.5));
-    left: 0;
+position: sticky;
+    top: var(--nav-height, 120px);;                         /* ← semplifica, togli il calc complesso */
     width: 35%;
     min-width: 30%;
-    height: 73dvh;
-    max-height: calc(16px * 22.5);
- padding-top: calc(16px * 0.2);
+    height: 100dvh;                  /* occupa tutta la viewport */
+    max-height: calc(100dvh - var(--nav-height, 120px));
     align-self: flex-start;
+    will-change: transform;
+    transform: translateZ(0);        /* forza GPU layer su Chrome */
+    overflow: auto;
+
+
+
+
+    left: 0;
+
+
+ padding-top: calc(16px * 0.2);
+   
     background-color: var(--bacground-color-nav);
     border: 2px solid var(--border-gold-simple);
     border-top: none;
     z-index: 2;
-   overflow: auto;
+
     animation: pixelAppear 0.3s steps(3) forwards;
 }
 
-
+.navDiv{
+    width: 100%;
+    position: sticky;
+   top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
 
 main{
-position: relative;
+    position: relative;
     width: 100%;
     min-height: 60dvh;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 
-        align-items: flex-start; 
+
+
 }
 
 main section{

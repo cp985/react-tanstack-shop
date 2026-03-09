@@ -55,19 +55,35 @@ export default function WrapperLayoutMainNav() {
     setIsFilterOpen((prev) => !prev);
   }
 
+  // In MainNav.jsx o WrapperLayoutMainNav.jsx
+  const navRef = useRef(null);
 
+  // useEffect(() => {
+  //   if (navRef.current) {
+  //     const h = navRef.current.offsetHeight;
+  //     document.documentElement.style.setProperty('--nav-height', `${h}px`);
+  //   }
+  // }, []);
 
+  useEffect(() => {
+    const updateNavHeight = () => {
+      if (navRef.current) {
+        const h = navRef.current.offsetHeight;
+        document.documentElement.style.setProperty("--nav-height", `${h}px`);
+      }
+    };
 
-// In MainNav.jsx o WrapperLayoutMainNav.jsx
-const navRef = useRef(null);
+    updateNavHeight();
 
-useEffect(() => {
-  if (navRef.current) {
-    const h = navRef.current.offsetHeight;
-    document.documentElement.style.setProperty('--nav-height', `${h}px`);
-  }
-}, []); // ricalcola al mount
+    window.addEventListener("resize", updateNavHeight);
 
+    window.visualViewport?.addEventListener("resize", updateNavHeight);
+
+    return () => {
+      window.removeEventListener("resize", updateNavHeight);
+      window.visualViewport?.removeEventListener("resize", updateNavHeight);
+    };
+  }, []);
 
   if (!items) {
     return <div>Caricamento...</div>;
@@ -84,32 +100,45 @@ useEffect(() => {
 
   const modalRef = useRef();
 
-//modal delete account
-const modalDeleteAccountRef = useRef();
-function openModalDeleteAccount() {
-  modalDeleteAccountRef.current.showModal();
-}
-function closeModalDeleteAccount() {
-  modalDeleteAccountRef.current.close();
-}
+  //modal delete account
+  const modalDeleteAccountRef = useRef();
+  function openModalDeleteAccount() {
+    modalDeleteAccountRef.current.showModal();
+  }
+  function closeModalDeleteAccount() {
+    modalDeleteAccountRef.current.close();
+  }
 
   return (
     <>
-     
       <Header />
-      <ItemsProvider items={items.products} openModal={openModal} openModalDeleteAccount={openModalDeleteAccount} closeModalDeleteAccount={closeModalDeleteAccount}>
-        <ModalCheckout ref={modalRef} closeModal={closeModal} openModal={openModal} />
-        <ModalDeleteAccount ref={modalDeleteAccountRef} closeModalDeleteAccount={closeModalDeleteAccount} openModalDeleteAccount={openModalDeleteAccount} />
-        <MainNav setIsFilterOpen={toggleFilter} isFilterOpen={isFilterOpen} />
+      <ItemsProvider
+        items={items.products}
+        openModal={openModal}
+        openModalDeleteAccount={openModalDeleteAccount}
+        closeModalDeleteAccount={closeModalDeleteAccount}
+      >
+        <ModalCheckout
+          ref={modalRef}
+          closeModal={closeModal}
+          openModal={openModal}
+        />
+        <ModalDeleteAccount
+          ref={modalDeleteAccountRef}
+          closeModalDeleteAccount={closeModalDeleteAccount}
+          openModalDeleteAccount={openModalDeleteAccount}
+        />
+        <div className={classWrapperLayoutMainNav.navDiv} ref={navRef}>
+          <MainNav setIsFilterOpen={toggleFilter} isFilterOpen={isFilterOpen} />
+        </div>
         <main className={classWrapperLayoutMainNav.main}>
-          
-            <aside
-              className={`${classWrapperLayoutMainNav.aside} ${isFilterOpen ? classWrapperLayoutMainNav.asideOpen : classWrapperLayoutMainNav.asideClosed} `}
-              ref={sidebarRef}
-            >
-              <FormFilter />
-            </aside>
-          
+          <aside
+            className={`${classWrapperLayoutMainNav.aside} ${isFilterOpen ? classWrapperLayoutMainNav.asideOpen : classWrapperLayoutMainNav.asideClosed} `}
+            ref={sidebarRef}
+          >
+            <FormFilter />
+          </aside>
+
           <Outlet />
         </main>
       </ItemsProvider>
