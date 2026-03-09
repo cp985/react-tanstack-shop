@@ -83,14 +83,10 @@ button:disabled {
 
     }
 
-   .secondaryButton .active{
-        background-color: transparent;
-        border: none;
-       
-    }
+
 
        .theme{
-    padding: calc(16px * 0.2);
+    padding: calc(16px * 0.3);
 }
     }
 
