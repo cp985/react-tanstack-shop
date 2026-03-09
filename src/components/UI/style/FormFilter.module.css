@@ -24,7 +24,7 @@
 
 
 
-.form-filter label:hover,
+
 .form-filter input:checked+label {
     background-color: var(--button-hover-background);
 }
@@ -108,3 +108,8 @@ color: var(--font-color-dark);
   color: var(--font-color-light);
 }
 
+@media (hover: hover ) and (pointer: fine) {
+    .form-filter label:hover {
+    background-color: var(--button-hover-background);
+}
+}
