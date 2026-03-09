@@ -134,7 +134,7 @@ justify-content: space-evenly;
     }  
     
     .search-icon {
-        width: calc(16px * 1.2);
+        width: calc(16px * 1.1);
         padding: calc(16px * 0.2);
     } 
 .ul2 li.search-li input{
