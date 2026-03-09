@@ -89,7 +89,7 @@ input:-webkit-autofill:active {
 
 @media (hover: none) and (pointer: coarse) {
    input[type="password"] {
-    width: 100%;
+    width: calc(16px*13);
     max-width: auto;
 }
 }

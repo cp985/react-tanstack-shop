@@ -53,7 +53,7 @@ div.input-pass-container {
     align-items: center;
     flex-direction: column-reverse;
     width: auto;           
-    max-width: calc(16px * 13); 
+ 
     box-sizing: border-box;
 
 
