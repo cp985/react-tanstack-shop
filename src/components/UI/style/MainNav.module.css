@@ -130,11 +130,11 @@ justify-content: space-evenly;
     } */
          nav svg {
         width: calc(16px * 1.2);
-        height: calc(16px * 1.15);
+        height: calc(16px * 1.2);
     }  
     
     .search-icon {
-        width: calc(16px * 1.1);
+        width: calc(16px * 1.2);
         padding: calc(16px * 0.2);
     } 
 .ul2 li.search-li input{

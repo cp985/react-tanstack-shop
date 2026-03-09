@@ -77,7 +77,7 @@ button:disabled {
     }
 }
 
-@media screen and (hover: none) and (pointer: coarse) { 
+@media screen and (max-width: 768px) { 
     .browserOnly{
         display: none;
 
