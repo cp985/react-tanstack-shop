@@ -25,9 +25,25 @@ position: relative;
     width: 100%;
     min-height: 60dvh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 
         align-items: flex-start; 
+}
+
+main section{
+   margin: 0 auto;
+
+
+
+}
+
+.asideOpen{
+display: block;
+}
+
+.asideClosed{
+display: none;
+ 
 }
 
 .aside {

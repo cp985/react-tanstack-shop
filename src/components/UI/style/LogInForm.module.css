@@ -131,7 +131,6 @@ input {
         color: var(--border-gold-simple);
         box-shadow:
             0 4px 0 0 #b87800,
-            /* Ombra oro scuro */
             0 -4px 0 0 #000, 4px 0 0 0 #000, -4px 0 0 0 #000;
     }
 }
@@ -155,9 +154,7 @@ input {
     }
 }
 
-/* div.input-pass-container input {
-    max-width: calc(16px * 11);
-} */
+
 
 @media screen and (max-width: 720px) {
 

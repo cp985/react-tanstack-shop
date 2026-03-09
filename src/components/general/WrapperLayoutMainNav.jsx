@@ -55,34 +55,7 @@ export default function WrapperLayoutMainNav() {
     setIsFilterOpen((prev) => !prev);
   }
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollY = window.scrollY;
-  //     const altezzaNavbar = 190;
-  //     const nuovoMargine = Math.max(90, altezzaNavbar - scrollY);
 
-  //     setMarginTop(nuovoMargine);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-
-  // useEffect(() => {
-  //   let ticking = false;
-  //   const handleScroll = () => {
-  //     if (!ticking) {
-  //       window.requestAnimationFrame(() => {
-  //         const scrollY = window.scrollY;
-  //         setMarginTop(Math.max(120, 210 - scrollY));
-  //         ticking = false;
-  //       });
-  //       ticking = true;
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
 
 
 // In MainNav.jsx o WrapperLayoutMainNav.jsx
@@ -129,15 +102,14 @@ function closeModalDeleteAccount() {
         <ModalDeleteAccount ref={modalDeleteAccountRef} closeModalDeleteAccount={closeModalDeleteAccount} openModalDeleteAccount={openModalDeleteAccount} />
         <MainNav setIsFilterOpen={toggleFilter} isFilterOpen={isFilterOpen} />
         <main className={classWrapperLayoutMainNav.main}>
-          {isFilterOpen && (
+          
             <aside
-              className={classWrapperLayoutMainNav.aside}
-              // style={{ marginTop: `${marginTop}px` }}
+              className={`${classWrapperLayoutMainNav.aside} ${isFilterOpen ? classWrapperLayoutMainNav.asideOpen : classWrapperLayoutMainNav.asideClosed} `}
               ref={sidebarRef}
             >
               <FormFilter />
             </aside>
-          )}
+          
           <Outlet />
         </main>
       </ItemsProvider>
