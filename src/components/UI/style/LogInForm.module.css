@@ -155,9 +155,9 @@ input {
     }
 }
 
-div.input-pass-container input {
+/* div.input-pass-container input {
     max-width: calc(16px * 11);
-}
+} */
 
 @media screen and (max-width: 720px) {
 
@@ -165,9 +165,15 @@ div.input-pass-container input {
         gap: calc(16px * 0.5);
     }
 }
-
 @media (hover: none) and (pointer: coarse) {
 div.input-pass-container input {
     max-width: auto;
 }
+}
+
+@media (hover: hover ) and (pointer: fine) {
+div.input-pass-container input {
+    max-width: calc(16px * 11);
+}
+
 }
