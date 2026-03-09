@@ -94,5 +94,12 @@
    .input-pass-container {
         max-width: 100%;
 }
+
+}
+
+@media (hover: none) and (pointer: coarse) {
+.input-pass-container input{
+    max-width: auto;
+}
 }
 
