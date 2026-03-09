@@ -130,7 +130,7 @@ justify-content: space-evenly;
     } */
          nav svg {
         width: calc(16px * 1.2);
-        height: calc(16px * 1.2);
+        height: calc(16px * 1.15);
     }  
     
     .search-icon {
