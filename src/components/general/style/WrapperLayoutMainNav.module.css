@@ -5,26 +5,18 @@ position: sticky;
     top: var(--nav-height, 120px);;                         /* ← semplifica, togli il calc complesso */
     width: 35%;
     min-width: 30%;
-    height: 100dvh;                  /* occupa tutta la viewport */
+    height: 70vh;                  /* occupa tutta la viewport */
     max-height: calc(100dvh - var(--nav-height, 120px));
     align-self: flex-start;
     will-change: transform;
     transform: translateZ(0);        /* forza GPU layer su Chrome */
     overflow: auto;
-
-
-
-
     left: 0;
-
-
  padding-top: calc(16px * 0.2);
-   
     background-color: var(--bacground-color-nav);
     border: 2px solid var(--border-gold-simple);
     border-top: none;
     z-index: 2;
-
     animation: pixelAppear 0.3s steps(3) forwards;
 }
 
