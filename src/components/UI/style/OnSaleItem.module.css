@@ -1,0 +1,55 @@
+.on-sale-item{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    background-color: transparent;
+    padding: 0 calc(16px * 0.5);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.on-sale-item h3{
+    padding: 2px 8px;
+    font-family: var(--titleFont); /* Usa il tuo font pixel */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    display: inline-block;
+    
+   
+    animation: rainbowFlash 0.8s steps(4) infinite;
+}
+
+@keyframes rainbowFlash {
+    0% {
+        background-color: #ff0000; /* Rosso */
+        color: #fff;
+        box-shadow: 0 0 5px #ff0000;
+    }
+    25% {
+        background-color: #f8b800; /* Il tuo Oro */
+        color: #000;
+        box-shadow: 0 0 5px #f8b800;
+    }
+    50% {
+        background-color: #00ff00; /* Verde Loot */
+        color: #000;
+        box-shadow: 0 0 5px #00ff00;
+    }
+    75% {
+        background-color: #0000ff; /* Blu Raro */
+        color: #fff;
+        box-shadow: 0 0 5px #0000ff;
+    }
+    100% {
+        background-color: #ff00ff; /* Viola Epico */
+        color: #fff;
+        box-shadow: 0 0 5px #ff00ff;
+    }
+}

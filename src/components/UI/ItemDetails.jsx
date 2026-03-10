@@ -27,6 +27,8 @@ export default function ItemDetails() {
       <div className={classItemDetails["image-container"]}>
        
         <ItemImage
+          id={item.id}
+         
           spritePosX={imageSprite[item.id].x}
           spritePosY={imageSprite[item.id].y}
         />

@@ -1,10 +1,11 @@
 import sprite64x64 from "../../assets/sprite64x64.webp";
 import classItemImage from './style/ItemImage.module.css'
-export default function ItemImage({ spritePosX, spritePosY, size = 64 }) {
+import barbem from '../../assets/barbasvg.svg'
+export default function ItemImage({id, spritePosX, spritePosY, size = 64 }) {
   const style = {
-    width: `${size}px`,
-    height: `${size}px`,
-    backgroundImage: `url(${sprite64x64})`,
+    width:id !== 'item-101' ? `${size}px` : `74px`,
+    height: id !== 'item-101' ? `${size}px` : `80px`,
+    backgroundImage:id !== 'item-101' ? `url(${sprite64x64})` : `url(${barbem})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: `-${spritePosX}px ${spritePosY}px`,
     imageRendering: "pixelated",

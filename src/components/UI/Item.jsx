@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import ItemImage from "./ItemImage";
 import { imageSprite } from "../../util/imageSprite";
 import Money from "./Money";
+import OnSaleItem from './OnSaleItem';
+import ItemOutOfStock from './ItemOutOfStock';
+
 import classItem from "./style/Item.module.css";
 export default function Item({ item }) {
   let itemType = item.categoria;
@@ -64,13 +67,16 @@ export default function Item({ item }) {
         <div className={classItem["image-container"]}>
         
           <ItemImage
+          id={item.id}
             spritePosX={imageSprite[item.id].x}
             spritePosY={imageSprite[item.id].y}
           />
+          {item.onSale && item.stock > 0 && <OnSaleItem />}
+          {item.stock === 0 && <ItemOutOfStock />}
         </div>
 
         <div className={classItem["item-info2"]}>
-          {" "}
+         
           <p>Tipo: {itemType}</p>
           <p>Rating: {item.rating}</p>
           

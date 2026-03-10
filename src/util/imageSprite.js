@@ -83,7 +83,7 @@ export const imageSprite = {
   "item-080": {x:5056,y:0},
   "item-081": {x:5120,y:0},
   "item-082": {x:5184,y:0},
-  "item-083": {x:5248,y:0},
+  "item-083": {x:n*12,y:-n*3},
   "item-084": {x:5312,y:0},
   "item-085": {x:5376,y:0},
   "item-086": {x:5440,y:0},
@@ -100,5 +100,6 @@ export const imageSprite = {
   "item-097": {x:6144,y:0},
   "item-098": {x:6208,y:0},
   "item-099": {x:6272,y:0},
-  "item-100": {x:6336,y:0}
+  "item-100": {x:6336,y:0},
+   "item-101": {x:n*0,y:-n*0},
 };
