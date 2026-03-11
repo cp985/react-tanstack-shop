@@ -58,12 +58,7 @@ export default function WrapperLayoutMainNav() {
   // In MainNav.jsx o WrapperLayoutMainNav.jsx
   const navRef = useRef(null);
 
-  // useEffect(() => {
-  //   if (navRef.current) {
-  //     const h = navRef.current.offsetHeight;
-  //     document.documentElement.style.setProperty('--nav-height', `${h}px`);
-  //   }
-  // }, []);
+
 
   useEffect(() => {
     const updateNavHeight = () => {
@@ -73,17 +68,19 @@ export default function WrapperLayoutMainNav() {
       }
     };
 
-    updateNavHeight();
+      const timeout = setTimeout(updateNavHeight, 50);
+    // updateNavHeight();
 
     window.addEventListener("resize", updateNavHeight);
 
     window.visualViewport?.addEventListener("resize", updateNavHeight);
 
     return () => {
+        clearTimeout(timeout);
       window.removeEventListener("resize", updateNavHeight);
       window.visualViewport?.removeEventListener("resize", updateNavHeight);
     };
-  }, []);
+  }, [isFilterOpen]);
 
   if (!items) {
     return <div>Caricamento...</div>;
