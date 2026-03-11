@@ -5,7 +5,7 @@ export default function Sales() {
 
   const {filtered}= useItems();
   let filteredOnSale = filtered.filter((item) => item.onSale === true);
-console.log(data);
+
 
   return (
     <section className={classSales["sales-page"]}>
