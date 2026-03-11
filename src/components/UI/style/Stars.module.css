@@ -1,0 +1,18 @@
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: var(--titleFont); 
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #444; 
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--border-gold-simple);
+  width: 0; 
+}

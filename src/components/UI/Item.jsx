@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ItemImage from "./ItemImage";
 import { imageSprite } from "../../util/imageSprite";
 import Money from "./Money";
+import Stars from "./Stars";
 import OnSaleItem from './OnSaleItem';
 import ItemOutOfStock from './ItemOutOfStock';
 
@@ -78,7 +79,7 @@ export default function Item({ item }) {
         <div className={classItem["item-info2"]}>
          
           <p>Tipo: {itemType}</p>
-          <p>Rating: {item.rating}</p>
+          <p>Rating:<span><Stars rating={item.rating}/></span></p>
           
           <p className={classItem["price"]}>Prezzo: {item.prezzo}<Money/></p>
         </div>

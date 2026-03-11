@@ -4,6 +4,7 @@ import classItemDetails from "./style/ItemDetails.module.css";
 import Button from "./Button";
 import ItemImage from "./ItemImage";
 import Money from "./Money";
+import Stars from "./Stars";
 import { imageSprite } from "../../util/imageSprite";
 export default function ItemDetails() {
   const { items, addCart, cart } = useItems();
@@ -42,7 +43,7 @@ export default function ItemDetails() {
         <p>Peso: {item.peso}</p>
       </article>
       <article className={classItemDetails["price-container"]}>
-        <p>Rating: {item.rating}</p>
+        <p>Rating: <span><Stars rating={item.rating} /></span></p>
         <p>Disponibilità: {item.stock}</p>
         <div>
           <p
