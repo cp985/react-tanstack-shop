@@ -58,7 +58,7 @@ export default function Item({ item }) {
           <h4>{item.rarita}</h4>
           <h3>{item.nome}</h3>
           <ul className={classItem["ul-class"]}>
-            Classi:
+          Classi:&nbsp;
             {item.classe.map((classe) => (
               <li key={classe}>{classe},</li>
             ))}
