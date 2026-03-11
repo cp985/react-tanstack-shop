@@ -48,6 +48,7 @@ export default function FormFilter() {
               name="onSale"
               value={"onSale"}
               label="On Sale"
+              checked={formData.onSale}
               hidden
               onChange={handlerStatusChange}
             />

@@ -19,6 +19,7 @@ export default function Input({
   placeholder,
   defaultValue,
   rows,
+  checked
   
 }) {
   const [isPassword, setIsPassword] = useState(true);
@@ -82,6 +83,7 @@ export default function Input({
         min={min}
         max={max}
         step={step}
+        checked={checked}
         placeholder={placeholder}
         {...(value !== undefined ? { value } : { defaultValue })}
       />

@@ -32,16 +32,26 @@ if (error?.data) {
       if (redirectionCount === 0) {
         navigate("/");
       }
-      return () => clearInterval(interval);
+      return () => clearTimeout(interval);
     }
   }, [redirectionCount, error, navigate]);
 
+  if (!error?.status || error.status >= 500) {
   return (
     <div className={classError.errorPage}>
-      <h1>ErrorPage status {error.status}</h1>
+      <h2>🚧 Lavori in corso</h2>
+      <p>Il server è temporaneamente non disponibile, riprova più tardi.</p>
+      <Button text={"Riprova"} onClick={() => window.location.reload()} />
+    </div>
+  );
+}
+
+  return (
+    <div className={classError.errorPage}>
+      <h2>ErrorPage status {error.status}</h2>
       <p>{errorMessage}</p>
       <p>verrai reindirizzato alla home tra {redirectionCount}</p>
-      <Button text={"Go to Home"} isLink={true} path={"/"} />
+      <Button text={"Homepage"} isLink={true} path={"/"} />
     </div>
   );
 }

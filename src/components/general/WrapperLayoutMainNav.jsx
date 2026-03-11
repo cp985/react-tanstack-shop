@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import MainNav from "../UI/MainNav";
@@ -13,7 +13,9 @@ import classWrapperLayoutMainNav from "./style/WrapperLayoutMainNav.module.css";
 export default function WrapperLayoutMainNav() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const sidebarRef = useRef(null);
-  // const [marginTop, setMarginTop] = useState(210);
+  let path = useLocation().pathname;
+  console.log('loc ',location);
+  
 
   const { data: items } = useSuspenseQuery({
     queryKey: ["items"],
@@ -69,7 +71,6 @@ export default function WrapperLayoutMainNav() {
     };
 
       const timeout = setTimeout(updateNavHeight, 50);
-    // updateNavHeight();
 
     window.addEventListener("resize", updateNavHeight);
 
@@ -130,7 +131,7 @@ export default function WrapperLayoutMainNav() {
         </div>
         <main className={classWrapperLayoutMainNav.main}>
           <aside
-            className={`${classWrapperLayoutMainNav.aside} ${isFilterOpen ? classWrapperLayoutMainNav.asideOpen : classWrapperLayoutMainNav.asideClosed} `}
+            className={`${classWrapperLayoutMainNav.aside} ${isFilterOpen && (path === "/app/shop"|| path === "/app/shop/sales")  ? classWrapperLayoutMainNav.asideOpen : classWrapperLayoutMainNav.asideClosed} `}
             ref={sidebarRef}
           >
             <FormFilter />

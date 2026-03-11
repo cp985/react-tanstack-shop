@@ -1,4 +1,12 @@
 .errorPage{
-    color: red;
+    color: var(--font-color-error , red);
+    border: 2px solid var(--border-gold-simple , gold);
     text-align: center;
+ margin: 16px auto;
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

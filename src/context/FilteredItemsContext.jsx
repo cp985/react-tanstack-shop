@@ -137,6 +137,8 @@ export function ItemsProvider({ children, items, openModal,openModalDeleteAccoun
     }));
   }
 
+
+  let search= formData.search;
   //logout
 
 
@@ -167,6 +169,7 @@ export function ItemsProvider({ children, items, openModal,openModalDeleteAccoun
         quantityCart,
         totalPrice,
         handleSearchChange,
+        search,
         openModal,
         logOut,
         user,

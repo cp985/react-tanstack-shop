@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,useSearchParams } from "react-router-dom";
 import { useItems } from "../../context/FilteredItemsContext";
 import classMainNav from "./style/MainNav.module.css";
 import Button from "./Button";
@@ -10,7 +10,7 @@ export default function MainNav({ setIsFilterOpen }) {
   const location = useLocation();
   const path = location.pathname;
   const username = localStorage.getItem("username");
-  const { quantityCart, handleSearchChange } = useItems();
+  const { quantityCart, handleSearchChange,search } = useItems();
 
   function toggleTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -76,6 +76,7 @@ export default function MainNav({ setIsFilterOpen }) {
               label=""
               onChange={handleSearchChange}
               placeholder={"Search"}
+              value={search}
             />
           </li>
         </ul>
