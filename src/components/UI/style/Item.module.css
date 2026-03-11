@@ -75,14 +75,7 @@
   }
 }
 
-.item-card:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 10px 10px 0px 0px #000;
-  filter: brightness(1.1);
-  outline: 2px solid white;
-  /* Un "flash" di selezione tipico degli RPG */
-  z-index: 0;
-}
+
 
 .image-container {
   position: relative;
@@ -165,4 +158,14 @@
       padding: 0 calc(16px * 0.3);
   }
 
+}
+
+@media (hover:hover) and (pointer: fine) {
+.item-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0px 0px #000;
+  filter: brightness(1.1);
+  outline: 2px solid white;
+  z-index: 0;
+}
 }
