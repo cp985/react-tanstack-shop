@@ -11,7 +11,7 @@ export default function NewsLetterContact() {
   }
 
   function sendText() {
-    console.log(isText);
+  
 
     setIsText({ message: "", isSend: true });
  

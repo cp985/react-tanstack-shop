@@ -25,7 +25,7 @@ export default function OrdersHistory() {
       }
     },
   });
-  console.log(data);
+  
 
   return (
     <>

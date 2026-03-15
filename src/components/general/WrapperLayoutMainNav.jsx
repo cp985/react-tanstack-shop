@@ -14,7 +14,6 @@ export default function WrapperLayoutMainNav() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const sidebarRef = useRef(null);
   let path = useLocation().pathname;
-  console.log('loc ',location);
   
 
   const { data: items } = useSuspenseQuery({
@@ -25,7 +24,7 @@ export default function WrapperLayoutMainNav() {
     },
   });
 
-  console.log("items:", items);
+ 
 
   useEffect(() => {
     const handleClickOutside = (event) => {

@@ -13,7 +13,7 @@ export default function Home() {
     useMutation({
       mutationFn: (user) => logIn(user),
       onSuccess: (response) => {
-        console.log("onSuccess data", response);
+      
         localStorage.setItem("token", response.token);
         localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
         localStorage.setItem("username", response.user.username);
@@ -33,7 +33,7 @@ export default function Home() {
   } = useMutation({
     mutationFn: (user) => signUp(user),
     onSuccess: (response) => {
-      console.log("onSuccess data", response);
+     
       localStorage.setItem("token", response.token);
       localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
       localStorage.setItem("username", response.user.username);

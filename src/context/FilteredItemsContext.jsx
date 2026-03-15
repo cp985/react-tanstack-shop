@@ -145,7 +145,6 @@ export function ItemsProvider({ children, items, openModal,openModalDeleteAccoun
   const navigate = useNavigate();
   function logOut() {
     if (user.isLogIn) {
-      console.log("log out");
 
       localStorage.clear();
       setUser(null);
