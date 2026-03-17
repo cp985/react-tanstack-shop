@@ -6,9 +6,8 @@ import { useMutation } from "@tanstack/react-query";
 import LogInForm from "../components/UI/LogInForm";
 import { logIn, signUp } from "../util/httpRequest";
 import classHome from "./style/Home.module.css";
-import { useItems } from "../context/FilteredItemsContext";
 export default function Home() {
-  const { setUser } = useItems();
+  
   const [isSubscribed, setIsSubscribed] = useState(false);
   const navigate = useNavigate();
   const messageDeleteAccount = useLocation().state?.message;
