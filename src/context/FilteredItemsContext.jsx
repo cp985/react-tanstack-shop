@@ -30,9 +30,7 @@ export function ItemsProvider({
     search: "",
   });
 
-  if (!items) {
-    return <div>Caricamento...</div>;
-  }
+
 
   const RARITA_ORDER = {
     Comune: 1,
@@ -156,6 +154,10 @@ export function ItemsProvider({
     } else {
       return;
     }
+  }
+
+    if (!items) {
+    return <div>Caricamento...</div>;
   }
 
   return (
