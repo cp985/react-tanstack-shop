@@ -6,9 +6,8 @@ import { useMutation } from "@tanstack/react-query";
 import LogInForm from "../components/UI/LogInForm";
 import { logIn, signUp } from "../util/httpRequest";
 import classHome from "./style/Home.module.css";
-import {useItems} from "../context/FilteredItemsContext";
+import { useItems } from "../context/FilteredItemsContext";
 export default function Home() {
-
   const { setUser } = useItems();
   const [isSubscribed, setIsSubscribed] = useState(false);
   const navigate = useNavigate();
@@ -17,13 +16,12 @@ export default function Home() {
     useMutation({
       mutationFn: (user) => logIn(user),
       onSuccess: (response) => {
-      
         localStorage.setItem("token", response.token);
         localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
         localStorage.setItem("username", response.user.username);
         localStorage.setItem("email", response.user.email);
-       setUser(produce((draft)=> {draft.ruolo=response.user.ruolo}))
-        
+        localStorage.setItem("ruolo", response.user.ruolo);
+
         navigate("/app/home");
       },
     });
@@ -39,10 +37,10 @@ export default function Home() {
   } = useMutation({
     mutationFn: (user) => signUp(user),
     onSuccess: (response) => {
-     
       localStorage.setItem("token", response.token);
       localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
       localStorage.setItem("username", response.user.username);
+      localStorage.setItem("ruolo", response.user.ruolo);
       navigate("/app/home");
     },
   });
@@ -71,12 +69,12 @@ export default function Home() {
     }
   }, [messageDeleteAccount, navigate]);
 
-   
-
   return (
     <div className={classHome.home}>
       <h1>The Golden-Pixel Inn</h1>
-      {messageDeleteAccount && <h2 className={classHome.message}> {messageDeleteAccount}</h2>}
+      {messageDeleteAccount && (
+        <h2 className={classHome.message}> {messageDeleteAccount}</h2>
+      )}
 
       <LogInForm
         subscribe={isSubscribed}

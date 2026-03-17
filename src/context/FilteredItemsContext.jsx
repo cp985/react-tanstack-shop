@@ -2,13 +2,19 @@ import { createContext, useContext, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 const ItemsContext = createContext();
 
-export function ItemsProvider({ children, items, openModal,openModalDeleteAccount,closeModalDeleteAccount }) {
+export function ItemsProvider({
+  children,
+  items,
+  openModal,
+  openModalDeleteAccount,
+  closeModalDeleteAccount,
+}) {
   //user
   const [user, setUser] = useState({
-    username: "",
-    email: "",
-    ruolo: "",
-    isLogIn: false,
+    username: localStorage.getItem("username") || "",
+    email: localStorage.getItem("email") || "",
+    ruolo: localStorage.getItem("ruolo") || "",
+    isLogIn: !!localStorage.getItem("token"),
   });
 
   //items e bfiltered items
@@ -138,15 +144,12 @@ export function ItemsProvider({ children, items, openModal,openModalDeleteAccoun
     }));
   }
 
-
-  let search= formData.search;
+  let search = formData.search;
   //logout
-
 
   const navigate = useNavigate();
   function logOut() {
     if (user.isLogIn) {
-
       localStorage.clear();
       setUser(null);
       navigate("/", { replace: true });
@@ -175,7 +178,7 @@ export function ItemsProvider({ children, items, openModal,openModalDeleteAccoun
         user,
         setUser,
         openModalDeleteAccount,
-        closeModalDeleteAccount
+        closeModalDeleteAccount,
       }}
     >
       {children}

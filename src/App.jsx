@@ -56,23 +56,23 @@ const router = createHashRouter(
           path: "home",
           element: <FirstPage />,
         },
-                    {
-              path: "admin",
-              element: <AdminPage />,
-              loader: async () => {
-                authCheck();
-                const res = await fetch(`${API_URL}/users/profile`, {
-                  headers: {
-                    Authorization: `Bearer ${localStorage.getItem("token")}`,
-                  },
-                });
-                const data = await res.json();
-                if (data.user?.ruolo !== "admin") {
-                  throw new Response("Accesso negato", { status: 403 });
-                }
-                return null;
+        {
+          path: "admin",
+          element: <AdminPage />,
+          loader: async () => {
+            authCheck();
+            const res = await fetch(`${API_URL}/users/profile`, {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
               },
-            },
+            });
+            const data = await res.json();
+            if (data.user?.ruolo !== "admin") {
+              throw new Response("Accesso negato", { status: 403 });
+            }
+            return null;
+          },
+        },
 
         {
           path: "shop",

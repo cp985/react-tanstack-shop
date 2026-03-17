@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
-import { useLocation,useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { useItems } from "../../context/FilteredItemsContext";
 import classMainNav from "./style/MainNav.module.css";
 import Button from "./Button";
 import Input from "./Input";
-import { Lightbulb, Moon,Search } from "pixelarticons/react";
+import { Lightbulb, Moon, Search } from "pixelarticons/react";
 export default function MainNav({ setIsFilterOpen }) {
   const [theme, setTheme] = useState("light");
   const location = useLocation();
   const path = location.pathname;
   const username = localStorage.getItem("username");
-  const { quantityCart, handleSearchChange,search } = useItems();
+  const { quantityCart, handleSearchChange, search } = useItems();
 
   function toggleTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -23,12 +23,18 @@ export default function MainNav({ setIsFilterOpen }) {
   return (
     <nav
       className={classMainNav.nav}
-      style={path === "/app/shop"|| path === "/app/shop/sales" ? { height: "fit-content" } : {}}
+      style={
+        path === "/app/shop" || path === "/app/shop/sales"
+          ? { height: "fit-content" }
+          : {}
+      }
     >
       <ul className={classMainNav.ul1}>
-        <li>
-          <Button text={"ADMIN"} isLink={true} path={"admin"} />
-        </li>
+        {localStorage.getItem("ruolo") === "admin" && (
+          <li>
+            <Button text={"ADMIN"} isLink={true} path={"admin"} />
+          </li>
+        )}
         <li>
           <Button text={"Home"} isLink={true} path={"home"} />
         </li>
@@ -55,8 +61,7 @@ export default function MainNav({ setIsFilterOpen }) {
           />
         </li>
         <li>
-          <Button type="button" classOf={"theme"} onClick={toggleTheme} >
-            
+          <Button type="button" classOf={"theme"} onClick={toggleTheme}>
             {theme === "dark" ? <Moon /> : <Lightbulb />}
           </Button>
         </li>
@@ -68,9 +73,9 @@ export default function MainNav({ setIsFilterOpen }) {
             <Button text={"Filter"} onClick={setIsFilterOpen} />
           </li>
           <li className={classMainNav["search-li"]}>
-           <div className={classMainNav['search-icon']}>
-             <Search />
-           </div>
+            <div className={classMainNav["search-icon"]}>
+              <Search />
+            </div>
             <Input
               classOfInput={"search"}
               type="text"
