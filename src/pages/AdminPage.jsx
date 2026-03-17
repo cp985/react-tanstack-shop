@@ -1,4 +1,4 @@
-import classAdminPage from "./style/AdminPage.module.css";
+import classAdminPage from "./style/AdminPage.module.css"
 
 export default function AdminPage() {
   return (
