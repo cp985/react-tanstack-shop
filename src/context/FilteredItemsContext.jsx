@@ -7,6 +7,7 @@ export function ItemsProvider({ children, items, openModal,openModalDeleteAccoun
   const [user, setUser] = useState({
     username: "",
     email: "",
+    ruolo: "",
     isLogIn: false,
   });
 

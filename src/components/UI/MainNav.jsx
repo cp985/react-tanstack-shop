@@ -27,6 +27,9 @@ export default function MainNav({ setIsFilterOpen }) {
     >
       <ul className={classMainNav.ul1}>
         <li>
+          <Button text={"ADMIN"} isLink={true} path={"admin"} />
+        </li>
+        <li>
           <Button text={"Home"} isLink={true} path={"home"} />
         </li>
         <li className={classMainNav.li}>

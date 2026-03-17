@@ -23,25 +23,34 @@ if (error?.data) {
       }
     }
   }
-  useEffect(() => {
-    if (error.status === 401 || error.status === 404) {
+useEffect(() => {
+    if (error.status === 401 || error.status === 404 || error.status === 403) {
       let interval = setTimeout(() => {
         setRedirectionCount(redirectionCount - 1);
       }, 1000);
-
       if (redirectionCount === 0) {
-        navigate("/");
+        navigate(error.status === 403 ? "/app/home" : "/");
       }
       return () => clearTimeout(interval);
     }
   }, [redirectionCount, error, navigate]);
-
   if (!error?.status || error.status >= 500) {
   return (
     <div className={classError.errorPage}>
       <h2>🚧 Lavori in corso</h2>
       <p>Il server è temporaneamente non disponibile, riprova più tardi.</p>
       <Button text={"Riprova"} onClick={() => window.location.reload()} />
+    </div>
+  );
+}
+
+if (error.status === 403) {
+  return (
+    <div className={classError.errorPage}>
+      <h2>🚫 Accesso negato</h2>
+      <p>Non hai i permessi per visualizzare questa pagina.</p>
+      <p>Verrai reindirizzato tra {redirectionCount}</p>
+      <Button text={"Homepage"} isLink={true} path={"/app/home"} />
     </div>
   );
 }

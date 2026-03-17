@@ -1,11 +1,15 @@
 //! home in cui si ci logga e registra
 import { useState, useEffect } from "react";
+import { produce } from "immer";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import LogInForm from "../components/UI/LogInForm";
 import { logIn, signUp } from "../util/httpRequest";
 import classHome from "./style/Home.module.css";
+import {useItems} from "../context/FilteredItemsContext";
 export default function Home() {
+
+  const { setUser } = useItems();
   const [isSubscribed, setIsSubscribed] = useState(false);
   const navigate = useNavigate();
   const messageDeleteAccount = useLocation().state?.message;
@@ -18,7 +22,7 @@ export default function Home() {
         localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
         localStorage.setItem("username", response.user.username);
         localStorage.setItem("email", response.user.email);
-       console.log(response.user.ruolo);
+       setUser(produce((draft)=> {draft.ruolo=response.user.ruolo}))
         
         navigate("/app/home");
       },

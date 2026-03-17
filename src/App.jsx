@@ -17,6 +17,7 @@ import OrdersHistory from "./pages/OrdersHistory";
 import ProfileUser from "./pages/ProfileUser";
 import FirstPage from "./pages/FirstPage";
 import LogOut from "./pages/LogOut";
+import AdminPage from "./pages/AdminPage";
 import ItemDetails from "./components/UI/ItemDetails";
 import Sales from "./pages/Sales";
 
@@ -118,6 +119,23 @@ const router = createHashRouter(
                     return res.json();
                   },
                 });
+                return null;
+              },
+            },
+            {
+              path: "admin",
+              element: <AdminPage />,
+              loader: async () => {
+                authCheck();
+                const res = await fetch(`${API_URL}/users/profile`, {
+                  headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                  },
+                });
+                const data = await res.json();
+                if (data.user?.ruolo !== "admin") {
+                  throw new Response("Accesso negato", { status: 403 });
+                }
                 return null;
               },
             },

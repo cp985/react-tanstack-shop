@@ -1,0 +1,38 @@
+.adminPage {
+    width: 100%;
+    min-height: 60dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(16px * 1.5);
+    padding: calc(16px * 2);
+}
+
+.adminPage h2 {
+    font-family: var(--titlePage);
+    color: var(--border-gold-simple);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    border-bottom: 2px solid var(--border-gold-simple);
+    padding-bottom: calc(16px * 0.5);
+    width: 100%;
+    text-align: center;
+}
+
+.adminPage h3 {
+    font-family: var(--titleFont);
+    color: var(--border-orange);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    letter-spacing: 0.2rem;
+    animation: blink 1s steps(2) infinite;
+}
+
+.adminPage p {
+    color: var(--font-color-light);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
