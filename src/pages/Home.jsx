@@ -18,6 +18,8 @@ export default function Home() {
         localStorage.setItem("expires", Date.now() + 10 * 60 * 1000); //! 6minuti
         localStorage.setItem("username", response.user.username);
         localStorage.setItem("email", response.user.email);
+       console.log(response.user.ruolo);
+        
         navigate("/app/home");
       },
     });
@@ -64,6 +66,8 @@ export default function Home() {
       return () => clearTimeout(timer);
     }
   }, [messageDeleteAccount, navigate]);
+
+   
 
   return (
     <div className={classHome.home}>
